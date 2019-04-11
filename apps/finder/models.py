@@ -1,10 +1,24 @@
 from django.db import models
 
 
-# class Party(models.Model):
-#
-#     class Meta:
-#         db_table = 'party'
+class Category(models.Model):
+    name = models.TextField(null=True)
+
+    class Meta:
+        db_table = 'category'
+
+
+class Organization(models.Model):
+    name = models.TextField(null=True)
+    website = models.TextField(null=True)
+    yelp = models.TextField(null=True)
+    youtube = models.TextField(null=True)
+    facebook = models.TextField(null=True)
+    twitter = models.TextField(null=True)
+    email = models.TextField(null=True)
+
+    class Meta:
+        db_table = 'organization'
 
 
 class Person(models.Model):
@@ -26,25 +40,18 @@ class EmailAddress(models.Model):
 
 
 class PhoneNumber(models.Model):
-    # party = models.ForeignKey(Party, related_name='phone_numbers', on_delete=models.CASCADE)
     area_code = models.CharField(max_length=3, null=True)
     phone_number = models.CharField(max_length=7, null=True)
-    # phone_number_type = models.ForeignKey(PhoneNumberType, on_delete=models.PROTECT, null=True)
     priority = models.IntegerField()
 
     class Meta:
         db_table = 'phone_number'
 
 
-class Organization(models.Model):
-    name = models.TextField(null=True)
-
-    class Meta:
-        db_table = 'organization'
-
-
 class PostalAddress(models.Model):
-    organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
+    organization = models.ForeignKey(Organization,
+                                     related_name='postal_addresses',
+                                     on_delete=models.CASCADE)
     street1 = models.CharField(max_length=100, null=True)
     street2 = models.CharField(max_length=100, null=True)
     city = models.CharField(max_length=100, null=True)
@@ -55,3 +62,12 @@ class PostalAddress(models.Model):
 
     class Meta:
         db_table = 'postal_address'
+
+
+class CategoryQuantity(models.Model):
+    organization = models.ForeignKey(Organization,
+                                     related_name='category_quantities',
+                                     on_delete=models.CASCADE)
+    category = models.ForeignKey(Category,
+                                 on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField()
