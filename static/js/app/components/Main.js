@@ -14,13 +14,13 @@ new Vue({
                    v-model="searchString" 
                    @keyup="search" />
             <ul id="reports-list-container" class="entity-list">
-                <li v-for="store in filteredStores">
-                    {{ store.name }}
+                <li v-for="business in filteredBusinesses">
+                    {{ business.name }}
                 </li>
             </ul>
         </div>`,
     mounted() {
-        store.dispatch('storeList/getStores', null, {root: true});
+        store.dispatch('businessList/getBusinesses', null, {root: true});
 
         map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: 39.833333, lng: -98.583333},
@@ -290,37 +290,37 @@ new Vue({
 
     },
     computed: {
-        filteredStores() {
-            const filteredStores = store.state.storeList.searchResults;
+        filteredBusinesses() {
+            const filteredBusinesses = store.state.businessList.searchResults;
 
             // Clear existing markers
             for (let marker of this.markers) {
                 marker.setMap(null);
             }
 
-            for (let gameStore of filteredStores) {
-                for (let postalAddress of gameStore.postalAddresses) {
+            for (let business of filteredBusinesses) {
+                for (let gameStore of business.stores) {
                     const location = {
-                        lat: parseFloat(postalAddress.lat),
-                        lng: parseFloat(postalAddress.lng)
+                        lat: parseFloat(gameStore.lat),
+                        lng: parseFloat(gameStore.lng)
                     };
 
                     this.markers.push(new google.maps.Marker({
                         position: location,
                         map: map,
-                        title: gameStore.name,
+                        title: business.name,
                         icon: 'static/images/map-pin-04.png',
                     }));
                 }
 
             }
 
-            return filteredStores;
+            return filteredBusinesses;
         }
     },
     methods: {
         search() {
-            store.dispatch('storeList/search', this.searchString, {root: true});
+            store.dispatch('businessList/search', this.searchString, {root: true});
         }
     }
 });

@@ -1,7 +1,7 @@
 export default {
     namespaced: true,
     state: {
-        stores: [],
+        businesses: [],
         searchIndex: null,
         searchResults: []
     },
@@ -13,25 +13,25 @@ export default {
                 searchResults = state.searchIndex.search(searchString);
             }
 
-            const filteredStores = [];
+            const filteredBusinesses = [];
             for (let searchResult of searchResults) {
-                for (let gameStore of state.stores) {
-                    if (parseInt(searchResult.ref) === gameStore.id) {
-                        filteredStores.push(gameStore);
+                for (let business of state.businesses) {
+                    if (parseInt(searchResult.ref) === business.id) {
+                        filteredBusinesses.push(business);
                     }
                 }
             }
-            commit('setSearchResults', filteredStores);
+            commit('setSearchResults', filteredBusinesses);
         },
-        getStores({commit}) {
-            $.get('shops/', function (stores, status) {
-                commit('setStores', stores);
+        getBusinesses({commit}) {
+            $.get('shops/', function (businesses, status) {
+                commit('setBusinesses', businesses);
 
                 const idx = lunr(function () {
                     this.ref('id');
                     this.field('name');
 
-                    for (let gameStore of stores) {
+                    for (let gameStore of businesses) {
                         this.add(gameStore);
                     }
                 });
@@ -47,8 +47,8 @@ export default {
         setSearchResults(state, results) {
             state.searchResults = results;
         },
-        setStores(state, payload) {
-            state.stores = payload;
+        setBusinesses(state, payload) {
+            state.businesses = payload;
         }
     }
 };

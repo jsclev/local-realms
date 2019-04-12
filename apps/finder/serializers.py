@@ -1,10 +1,10 @@
 from rest_framework import serializers
 
-from apps.finder.models import Organization
-from apps.finder.models import PostalAddress
+from apps.finder.models import Business
+from apps.finder.models import Store
 
 
-class PostalAddressSerializer(serializers.ModelSerializer):
+class StoreSerializer(serializers.ModelSerializer):
     street1 = serializers.CharField()
     street2 = serializers.CharField()
     city = serializers.CharField()
@@ -14,7 +14,7 @@ class PostalAddressSerializer(serializers.ModelSerializer):
     lng = serializers.DecimalField(source='longitude', max_digits=12, decimal_places=9)
 
     class Meta:
-        model = PostalAddress
+        model = Store
         fields = ('street1',
                   'street2',
                   'city',
@@ -24,13 +24,13 @@ class PostalAddressSerializer(serializers.ModelSerializer):
                   'lng')
 
 
-class OrganizationSerializer(serializers.ModelSerializer):
+class BusinessSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField()
     name = serializers.CharField()
-    postalAddresses = PostalAddressSerializer(source='postal_addresses', many=True, read_only=True)
+    stores = StoreSerializer(many=True, read_only=True)
 
     class Meta:
-        model = Organization
+        model = Business
         fields = ('id',
                   'name',
-                  'postalAddresses')
+                  'stores')

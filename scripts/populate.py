@@ -4,124 +4,109 @@ django.setup()
 
 from apps.finder.models import Category
 from apps.finder.models import CategoryQuantity
-from apps.finder.models import Organization
-from apps.finder.models import PostalAddress
+from apps.finder.models import Business
+from apps.finder.models import Store
 
 Category.objects.all().delete()
-Organization.objects.all().delete()
+Business.objects.all().delete()
 
 board_game_category = Category.objects.create(name='Board Games')
 comics_category = Category.objects.create(name='Comics')
 
-org = Organization(name='Asgards Gate')
-org.website = 'https://asgardsgate.website'
-org.facebook = 'https://www.facebook.com/asgardsgateholton'
-org.save()
+business = Business(name='Asgards Gate')
+business.website = 'https://asgardsgate.website'
+business.facebook = 'https://www.facebook.com/asgardsgateholton'
+business.save()
 
-pa = PostalAddress(organization=org, state_code='KS')
-pa.street1 = '106 W 5th St'
-pa.street2 = None
-pa.city = 'Holton'
-pa.zip_code = '66436'
-pa.latitude = 39.465175
-pa.longitude = -95.735196
-pa.save()
+store = Store(business=business, state_code='KS')
+store.street1 = '106 W 5th St'
+store.street2 = None
+store.city = 'Holton'
+store.zip_code = '66436'
+store.latitude = 39.465175
+store.longitude = -95.735196
+store.save()
 
+business = Business.objects.create(name='Your Local Game Store')
+store = Store(business=business, state_code='NC')
+store.street1 = '6908 Matthews-Mint Hill Rd'
+store.street2 = 'Suite 350'
+store.city = 'Mint Hill'
+store.zip_code = '28227'
+store.latitude = 35.171643
+store.longitude = -80.657079
+store.save()
 
-org = Organization(name='Asgards Gate')
-org.website = 'https://asgardsgate.website'
-org.facebook = 'https://www.facebook.com/asgardsgateholton'
-org.save()
+business = Business.objects.create(name='Hillside Games and Comics')
+store = Store(business=business, state_code='NC')
+store.street1 = '800 Fairview Rd'
+store.street2 = 'Suite EE'
+store.city = 'Asheville'
+store.zip_code = '28803'
+store.latitude = 35.570199
+store.longitude = -82.507587
+store.save()
 
-pa = PostalAddress(organization=org, state_code='KS')
-pa.street1 = '106 W 5th St'
-pa.street2 = None
-pa.city = 'Holton'
-pa.zip_code = '66436'
-pa.latitude = 39.465175
-pa.longitude = -95.735196
-pa.save()
+business = Business.objects.create(name='Carolina Tabletop Games')
+store = Store(business=business, state_code='NC')
+store.street1 = '315 Main St'
+store.street2 = '#1'
+store.city = 'Pineville'
+store.zip_code = '28134'
+store.latitude = 35.085479
+store.longitude = -80.890651
+store.save()
 
-org = Organization.objects.create(name='Your Local Game Store')
-pa = PostalAddress(organization=org, state_code='NC')
-pa.street1 = '6908 Matthews-Mint Hill Rd'
-pa.street2 = 'Suite 350'
-pa.city = 'Mint Hill'
-pa.zip_code = '28227'
-pa.latitude = 35.171643
-pa.longitude = -80.657079
-pa.save()
+business = Business.objects.create(name='Spandex City')
+store = Store(business=business, state_code='NC')
+store.street1 = '2914 Mt Holly-Huntersville Rd'
+store.street2 = None
+store.city = 'Charlotte'
+store.zip_code = '28214'
+store.latitude = 35.319121
+store.longitude = -80.952932
+store.save()
 
-org = Organization.objects.create(name='Hillside Games and Comics')
-pa = PostalAddress(organization=org, state_code='NC')
-pa.street1 = '800 Fairview Rd'
-pa.street2 = 'Suite EE'
-pa.city = 'Asheville'
-pa.zip_code = '28803'
-pa.latitude = 35.570199
-pa.longitude = -82.507587
-pa.save()
+business = Business.objects.create(name="The Wyvern's Tale")
+store = Store(business=business, state_code='NC')
+store.street1 = '347 Merrimon Ave'
+store.street2 = None
+store.city = 'Asheville'
+store.zip_code = '28801'
+store.latitude = 35.610936
+store.longitude = -82.554662
+store.save()
 
-org = Organization.objects.create(name='Carolina Tabletop Games')
-pa = PostalAddress(organization=org, state_code='NC')
-pa.street1 = '315 Main St'
-pa.street2 = '#1'
-pa.city = 'Pineville'
-pa.zip_code = '28134'
-pa.latitude = 35.085479
-pa.longitude = -80.890651
-pa.save()
+business = Business.objects.create(name='The Deck Box')
+store = Store(business=business, state_code='NC')
+store.street1 = '3049 Hendersonville Rd'
+store.street2 = 'Suite 30'
+store.city = 'Fletcher'
+store.zip_code = '28732'
+store.latitude = 35.439584
+store.longitude = -82.504974
+store.save()
 
-org = Organization.objects.create(name='Spandex City')
-pa = PostalAddress(organization=org, state_code='NC')
-pa.street1 = '2914 Mt Holly-Huntersville Rd'
-pa.street2 = None
-pa.city = 'Charlotte'
-pa.zip_code = '28214'
-pa.latitude = 35.319121
-pa.longitude = -80.952932
-pa.save()
+business = Business.objects.create(name='Frogtown Hobbies')
+store = Store(business=business, state_code='OH')
+store.street1 = '27250 Crossroad Parkway a'
+store.street2 = None
+store.city = 'Rossford'
+store.zip_code = '43460'
+store.latitude = 41.546179
+store.longitude = -83.582045
+store.save()
 
-org = Organization.objects.create(name="The Wyvern's Tale")
-pa = PostalAddress(organization=org, state_code='NC')
-pa.street1 = '347 Merrimon Ave'
-pa.street2 = None
-pa.city = 'Asheville'
-pa.zip_code = '28801'
-pa.latitude = 35.610936
-pa.longitude = -82.554662
-pa.save()
+business = Business(name='Dark Mountain Games')
+business.website = 'http://www.darkmountaingames.com'
+business.email = 'darkmtngames@vermontel.net'
+business.save()
 
-org = Organization.objects.create(name='The Deck Box')
-pa = PostalAddress(organization=org, state_code='NC')
-pa.street1 = '3049 Hendersonville Rd'
-pa.street2 = 'Suite 30'
-pa.city = 'Fletcher'
-pa.zip_code = '28732'
-pa.latitude = 35.439584
-pa.longitude = -82.504974
-pa.save()
-
-org = Organization.objects.create(name='Frogtown Hobbies')
-pa = PostalAddress(organization=org, state_code='OH')
-pa.street1 = '27250 Crossroad Parkway a'
-pa.street2 = None
-pa.city = 'Rossford'
-pa.zip_code = '43460'
-pa.latitude = 41.546179
-pa.longitude = -83.582045
-pa.save()
-
-org = Organization(name='Dark Mountain Games')
-org.website = 'http://www.darkmountaingames.com'
-org.email = 'darkmtngames@vermontel.net'
-org.save()
-
-pa = PostalAddress(organization=org, state_code='VT')
-pa.street1 = '27 Main St'
-pa.city = 'Springfield'
-pa.zip_code = '05156'
-pa.latitude = 43.299009
-pa.longitude = -72.482226
-pa.save()
+store = Store(business=business, state_code='VT')
+store.street1 = '27 Main St'
+store.city = 'Springfield'
+store.zip_code = '05156'
+store.latitude = 43.299009
+store.longitude = -72.482226
+store.save()
 
