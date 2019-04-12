@@ -10,7 +10,7 @@ export default {
             let searchResults = [];
 
             if (state.searchIndex) {
-                searchResults = state.searchIndex.search(searchString);
+                searchResults = state.searchIndex.search(searchString + '*');
             }
 
             const filteredBusinesses = [];

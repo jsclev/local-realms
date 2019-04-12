@@ -13,18 +13,28 @@ new Vue({
                    type="text" 
                    v-model="searchString" 
                    @keyup="search" />
-            <ul id="reports-list-container" class="entity-list">
-                <li v-for="business in filteredBusinesses">
-                    {{ business.name }}
-                </li>
-            </ul>
+            <div id="store-list" class="entity-list">
+                <div v-for="business in filteredBusinesses" class="section-result">
+                    <div class="section-result-title">
+                        {{ business.name }}
+                    </div>
+                    <div v-for="store in business.stores" class="section-result-details">
+                        <span v-if="store.name">
+                            {{ store.name }}, {{ store.street1 }}, {{ store.city }} {{ store.stateCode }}
+                        </span>
+                        <span v-else>
+                            {{ store.street1 }}, {{ store.city }} {{ store.stateCode }}
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>`,
     mounted() {
         store.dispatch('businessList/getBusinesses', null, {root: true});
 
         map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: 39.833333, lng: -98.583333},
-            zoom: 5,
+            center: {lat: 38.836684, lng: -104.842041},
+            zoom: 4,
             mapTypeControl: false,
             // styles: [
             //     {
@@ -309,7 +319,7 @@ new Vue({
                         position: location,
                         map: map,
                         title: business.name,
-                        icon: 'static/images/map-pin-04.png',
+                        icon: 'static/images/marker.png',
                     }));
                 }
 

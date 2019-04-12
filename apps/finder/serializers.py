@@ -5,6 +5,7 @@ from apps.finder.models import Store
 
 
 class StoreSerializer(serializers.ModelSerializer):
+    name = serializers.CharField()
     street1 = serializers.CharField()
     street2 = serializers.CharField()
     city = serializers.CharField()
@@ -15,7 +16,8 @@ class StoreSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Store
-        fields = ('street1',
+        fields = ('name',
+                  'street1',
                   'street2',
                   'city',
                   'stateCode',
