@@ -6,8 +6,6 @@ from apps.finder.serializers import OrganizationSerializer
 
 
 def get_home(request):
-    organizations = Organization.objects.all()
-
     return render(request, 'home.html', locals())
 
 

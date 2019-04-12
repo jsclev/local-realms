@@ -11,19 +11,16 @@
 </head>
 <body>
 <div id="map"></div>
-<div id="main-vue-hook">
-{#    {% for organization in organizations %}#}
-{#        <div>{{ organization.name }}</div>#}
-{#    {% endfor %}#}
-</div>
+<div id="main-vue-hook"></div>
+
 <script src="{% static "js/lib/jQuery/jquery-3.3.0.min.js" %}"></script>
 <script src="{% static "js/lib/vuejs/vue.js" %}"></script>
 <script src="{% static "js/lib/vuejs/vuex.js" %}"></script>
+<script src="{% static "js/lib/lunr/lunr.js" %}"></script>
 
 <script src="{% static "js/app/main.js" %}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB83ag2ECvWR3YM2rRCI62zPxAVpzCLdyk&callback=initMap" async defer></script>
 
 <script src="{% static "js/app/components/Main.js" %}" type="module"></script>
-
 </body>
 </html>

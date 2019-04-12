@@ -25,10 +25,12 @@ class PostalAddressSerializer(serializers.ModelSerializer):
 
 
 class OrganizationSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField()
     name = serializers.CharField()
     postalAddresses = PostalAddressSerializer(source='postal_addresses', many=True, read_only=True)
 
     class Meta:
         model = Organization
-        fields = ('name',
+        fields = ('id',
+                  'name',
                   'postalAddresses')
