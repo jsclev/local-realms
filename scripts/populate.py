@@ -2,10 +2,45 @@ import django
 
 django.setup()
 
+from apps.finder.models import Category
+from apps.finder.models import CategoryQuantity
 from apps.finder.models import Organization
 from apps.finder.models import PostalAddress
 
+Category.objects.all().delete()
 Organization.objects.all().delete()
+
+board_game_category = Category.objects.create(name='Board Games')
+comics_category = Category.objects.create(name='Comics')
+
+org = Organization(name='Asgards Gate')
+org.website = 'https://asgardsgate.website'
+org.facebook = 'https://www.facebook.com/asgardsgateholton'
+org.save()
+
+pa = PostalAddress(organization=org, state_code='KS')
+pa.street1 = '106 W 5th St'
+pa.street2 = None
+pa.city = 'Holton'
+pa.zip_code = '66436'
+pa.latitude = 39.465175
+pa.longitude = -95.735196
+pa.save()
+
+
+org = Organization(name='Asgards Gate')
+org.website = 'https://asgardsgate.website'
+org.facebook = 'https://www.facebook.com/asgardsgateholton'
+org.save()
+
+pa = PostalAddress(organization=org, state_code='KS')
+pa.street1 = '106 W 5th St'
+pa.street2 = None
+pa.city = 'Holton'
+pa.zip_code = '66436'
+pa.latitude = 39.465175
+pa.longitude = -95.735196
+pa.save()
 
 org = Organization.objects.create(name='Your Local Game Store')
 pa = PostalAddress(organization=org, state_code='NC')
@@ -76,3 +111,17 @@ pa.zip_code = '43460'
 pa.latitude = 41.546179
 pa.longitude = -83.582045
 pa.save()
+
+org = Organization(name='Dark Mountain Games')
+org.website = 'http://www.darkmountaingames.com'
+org.email = 'darkmtngames@vermontel.net'
+org.save()
+
+pa = PostalAddress(organization=org, state_code='VT')
+pa.street1 = '27 Main St'
+pa.city = 'Springfield'
+pa.zip_code = '05156'
+pa.latitude = 43.299009
+pa.longitude = -72.482226
+pa.save()
+

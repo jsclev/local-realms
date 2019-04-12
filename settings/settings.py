@@ -25,7 +25,9 @@ SECRET_KEY = 'l55e)_5i^js$a5#&_rej@!786rex@gt+%!m*x3wq6e@snn9$mn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost',
+                 'localgameshopfinder-env.2cf3d4nsy2.us-east-1.elasticbeanstalk.com',
+                 '.local-game-shop-finder.com']
 
 
 # Application definition
