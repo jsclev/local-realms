@@ -31,8 +31,13 @@ export default {
                     this.ref('id');
                     this.field('name');
 
-                    for (let gameStore of businesses) {
-                        this.add(gameStore);
+                    for (let business of businesses) {
+                        const doc = {
+                            id: business.id,
+                            name: business.name
+
+                        };
+                        this.add(doc);
                     }
                 });
 
