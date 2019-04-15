@@ -9,13 +9,13 @@ class Category(models.Model):
 
 
 class Business(models.Model):
-    name = models.TextField(null=True)
-    website = models.TextField(null=True)
-    yelp = models.TextField(null=True)
-    youtube = models.TextField(null=True)
-    facebook = models.TextField(null=True)
-    twitter = models.TextField(null=True)
-    email = models.TextField(null=True)
+    name = models.TextField(blank=False, default=None)
+    website = models.TextField(default='')
+    yelp = models.TextField(default='')
+    youtube = models.TextField(default='')
+    facebook = models.TextField(default='')
+    twitter = models.TextField(default='')
+    email = models.TextField(default='')
 
     class Meta:
         db_table = 'business'
