@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.http import JsonResponse
 from django.shortcuts import render
 
@@ -6,6 +7,8 @@ from apps.finder.serializers import BusinessSerializer
 
 
 def get_home(request):
+    mapbox_access_token = settings.GLOBAL_CONSTANTS['MAPBOX_ACCESS_TOKEN']
+
     return render(request, 'home.html', locals())
 
 

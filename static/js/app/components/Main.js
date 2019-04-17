@@ -4,7 +4,7 @@ new Vue({
     el: '#main-vue-hook',
     data: {
         searchString: null,
-        markers: []
+        markerGroup: L.featureGroup()
     },
     template: `
         <div id="main-panel">
@@ -323,27 +323,18 @@ new Vue({
         filteredBusinesses() {
             const filteredBusinesses = store.state.businessList.searchResults;
 
-            // Clear existing markers
-            for (let marker of this.markers) {
-                marker.setMap(null);
-            }
+            map.removeLayer(this.markerGroup);
+
+            let markers = [];
 
             for (let business of filteredBusinesses) {
                 for (let gameStore of business.stores) {
-                    const location = {
-                        lat: parseFloat(gameStore.lat),
-                        lng: parseFloat(gameStore.lng)
-                    };
-
-                    this.markers.push(new google.maps.Marker({
-                        position: location,
-                        map: map,
-                        title: business.name,
-                        icon: 'static/images/marker.png',
-                    }));
+                    markers.push(L.marker([gameStore.lat, gameStore.lng]));
                 }
-
             }
+
+            this.markerGroup = L.featureGroup(markers);
+            this.markerGroup.addTo(map);
 
             return filteredBusinesses;
         }

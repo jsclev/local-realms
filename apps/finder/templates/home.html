@@ -4,12 +4,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Game Shop Finder</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description"
+          content="Visit a Friendly Local Game Store (FLGS) today.  Find local board game stores and board game cafes in North America."/>
+    <title>Local Game Store Finder</title>
+
     <link rel="icon" type="image/png" sizes="32x32" href="{% static "images/favicon.ico" %}?v=1"/>
 
+    <link href="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css" rel="stylesheet" />
     <link rel="stylesheet" href="{% static "css/app/main.css" %}" />
 </head>
 <body>
+<input type="hidden" id="mapboxAccessToken" value="{{ mapbox_access_token }}" />
 <div id="map"></div>
 <div id="main-vue-hook"></div>
 
@@ -18,8 +24,9 @@
 <script src="{% static "js/lib/vuejs/vuex.js" %}"></script>
 <script src="{% static "js/lib/lunr/lunr.js" %}"></script>
 
+<script src="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js"></script>
+
 <script src="{% static "js/app/main.js" %}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB83ag2ECvWR3YM2rRCI62zPxAVpzCLdyk&callback=initMap" async defer></script>
 
 <script src="{% static "js/app/components/Main.js" %}" type="module"></script>
 </body>
