@@ -31,6 +31,7 @@ class Store(models.Model):
     city = models.TextField(default='')
     state_code = models.CharField(max_length=2, null=True)
     zip_code = models.CharField(max_length=10, null=True)
+    phone = models.TextField(default='')
     latitude = models.DecimalField(max_digits=11, decimal_places=9, null=True)
     longitude = models.DecimalField(max_digits=12, decimal_places=9, null=True)
 
