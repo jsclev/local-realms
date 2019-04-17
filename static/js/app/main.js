@@ -1,24 +1,11 @@
-let map;
-
-function initMap() {
-
-
-    // var myLatLng = {lat: 35.171643, lng: -80.657079};
-    //
-    // var marker = new google.maps.Marker({
-    //     position: myLatLng,
-    //     map: map,
-    //     title: 'Your Local Game Store'
-    // });
-    //
-    // myLatLng = {lat: 35.570199, lng: -82.507587};
-    //
-    // marker = new google.maps.Marker({
-    //     position: myLatLng,
-    //     map: map,
-    //     title: 'Hillside Games and Comics'
-    // });
-
+if ("geolocation" in navigator) {
+    console.log('geolocation available');
+  /* geolocation is available */
+} else {
+  /* geolocation IS NOT available */
 }
 
-
+L.mapbox.accessToken = document.getElementById('mapboxAccessToken').value;
+const map = L.mapbox.map('map')
+    .setView([38.836684, -104.842041], 4)
+    .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));

@@ -10,14 +10,16 @@ export default {
             let searchResults = [];
 
             if (state.searchIndex) {
-                searchResults = state.searchIndex.search(searchString + '*');
+                searchResults = state.searchIndex.search(searchString.trim() + '*');
             }
 
             const filteredBusinesses = [];
             for (let searchResult of searchResults) {
                 for (let business of state.businesses) {
-                    if (parseInt(searchResult.ref) === business.id) {
-                        filteredBusinesses.push(business);
+                    for (let gameStore of business.stores) {
+                        if (parseInt(searchResult.ref) === gameStore.id) {
+                            filteredBusinesses.push(business);
+                        }
                     }
                 }
             }
@@ -30,14 +32,27 @@ export default {
                 const idx = lunr(function () {
                     this.ref('id');
                     this.field('name');
+                    this.field('businessName');
+                    this.field('street1');
+                    this.field('city');
+                    this.field('zipCode');
+
+                    this.pipeline.remove(lunr.stemmer);
+                    this.searchPipeline.remove(lunr.stemmer);
 
                     for (let business of businesses) {
-                        const doc = {
-                            id: business.id,
-                            name: business.name
+                        for (let gameStore of business.stores) {
+                            const doc = {
+                                id: gameStore.id,
+                                businessName: business.name,
+                                name: gameStore.name,
+                                street1: gameStore.street1,
+                                city: gameStore.city,
+                                zipCode: gameStore.zipCode
+                            };
 
-                        };
-                        this.add(doc);
+                            this.add(doc);
+                        }
                     }
                 });
 

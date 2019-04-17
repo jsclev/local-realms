@@ -122,6 +122,8 @@ STATICFILES_DIRS = (
 )
 
 GLOBAL_CONSTANTS = {
+    'MAPBOX_ACCESS_TOKEN': 'pk.eyJ1IjoianNjbGV2IiwiYSI6ImNpZjQzdHZre' +
+                           'DRsNjFzeGx2bWdiaDlrMjIifQ.W1H0lSji_u8g2UX_OlvuqA',
     'STATUS_OPEN': 0,
     'STATUS_CLOSED': 1,
     'STATUS_CLOSING': 2

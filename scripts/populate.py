@@ -13,6 +13,7 @@ board_game_category = Category.objects.create(name='Board Games')
 comics_category = Category.objects.create(name='Comics')
 
 os.system('python us/id.py')
+os.system('python us/il.py')
 os.system('python us/ks.py')
 os.system('python us/nc.py')
 os.system('python us/oh.py')
