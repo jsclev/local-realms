@@ -35,7 +35,7 @@ new Vue({
     mounted() {
         store.dispatch('businessList/getBusinesses', null, {root: true});
 
-        var result_height = document.getElementById('section-results-text').style.height;
+        // var result_height = document.getElementById('section-results-text').style.height;
         // console.log(result_height);
         $('.section-result-icon').css('height', '80px');
         var header = $(".entity-list");

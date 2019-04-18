@@ -19,13 +19,17 @@ store.save()
 
 business = Business(name='The Island Games')
 business.website = 'www.theislandg.com'
+business.facebook = 'www.facebook.com/theislandg'
+business.email = 'contact@theislandg.com'
 business.save()
 
 store = Store(business=business, city='Centreville', state_code='VA', zip_code='20120')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.location_heading = 'Sully Station Center'
 store.street1 = '5107 Westfields Blvd'
 store.latitude = 38.867360
 store.longitude = -77.446814
+store.phone = '515-599-0360'.replace('-', '')
 store.save()
 
 business = Business(name='The End Games')

@@ -116,7 +116,7 @@ html, body {
     width: 14%;
     height: 50px;
     display: inline-block;
-    background: url('http://localhost:8000/static/images/marker-2.png') no-repeat;
+    /*background: url('http://localhost:8000/static/images/marker-2.png') no-repeat;*/
     background-size: 60%;
     /*vertical-align: center;*/
     background-position: center;

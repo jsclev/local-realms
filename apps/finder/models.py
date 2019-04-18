@@ -8,8 +8,16 @@ class Category(models.Model):
         db_table = 'category'
 
 
+class Tag(models.Model):
+    name = models.TextField(default=None, blank=False)
+    description = models.TextField(default='')
+
+    class Meta:
+        db_table = 'tag'
+
+
 class Business(models.Model):
-    name = models.TextField(blank=False, default=None)
+    name = models.TextField(default=None, blank=False)
     website = models.TextField(default='')
     yelp = models.TextField(default='')
     youtube = models.TextField(default='')
@@ -37,6 +45,14 @@ class Store(models.Model):
 
     class Meta:
         db_table = 'store'
+
+
+class StoreTag(models.Model):
+    store = models.ForeignKey(Business, related_name='tags', on_delete=models.CASCADE)
+    tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'store_tag'
 
 
 class CategoryQuantity(models.Model):
