@@ -54,6 +54,20 @@ store.latitude = 38.882183
 store.longitude = -77.170760
 store.save()
 
+business = Business(name='Victory Comics')
+business.website = 'www.victorycomics.com'
+business.facebook = 'www.facebook.com/VictoryComics'
+business.email = 'victorycomics.fc@gmail.com'
+business.save()
+
+store = Store(business=business, city='Falls Church', state_code='VA', zip_code='22046')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.street1 = '586 S Washington St'
+store.latitude = 38.879380
+store.longitude = -77.178619
+store.phone = '703-241-9393'.replace('-', '')
+store.save()
+
 business = Business.objects.get(name='G2K Games')
 
 store = Store(business=business, city='Kingsport', state_code='VA', zip_code='37660')
@@ -97,6 +111,35 @@ store.name = 'Norton – Norton Commons'
 store.street1 = '645 Commonwealth Dr'
 store.latitude = 36.956268
 store.longitude = -82.605011
+store.save()
+
+business = Business(name='One Eyed Jacques')
+business.website = 'www.oejrva.com'
+business.facebook = 'www.facebook.com/oneeyedjacques/'
+business.email = 'oej.contact@gmail.com'
+business.save()
+
+store = Store(business=business, city='Richmond', state_code='VA', zip_code='23221')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.street1 = '3104 W Cary St'
+store.latitude = 37.553151
+store.longitude = -77.480305
+store.phone = '804-359-5163'.replace('-', '')
+store.save()
+
+business = Business(name='Tower of Games')
+business.website = 'www.towerofgames.com'
+business.facebook = 'www.facebook.com/towerofgames'
+business.email = 'contactus@towerofgames.com'
+business.save()
+
+store = Store(business=business, city='Virginia Beach', state_code='VA', zip_code='23464')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.street1 = '5405 Indian River Rd'
+store.street2 = 'Suite A'
+store.latitude = 36.798303
+store.longitude = -76.178961
+store.phone = '757-420-8008'.replace('-', '')
 store.save()
 
 business = Business(name='The Game Store')
