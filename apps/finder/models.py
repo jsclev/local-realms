@@ -42,6 +42,12 @@ class Store(models.Model):
     phone = models.TextField(default='')
     latitude = models.DecimalField(max_digits=11, decimal_places=9, null=True)
     longitude = models.DecimalField(max_digits=12, decimal_places=9, null=True)
+    website = models.TextField(default='')
+    yelp = models.TextField(default='')
+    youtube = models.TextField(default='')
+    facebook = models.TextField(default='')
+    twitter = models.TextField(default='')
+    email = models.TextField(default='')
 
     class Meta:
         db_table = 'store'
