@@ -26,6 +26,7 @@ SECRET_KEY = 'l55e)_5i^js$a5#&_rej@!786rex@gt+%!m*x3wq6e@snn9$mn'
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost',
+                 '127.0.0.1',
                  'localgameshopfinder-env.2cf3d4nsy2.us-east-1.elasticbeanstalk.com',
                  '.local-game-shop-finder.com']
 
