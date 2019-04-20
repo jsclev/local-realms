@@ -7,6 +7,9 @@ from apps.finder.models import Business
 from apps.finder.models import Store
 
 
+###############################################################################
+# Business
+###############################################################################
 business = Business.objects.create(name='Frogtown Hobbies')
 
 store = Store(business=business, city='Rossford', state_code='OH', zip_code='43460')

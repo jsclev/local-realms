@@ -1674,7 +1674,7 @@ lunr.TokenSet.prototype.toString = function () {
     var label = labels[i],
         node = this.edges[label]
 
-    str = str + label + node.id
+    str = str + label + node.i
   }
 
   return str
@@ -2343,7 +2343,7 @@ lunr.Index.load = function (serializedIndex) {
  * @property {array} metadataWhitelist - A list of metadata keys that have been whitelisted for entry in the index.
  */
 lunr.Builder = function () {
-  this._ref = "id"
+  this._ref = "i.py"
   this._fields = Object.create(null)
   this._documents = Object.create(null)
   this.invertedIndex = Object.create(null)

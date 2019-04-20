@@ -7,6 +7,9 @@ from apps.finder.models import Business
 from apps.finder.models import Store
 
 
+###############################################################################
+# Business
+###############################################################################
 business = Business(name='All About Games')
 business.website = 'allaboutgames.com'
 business.save()
@@ -19,6 +22,9 @@ store.latitude = 43.589194
 store.longitude = -116.269873
 store.save()
 
+###############################################################################
+# Business
+###############################################################################
 store = Store(business=business, city='Boise', state_code='ID', zip_code='83702')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.name = 'Downtown Location'
@@ -27,10 +33,27 @@ store.latitude = 43.615762
 store.longitude = -116.203093
 store.save()
 
+###############################################################################
+# Business
+###############################################################################
 store = Store(business=business, city='Boise', state_code='ID', zip_code='83704')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.name = 'Mall Location'
 store.street1 = '350 N Milwaukee St'
 store.latitude = 43.608643
 store.longitude = -116.278262
+store.save()
+
+###############################################################################
+# Business
+###############################################################################
+business = Business(name='Fair Game')
+business.website = 'www.fairgamestore.com'
+business.save()
+
+store = Store(business=business, city='Downers Grove', state_code='IL', zip_code='60515')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.street1 = '5147 Main St'
+store.latitude = 41.793356
+store.longitude = -88.010124
 store.save()

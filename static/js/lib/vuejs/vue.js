@@ -739,7 +739,7 @@
       // subs aren't sorted in scheduler if not running async
       // we need to sort them now to make sure they fire in correct
       // order
-      subs.sort(function (a, b) { return a.id - b.id; });
+      subs.sort(function (a, b) { return a.i - b.i; });
     }
     for (var i = 0, l = subs.length; i < l; i++) {
       subs[i].update();
@@ -4291,7 +4291,7 @@
     //    user watchers are created before the render watcher)
     // 3. If a component is destroyed during a parent component's watcher run,
     //    its watchers can be skipped.
-    queue.sort(function (a, b) { return a.id - b.id; });
+    queue.sort(function (a, b) { return a.i - b.i; });
 
     // do not cache length because more watchers might be pushed
     // as we run existing watchers
@@ -4300,7 +4300,7 @@
       if (watcher.before) {
         watcher.before();
       }
-      id = watcher.id;
+      id = watcher.i;
       has[id] = null;
       watcher.run();
       // in dev build, check and stop circular updates.
@@ -4372,7 +4372,7 @@
    * pushed when the queue is being flushed.
    */
   function queueWatcher (watcher) {
-    var id = watcher.id;
+    var id = watcher.i;
     if (has[id] == null) {
       has[id] = true;
       if (!flushing) {
@@ -4381,7 +4381,7 @@
         // if already flushing, splice the watcher based on its id
         // if already past its id, it will be run next immediately.
         var i = queue.length - 1;
-        while (i > index && queue[i].id > watcher.id) {
+        while (i > index && queue[i].i > watcher.i) {
           i--;
         }
         queue.splice(i + 1, 0, watcher);
@@ -4492,7 +4492,7 @@
    * Add a dependency to this directive.
    */
   Watcher.prototype.addDep = function addDep (dep) {
-    var id = dep.id;
+    var id = dep.i;
     if (!this.newDepIds.has(id)) {
       this.newDepIds.add(id);
       this.newDeps.push(dep);
@@ -4509,7 +4509,7 @@
     var i = this.deps.length;
     while (i--) {
       var dep = this.deps[i];
-      if (!this.newDepIds.has(dep.id)) {
+      if (!this.newDepIds.has(dep.i)) {
         dep.removeSub(this);
       }
     }

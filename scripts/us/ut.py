@@ -7,6 +7,9 @@ from apps.finder.models import Business
 from apps.finder.models import Store
 
 
+###############################################################################
+# Business
+###############################################################################
 business = Business(name='Game Night Games')
 business.website = 'www.gamenightgames.com'
 business.save()

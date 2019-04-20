@@ -23,6 +23,22 @@ store.save()
 ###############################################################################
 # Business
 ###############################################################################
+business = Business(name='Huzzah Hobbies')
+business.website = 'huzzahhobbies.com'
+business.facebook = 'www.facebook.com/huzzah.hobbies.7'
+business.save()
+
+store = Store(business=business, city='Ashburn', state_code='VA', zip_code='20147')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.street1 = '44927 George Washington Blvd'
+store.latitude = 39.058097
+store.longitude = -77.445812
+store.phone = '703-466-0460'.replace('-', '')
+store.save()
+
+###############################################################################
+# Business
+###############################################################################
 business = Business(name='The Island Games')
 business.website = 'www.theislandg.com'
 business.facebook = 'www.facebook.com/theislandg'
@@ -321,4 +337,19 @@ store.name = 'Waynesboro – Gateway Park Shopping Center'
 store.street1 = '1321 W Broad St'
 store.latitude = 38.073755
 store.longitude = -78.898431
+store.save()
+
+###############################################################################
+# Business
+###############################################################################
+business = Business(name='Dark Mountain Games')
+business.website = 'www.darkmountaingames.com'
+business.email = 'darkmtngames@vermontel.net'
+business.save()
+
+store = Store(business=business, city='Springfield', state_code='VT', zip_code='05156')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.street1 = '27 Main St'
+store.latitude = 43.299009
+store.longitude = -72.482226
 store.save()
