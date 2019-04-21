@@ -17,7 +17,7 @@ export default {
             for (let searchResult of searchResults) {
                 for (let business of state.businesses) {
                     for (let gameStore of business.stores) {
-                        if (parseInt(searchResult.ref) === gameStore.i) {
+                        if (parseInt(searchResult.ref) === gameStore.id) {
                             filteredBusinesses.push(business);
                         }
                     }
@@ -30,7 +30,7 @@ export default {
                 commit('setBusinesses', businesses);
 
                 const idx = lunr(function () {
-                    this.ref('i.py');
+                    this.ref('id');
                     this.field('name');
                     this.field('businessName');
                     this.field('street1');
@@ -43,7 +43,7 @@ export default {
                     for (let business of businesses) {
                         for (let gameStore of business.stores) {
                             const doc = {
-                                id: gameStore.i,
+                                id: gameStore.id,
                                 businessName: business.name,
                                 name: gameStore.name,
                                 street1: gameStore.street1,
