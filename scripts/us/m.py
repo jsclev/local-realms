@@ -79,6 +79,24 @@ store.save()
 ###############################################################################
 # Business
 ###############################################################################
+business = Business.objects.create(name='Tournament City Games')
+business.website = 'www.tournamentcitygames.com'
+business.facebook = 'www.facebook.com/TournamentCityGames'
+business.email = 'TournamentCityGames@gmail.com'
+business.save()
+
+store = Store(business=business, city='Frederick', state_code='MD', zip_code='21701')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.street1 = '467 W Patrick St'
+store.street2 = 'Suite 8a'
+store.latitude = 39.413781
+store.longitude = -77.422826
+store.phone = '301-401-8202'.replace('-', '')
+store.save()
+
+###############################################################################
+# Business
+###############################################################################
 business = Business.objects.create(name='Gritty Goblin Games')
 business.website = 'www.grittygoblingames.com'
 business.facebook = 'www.facebook.com/grittygoblingames'
