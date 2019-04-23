@@ -10,6 +10,41 @@ from apps.finder.models import Store
 ###############################################################################
 # Business
 ###############################################################################
+business = Business(name='First Turn Games')
+business.website = 'www.firstturngames.com'
+business.facebook = 'www.facebook.com/FirstTurnGames'
+business.save()
+
+store = Store(business=business, city='Cedar Rapids', state_code='IA', zip_code='52402')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.street1 = '3645 1st Ave SE'
+store.latitude = 42.015345
+store.longitude = -91.633349
+store.phone = '319-826-1289'.replace('-', '')
+store.save()
+
+###############################################################################
+# Business
+###############################################################################
+business = Business(name='Tempest Games LLC')
+business.website = 'tempestgames.net'
+business.facebook = 'www.facebook.com/TempestGames'
+business.email = 'rich@tempestgames.net'
+business.save()
+
+store = Store(business=business, city='Cedar Rapids', state_code='IA', zip_code='52405')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.name = 'Tempest Games'
+store.street1 = '212 Edgewood Rd NW'
+store.street2 = 'Suite K'
+store.latitude = 41.973420
+store.longitude = -91.716889
+store.phone = '319-390-6441'.replace('-', '')
+store.save()
+
+###############################################################################
+# Business
+###############################################################################
 business = Business(name='All About Games')
 business.website = 'allaboutgames.com'
 business.save()
