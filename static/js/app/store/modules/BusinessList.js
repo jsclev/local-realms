@@ -3,7 +3,12 @@ export default {
     state: {
         businesses: [],
         searchIndex: null,
-        searchResults: []
+        searchResults: [],
+        centerLocation: {
+            lat: 37.774691,
+            lng: -77.697109
+
+        }
     },
     actions: {
         search({commit, state}, searchString) {
@@ -18,7 +23,11 @@ export default {
                 for (let business of state.businesses) {
                     for (let gameStore of business.stores) {
                         if (parseInt(searchResult.ref) === gameStore.id) {
-                            filteredBusinesses.push(business);
+                            const obj = Object.assign(gameStore);
+                            obj.distanceToCenterPoint = 1.0;
+                            obj.business = business;
+
+                            filteredBusinesses.push(obj);
                         }
                     }
                 }
