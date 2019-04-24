@@ -65,7 +65,9 @@ new Vue({
 
             for (let business of filteredBusinesses) {
                 for (let gameStore of business.stores) {
-                    markers.push(L.marker([gameStore.lat, gameStore.lng]));
+                    let marker = L.marker([gameStore.lat, gameStore.lng]);
+                    marker.bindPopup("<b>"+business.name+"</b><br>"+gameStore.street1+"<br>"+gameStore.city+", "+gameStore.stateCode);
+                    markers.push(marker);
                 }
             }
 
