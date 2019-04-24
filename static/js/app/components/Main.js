@@ -106,7 +106,9 @@ new Vue({
             let markers = [];
 
             for (let gameStore of filteredStores) {
-                markers.push(L.marker([gameStore.lat, gameStore.lng]));
+                let marker = L.marker([gameStore.lat, gameStore.lng]);
+                marker.bindPopup("<b>"+gameStore.business.name+"</b><br>"+gameStore.street1+"<br>"+gameStore.city+", "+gameStore.stateCode);
+                markers.push(marker);
             }
 
             this.markerGroup = L.featureGroup(markers);
