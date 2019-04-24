@@ -7,6 +7,9 @@ from apps.finder.models import Business
 from apps.finder.models import Store
 
 
+###############################################################################
+# Business
+###############################################################################
 business = Business.objects.get(name='G2K Games')
 
 store = Store(business=business, state_code='TN')
@@ -20,6 +23,9 @@ store.latitude = 36.592526
 store.longitude = -82.260995
 store.save()
 
+###############################################################################
+# Business
+###############################################################################
 business = Business.objects.get(name='G2K Games')
 
 store = Store(business=business, city='Johnson City', state_code='TN', zip_code='37601')
@@ -31,6 +37,9 @@ store.latitude = 36.342768
 store.longitude = -82.372622
 store.save()
 
+###############################################################################
+# Business
+###############################################################################
 business = Business.objects.get(name='G2K Games')
 
 store = Store(business=business, city='Kingsport', state_code='TN', zip_code='37660')

@@ -7,6 +7,9 @@ from apps.finder.models import Business
 from apps.finder.models import Store
 
 
+###############################################################################
+# Business
+###############################################################################
 business = Business(name='Asgards Gate')
 business.website = 'asgardsgate.website'
 business.facebook = 'www.facebook.com/asgardsgateholton'

@@ -7,6 +7,9 @@ from apps.finder.models import Business
 from apps.finder.models import Store
 
 
+###############################################################################
+# Business
+###############################################################################
 business = Business.objects.create(name='Your Local Game Store')
 business.website = 'www.yourlocalgamestore.com'
 business.save()
@@ -19,6 +22,9 @@ store.latitude = 35.171643
 store.longitude = -80.657079
 store.save()
 
+###############################################################################
+# Business
+###############################################################################
 business = Business.objects.create(name='Hillside Games and Comics')
 business.website = 'hillsidegames.com'
 business.save()
@@ -31,6 +37,9 @@ store.latitude = 35.570199
 store.longitude = -82.507587
 store.save()
 
+###############################################################################
+# Business
+###############################################################################
 business = Business.objects.create(name='Carolina Tabletop Games')
 business.facebook = 'www.facebook.com/carolinatabletopgames'
 business.save()
@@ -43,6 +52,9 @@ store.latitude = 35.085479
 store.longitude = -80.890651
 store.save()
 
+###############################################################################
+# Business
+###############################################################################
 business = Business.objects.create(name='Spandex City')
 business.website = 'spandexcity.com'
 business.save()
@@ -54,6 +66,9 @@ store.latitude = 35.319121
 store.longitude = -80.952932
 store.save()
 
+###############################################################################
+# Business
+###############################################################################
 business = Business.objects.create(name="The Wyvern's Tale")
 business.website = 'www.thewyvernstaleavl.com'
 business.save()
@@ -65,6 +80,9 @@ store.latitude = 35.610936
 store.longitude = -82.554662
 store.save()
 
+###############################################################################
+# Business
+###############################################################################
 business = Business.objects.create(name='The Deck Box')
 business.website = 'www.thedeckbox.com'
 business.save()
@@ -77,6 +95,9 @@ store.latitude = 35.439584
 store.longitude = -82.504974
 store.save()
 
+###############################################################################
+# Business
+###############################################################################
 business = Business(name='G2K Games')
 business.website = 'www.g2kgames.net'
 business.save()
