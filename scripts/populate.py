@@ -12,6 +12,7 @@ Business.objects.all().delete()
 board_game_category = Category.objects.create(name='Board Games')
 comics_category = Category.objects.create(name='Comics')
 
+os.system('python us/a.py')
 os.system('python us/c.py')
 os.system('python us/d.py')
 os.system('python us/i.py')

@@ -32,7 +32,7 @@ new Vue({
                     <div class="section-result-icon"></div>
                     <div id="section-results-text" class="section-result">
                         <div class="section-result-title">
-                            {{ store.business.name }}
+                            {{ getStoreText(store) }}
                         </div>
                     </div>
                 </div>
@@ -116,6 +116,11 @@ new Vue({
         }
     },
     methods: {
+        getStoreText(gameStore) {
+            const score = '(' + gameStore.searchResult.score.toPrecision(4) + ')';
+
+            return gameStore.business.name + ' ' + score;
+        },
         search() {
             store.dispatch('businessList/search', this.searchString, {root: true});
         }

@@ -26,6 +26,7 @@ export default {
                             const obj = Object.assign(gameStore);
                             obj.distanceToCenterPoint = 1.0;
                             obj.business = business;
+                            obj.searchResult = Object.assign(searchResult);
 
                             filteredBusinesses.push(obj);
                         }
@@ -47,7 +48,7 @@ export default {
                     this.field('zipCode');
 
                     this.pipeline.remove(lunr.stemmer);
-                    this.searchPipeline.remove(lunr.stemmer);
+                    this.pipeline.remove(lunr.stopWordFilter);
 
                     for (let business of businesses) {
                         for (let gameStore of business.stores) {
