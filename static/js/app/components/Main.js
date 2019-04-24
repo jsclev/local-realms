@@ -99,22 +99,20 @@ new Vue({
     },
     computed: {
         filteredStores() {
-            const filteredBusinesses = store.state.businessList.searchResults;
+            const filteredStores = store.state.businessList.searchResults;
 
-            // map.removeLayer(this.markerGroup);
-            //
-            // let markers = [];
-            //
-            // for (let business of filteredBusinesses) {
-            //     for (let gameStore of business.stores) {
-            //         markers.push(L.marker([gameStore.lat, gameStore.lng]));
-            //     }
-            // }
-            //
-            // this.markerGroup = L.featureGroup(markers);
-            // this.markerGroup.addTo(map);
+            map.removeLayer(this.markerGroup);
 
-            return filteredBusinesses;
+            let markers = [];
+
+            for (let gameStore of filteredStores) {
+                markers.push(L.marker([gameStore.lat, gameStore.lng]));
+            }
+
+            this.markerGroup = L.featureGroup(markers);
+            this.markerGroup.addTo(map);
+
+            return filteredStores;
         }
     },
     methods: {
