@@ -1,2 +1,2 @@
-# game-shop-finder
-Website for a local game shop finder.
+# Local Realms
+Website and app for locating friendly local game stores.
