@@ -108,6 +108,9 @@ new Vue({
             for (let gameStore of filteredStores) {
                 let marker = L.marker([gameStore.lat, gameStore.lng]);
                 marker.bindPopup("<b>"+gameStore.business.name+"</b><br>"+gameStore.street1+"<br>"+gameStore.city+", "+gameStore.stateCode);
+                marker.on('click', function onMarkerClick(e){
+                    store.dispatch('selectedStore/select', gameStore, {root: true});
+                });
                 markers.push(marker);
             }
 
@@ -125,6 +128,6 @@ new Vue({
         },
         search() {
             store.dispatch('businessList/search', this.searchString, {root: true});
-        }
+        },
     }
 });
