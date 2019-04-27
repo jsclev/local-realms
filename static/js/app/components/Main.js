@@ -32,7 +32,10 @@ new Vue({
                     <div class="section-result-icon"></div>
                     <div id="section-results-text" class="section-result">
                         <div class="section-result-title">
-                            {{ getStoreText(store) }}
+                            {{ store.business.name }}
+                        </div>
+                        <div class="section-result-details">
+                            {{ store.city }}, {{ store.stateCode }}
                         </div>
                     </div>
                 </div>
@@ -119,9 +122,15 @@ new Vue({
     },
     methods: {
         getStoreText(gameStore) {
-            const score = '(' + gameStore.searchResult.score.toPrecision(4) + ')';
+            // let score = '';
+            //
+            // if (gameStore.searchResult && gameStore.searchResult.score !== null) {
+            //     score = '(' + gameStore.searchResult.score.toPrecision(4) + ')';
+            // }
 
-            return gameStore.business.name + ' ' + score;
+            let text = gameStore.business.name;
+
+            return text;
         },
         search() {
             store.dispatch('businessList/search', this.searchString, {root: true});

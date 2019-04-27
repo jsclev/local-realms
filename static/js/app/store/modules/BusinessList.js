@@ -67,6 +67,19 @@ export default {
                 });
 
                 commit('setSearchIndex', idx);
+
+                const filteredBusinesses = [];
+                for (let business of businesses) {
+                    for (let gameStore of business.stores) {
+                        const obj = Object.assign(gameStore);
+                        obj.distanceToCenterPoint = 1.0;
+                        obj.business = business;
+                        obj.searchResult = null;
+
+                        filteredBusinesses.push(obj);
+                    }
+                }
+                commit('setSearchResults', filteredBusinesses);
             });
         }
     },

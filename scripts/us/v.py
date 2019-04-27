@@ -167,6 +167,7 @@ business.save()
 
 store = Store(business=business, city='Norfolk', state_code='VA', zip_code='23503')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.name = 'Atlantis Norfolk'
 store.street1 = '9649 1st View St'
 store.latitude = 36.955741
 store.longitude = -76.254268
@@ -182,6 +183,7 @@ business = Business.objects.get(name='Atlantis Games & Comics')
 
 store = Store(business=business, city='Portsmouth', state_code='VA', zip_code='23701')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.name = 'Atlantis Portsmouth'
 store.street1 = '2862 Airline Blvd'
 store.latitude = 36.810674
 store.longitude = -76.368036
