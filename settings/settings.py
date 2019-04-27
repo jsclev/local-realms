@@ -27,8 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost',
                  '127.0.0.1',
-                 'localgameshopfinder-env.2cf3d4nsy2.us-east-1.elasticbeanstalk.com',
-                 '.local-game-shop-finder.com']
+                 'localrealms.us-east-1.elasticbeanstalk.com',
+                 '.localrealms.com']
 
 
 INSTALLED_APPS = [
