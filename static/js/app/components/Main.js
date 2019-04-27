@@ -136,6 +136,7 @@ new Vue({
             return text;
         },
         search() {
+            store.dispatch('selectedStore/select', null, {root:true})
             store.dispatch('businessList/search', this.searchString, {root: true});
         },
     }
