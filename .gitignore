@@ -71,3 +71,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# Mac Finder hidden files
+.DS_Store
