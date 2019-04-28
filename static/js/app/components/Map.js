@@ -38,7 +38,7 @@ Vue.component('Map', {
                 const marker = L.circleMarker(latLng, options);
                 marker.bindPopup(this.getPopupHtml(gameStore));
                 marker.on('click', function onMarkerClick(e){
-                    store.dispatch('selectedStore/select', gameStore, {root: true});
+                    store.dispatch('setSelectedGameStore', gameStore, {root: true});
                 });
                 markers.push(marker);
             }

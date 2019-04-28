@@ -60,7 +60,6 @@ Vue.component('SearchBox', {
     },
     methods: {
         search() {
-            store.dispatch('selectedStore/select', null, {root: true});
             store.dispatch('businessList/search', this.searchString, {root: true});
         }
     }
