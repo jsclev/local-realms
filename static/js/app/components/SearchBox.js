@@ -11,16 +11,17 @@ Vue.component('SearchBox', {
         <div class="search-outer">
             <div id="input-container" class="input-common-default">
                 <div class="menu-icon icon"></div>
-                    <form id="search-form" autocomplete="off">
-                        <input id="search-input" class="input-common"
+                <form id="search-form" autocomplete="off">
+                    <input id="search-input" 
+                           class="input-common"
                            placeholder="Find a local game store" 
                            type="text" 
                            v-model="searchString" 
                            @keyup="search" />
-                            <div id="main-search-icon" class="search-icon icon"/>
-                    </form>
-                    <hr id="search-separator">
-                    <div id="filter-search" class="icon"/>
+                    <div id="main-search-icon" class="search-icon icon"/>
+                </form>
+                <hr id="search-separator">
+                <div id="filter-search" class="icon"/>
             </div>
         </div>`,
     mounted: function () {

@@ -9,7 +9,7 @@ Vue.component('Map', {
     },
     template: `
         <div>
-            {{ gameStores.length }}
+            Showing {{ gameStores.length }} game stores.
         </div>`,
     mounted: function () {
         store.dispatch('businessList/getBusinesses', null, {root: true});
