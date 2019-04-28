@@ -24,10 +24,13 @@ new Vue({
                                @keyup="search" />
                                 <div id="main-search-icon" class="search-icon icon"/>
                         </form>
+                        <hr id="search-separator">
+                        <div id="filter-search" class="icon"/>
                 </div>
             </div>
-            <FilterByTags></FilterByTags>
-<!--            <div id="message">Start typing in the search box to search local game stores</div>-->
+            <div id="filters">
+                <FilterByTags></FilterByTags>
+            </div>
             <div id="store-list" class="entity-list entity-list-default">
                 <div v-for="store in filteredStores" class="section-result-main">
                     <div class="section-result-icon"></div>
@@ -44,6 +47,27 @@ new Vue({
         </div>`,
     mounted() {
         store.dispatch('businessList/getBusinesses', null, {root: true});
+        const searchContainer = $("#input-container");
+        const list = $(".entity-list");
+        const searchOuter = $(".search-outer");
+
+        $('#filter-search').click(function () {
+            if ($('#filters').hasClass('filter-expanded')) {
+                $('#filters').removeClass('filter-expanded');
+                list.removeClass("entity-list-transition-filter");
+                searchContainer.removeClass("input-common-filter");
+                searchOuter.removeClass("search-outer-after-filter")
+
+
+
+            }
+            else {
+                $('#filters').addClass('filter-expanded');
+                list.addClass("entity-list-transition-filter");
+                searchContainer.addClass("input-common-filter");
+                searchOuter.addClass("search-outer-after-filter")
+            }
+        });
 
         $('.menu-icon').click(function () {
             $('#menu').addClass('menu-open');
@@ -51,6 +75,7 @@ new Vue({
             $('#store-list').addClass('dim');
             $('.search-outer').addClass('dim');
             $('#menu-back-icon').addClass('back-icon');
+            $('.tag-filter').addClass('dim')
 
         });
         $('#menu-back-icon').click(function () {
@@ -59,6 +84,7 @@ new Vue({
             $('#store-list').removeClass('dim');
             $('.search-outer').removeClass('dim');
             $('#menu-back-icon').removeClass('back-icon');
+            $('.tag-filter').removeClass('dim')
 
         });
         $("#main-search-icon").click(function () {
@@ -79,10 +105,6 @@ new Vue({
             event.preventDefault();
             return false;
         });
-
-        const searchContainer = $("#input-container");
-        const list = $(".entity-list");
-        const searchOuter = $(".search-outer");
         $('#store-list').scroll(function () {
             var scroll = $('#store-list').scrollTop();
 
@@ -98,8 +120,6 @@ new Vue({
                 searchOuter.removeClass("search-outer-after")
             }
         });
-
-
     },
     computed: {
         filteredStores() {

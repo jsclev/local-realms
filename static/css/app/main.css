@@ -17,25 +17,24 @@
 }
 
 #menu {
-    width: 330px;
+    width: 350px;
     height: 100%;
     position: absolute;
     z-index: 1000;
     background-color: white;
     transition: ease 250ms;
     border: #9c9c9c 1px solid;
-    left: -331px;
+    left: -352px;
 }
 
 .menu-open {
-    width: 330px !important;
     left: 0 !important;
 }
 
 #main-panel {
     z-index: 1000;
     position: absolute;
-    width: 330px;
+    width: 350px;
     height: 100%;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02);
@@ -57,7 +56,6 @@ html, body {
     padding: 0 10px;
     font-size: 14px;
     border-radius: 8px;
-    /*border: 1px solid #fff;*/
     height: 40px;
     width: 100%;
     box-sizing: border-box;
@@ -101,9 +99,8 @@ html, body {
 }
 
 .input-common-default {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0 rgba(0,0,0,0.02) !important;
-    border: 1px solid #fff !important;
-    /*padding: 4% 4% 2% !important;*/
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0 rgba(0,0,0,0.02);
+    border: 1px solid #fff;
     -webkit-transition: ease 250ms;
     -moz-transition: ease 250ms;
     -ms-transition: ease 250ms;
@@ -111,6 +108,22 @@ html, body {
     background-color: white;
 }
 
+.input-common-filter {
+    box-shadow: none;
+    border: none;
+}
+
+.entity-list-transition-filter {
+    -webkit-transition: ease 250ms;
+    -moz-transition: ease 250ms;
+    -ms-transition: ease 250ms;
+    -o-transition: ease 250ms;
+    transition: ease 250ms;
+    border-top: #e4e4e4 1px solid;
+    -moz-box-shadow:    inset 0 15px 9px -20px #9b9b9b;
+    -webkit-box-shadow: inset 0 15px 9px -20px #9b9b9b;
+    box-shadow:         inset 0 15px 9px -20px #9b9b9b;
+}
 
 .section-result {
     margin-bottom: 8px;
@@ -167,11 +180,11 @@ html, body {
     display: inline-block;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('../../images/place.svg');
+    background-image: url('../../images/place-dark.svg');
 }
 
 .section-result-main:hover > .section-result-icon {
-    background-image: url("../../images/place-dark.svg");
+    background-image: url("../../images/place.svg");
 }
 
 .section-result-main {
@@ -216,9 +229,11 @@ html, body {
     -webkit-transition: background-color 250ms ease;
     -moz-transition: background-color 250ms ease;
     -ms-transition: background-color 250ms ease;
-    -o-transition: background-color 100ms ease;
+    -o-transition: background-color 250ms ease;
     transition: background-color 250ms ease;
     background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .icon:hover {
@@ -242,25 +257,28 @@ html, body {
     padding: 5px !important;
 }
 
+.search-outer-after-filter {
+    padding: 5px !important;
+}
+
 #search-form {
-    width: 240px;
+    width: 215px;
     height: 40px;
     display: flex;
     align-items: center;
 }
 
 .header {
-    width: 100%;
     overflow: hidden;
     padding: 10px;
 }
 
 #menu-back-icon {
     background-image: url("../../images/back-arrow.svg");
-    -webkit-transition: ease 250ms;
-    -moz-transition: ease 250ms;
-    -ms-transition: ease 250ms;
-    -o-transition: background-position 500ms ease;
+    -webkit-transition: right 250ms;
+    -moz-transition: right 250ms;
+    -ms-transition: right 250ms;
+    -o-transition: right 250ms ease;
     transition: right 250ms ease;
     background-repeat: no-repeat;
     background-position: center;
@@ -269,3 +287,44 @@ html, body {
 .back-icon {
     right: 0 !important;
 }
+
+.tag-filter {
+    background-color: transparent;
+    -webkit-transition: -webkit-filter 150ms linear;
+}
+
+#filter-search {
+    background-image: url("../../images/filter-light.svg");
+    margin: 0 5px
+}
+
+#search-separator {
+    width: 0;
+    height: 20px;
+    border-left: 1px solid #ddd;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+    margin-top: 8px;
+}
+
+#filters {
+    max-height: 0;
+    -webkit-transition: ease 200ms;
+    -moz-transition: ease 200ms;
+    -ms-transition: ease 200ms;
+    -o-transition: ease 200ms;
+    transition: ease 200ms;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.filter-expanded {
+    max-height: 200px !important;
+}
+
+#tag-filters {
+    padding: 0 15px 5px 15px;
+}
+
+/*Checkbox styles*/
