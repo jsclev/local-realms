@@ -4,7 +4,9 @@ Vue.component('StoreList', {
     store,
     template: `
         <div id="store-list" class="entity-list entity-list-default">
-            <div v-for="store in gameStores" class="section-result-main">
+            <div v-for="store in gameStores" 
+                 class="section-result-main"
+                 @click="selectGameStore(store)">
                 <div class="section-result-icon"></div>
                 <div id="section-results-text" class="section-result">
                     <div class="section-result-title">
@@ -50,6 +52,9 @@ Vue.component('StoreList', {
             // }
 
             return gameStore.business.name;
+        },
+        selectGameStore(gameStore) {
+            store.dispatch('setSelectedGameStore', gameStore, {root: true});
         }
     }
 });
