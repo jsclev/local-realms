@@ -7,9 +7,9 @@ from apps.finder.models import Category
 from apps.finder.models import Business
 from apps.finder.models import Tag
 
+Tag.objects.all().delete()
 Category.objects.all().delete()
 Business.objects.all().delete()
-Tag.objects.all().delete()
 
 board_game_category = Category.objects.create(name='Board Games')
 comics_category = Category.objects.create(name='Comics')

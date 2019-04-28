@@ -5,6 +5,7 @@ export DJANGO_SETTINGS_MODULE=settings.settings
 
 # Rebuild the database structure
 rm db.sqlite3
+rm -rf apps/finder/migrations
 python manage.py makemigrations finder
 python manage.py migrate
 
