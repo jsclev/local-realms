@@ -7,8 +7,9 @@ export default {
         centerLocation: {
             lat: 37.774691,
             lng: -77.697109
-
-        }
+        },
+        isLoadingTags: false,
+        tags: []
     },
     actions: {
         search({commit, state}, searchString) {
@@ -81,9 +82,20 @@ export default {
                 }
                 commit('setSearchResults', filteredBusinesses);
             });
+        },
+        getTags({commit}) {
+            commit('setIsLoadingTags', true);
+
+            $.get('tags/', function (tags, status) {
+                commit('setTags', tags);
+                commit('setIsLoadingTags', false);
+            });
         }
     },
     mutations: {
+        setIsLoadingTags(state, isLoadingTags) {
+            state.isLoadingTags = isLoadingTags;
+        },
         setSearchIndex(state, idx) {
             state.searchIndex = idx;
         },
@@ -92,6 +104,9 @@ export default {
         },
         setBusinesses(state, payload) {
             state.businesses = payload;
+        },
+        setTags(state, payload) {
+            state.tags = payload;
         }
     }
 };

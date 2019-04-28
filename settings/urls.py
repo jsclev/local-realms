@@ -21,5 +21,6 @@ from apps.finder import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.get_home),
-    path('shops/', views.get_shops)
+    path('shops/', views.get_shops),
+    path('tags/', views.get_tags)
 ]

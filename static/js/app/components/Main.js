@@ -18,7 +18,7 @@ new Vue({
                     <div class="menu-icon icon"></div>
                         <form id="search-form" autocomplete="off">
                             <input id="search-input" class="input-common"
-                               placeholder="Search Local Game Stores" 
+                               placeholder="Find a local game store" 
                                type="text" 
                                v-model="searchString" 
                                @keyup="search" />
@@ -26,6 +26,7 @@ new Vue({
                         </form>
                 </div>
             </div>
+            <FilterByTags></FilterByTags>
 <!--            <div id="message">Start typing in the search box to search local game stores</div>-->
             <div id="store-list" class="entity-list entity-list-default">
                 <div v-for="store in filteredStores" class="section-result-main">
@@ -105,11 +106,21 @@ new Vue({
             const filteredStores = store.state.businessList.searchResults;
 
             map.removeLayer(this.markerGroup);
-
             let markers = [];
 
             for (let gameStore of filteredStores) {
-                let marker = L.marker([gameStore.lat, gameStore.lng]);
+                const latLng = L.latLng(gameStore.lat, gameStore.lng);
+                const options = {
+                    radius: 8,
+                    color: '#fff',
+                    weight: 1,
+                    opacity: 1.0,
+                    fill: true,
+                    fillColor: '#0593c4',
+                    fillOpacity: 1.0
+                };
+
+                const marker = L.circleMarker(latLng, options);
                 marker.bindPopup("<b>"+gameStore.business.name+"</b><br>"+gameStore.street1+"<br>"+gameStore.city+", "+gameStore.stateCode);
                 markers.push(marker);
             }

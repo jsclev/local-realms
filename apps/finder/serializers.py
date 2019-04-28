@@ -2,6 +2,19 @@ from rest_framework import serializers
 
 from apps.finder.models import Business
 from apps.finder.models import Store
+from apps.finder.models import Tag
+
+
+class TagSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField()
+    name = serializers.CharField()
+    description = serializers.CharField()
+
+    class Meta:
+        model = Tag
+        fields = ('id',
+                  'name',
+                  'description')
 
 
 class StoreSerializer(serializers.ModelSerializer):
