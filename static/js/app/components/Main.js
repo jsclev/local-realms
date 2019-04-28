@@ -56,8 +56,8 @@ new Vue({
                 $('#filters').removeClass('filter-expanded');
                 list.removeClass("entity-list-transition-filter");
                 searchContainer.removeClass("input-common-filter");
-                searchOuter.removeClass("search-outer-after-filter")
-
+                searchOuter.removeClass("search-outer-after-filter");
+                // $('#store-list').removeClass('dim')
 
 
             }
@@ -66,6 +66,8 @@ new Vue({
                 list.addClass("entity-list-transition-filter");
                 searchContainer.addClass("input-common-filter");
                 searchOuter.addClass("search-outer-after-filter")
+                // $('#store-list').addClass('dim')
+
             }
         });
 
@@ -75,7 +77,7 @@ new Vue({
             $('#store-list').addClass('dim');
             $('.search-outer').addClass('dim');
             $('#menu-back-icon').addClass('back-icon');
-            $('.tag-filter').addClass('dim')
+            $('#filters').addClass('dim')
 
         });
         $('#menu-back-icon').click(function () {
@@ -84,7 +86,7 @@ new Vue({
             $('#store-list').removeClass('dim');
             $('.search-outer').removeClass('dim');
             $('#menu-back-icon').removeClass('back-icon');
-            $('.tag-filter').removeClass('dim')
+            $('#filters').removeClass('dim')
 
         });
         $("#main-search-icon").click(function () {

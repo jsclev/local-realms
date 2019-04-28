@@ -9,6 +9,7 @@
 
 #store-list {
     background-color: white;
+    overflow-y: auto;
 }
 
 .dim {
@@ -23,8 +24,8 @@
     z-index: 1000;
     background-color: white;
     transition: ease 250ms;
-    border: #9c9c9c 1px solid;
-    left: -352px;
+    border-right: #9c9c9c 1px solid;
+    left: -351px;
 }
 
 .menu-open {
@@ -37,19 +38,17 @@
     width: 350px;
     height: 100%;
     background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02);
-    overflow-y: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0 rgba(0,0,0,0.02);
+    display: flex;
+    flex-flow: column;
 
 }
-
-#main-panel::-webkit-scrollbar { width: 0 !important }
-#main-panel { overflow: -moz-scrollbars-none; }
-#main-panel { -ms-overflow-style: none; }
 
 html, body {
     margin: 0;
     padding: 0;
     font-family: Helvetica, serif;
+    overflow: hidden;
 }
 
 #input-container {
@@ -119,7 +118,7 @@ html, body {
     -ms-transition: ease 250ms;
     -o-transition: ease 250ms;
     transition: ease 250ms;
-    border-top: #e4e4e4 1px solid;
+    border-top: #e4e4e4 1px solid !important;
     -moz-box-shadow:    inset 0 15px 9px -20px #9b9b9b;
     -webkit-box-shadow: inset 0 15px 9px -20px #9b9b9b;
     box-shadow:         inset 0 15px 9px -20px #9b9b9b;
@@ -139,17 +138,35 @@ html, body {
 }
 
 .entity-list {
-    overflow-y: scroll;
     height: 100%;
     -webkit-transition: ease 250ms;
     -moz-transition: ease 250ms;
     -ms-transition: ease 250ms;
     -o-transition: ease 250ms;
     transition: ease 250ms;
-    border-top: #e4e4e4 0 solid;
+    border-top: white 0 solid;
+    flex: 0 1 auto;
 }
 
-.entity-list::-webkit-scrollbar { width: 0 !important }
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #eaeaea;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 .entity-list { overflow: -moz-scrollbars-none; }
 .entity-list { -ms-overflow-style: none; }
 
@@ -249,6 +266,7 @@ html, body {
     -ms-transition: ease 250ms;
     -o-transition: ease 250ms;
     background-color: white;
+    flex: 0 1 40px;
 
 
 }
@@ -269,7 +287,6 @@ html, body {
 }
 
 .header {
-    overflow: hidden;
     padding: 10px;
 }
 
@@ -315,16 +332,17 @@ html, body {
     -ms-transition: ease 200ms;
     -o-transition: ease 200ms;
     transition: ease 200ms;
-    background-color: transparent;
-    overflow: hidden;
+    background-color: white;
 }
 
 .filter-expanded {
-    max-height: 200px !important;
+    max-height: 100% !important;
+    flex: 0 0 auto;
 }
 
 #tag-filters {
     padding: 0 15px 5px 15px;
+    background: transparent;
 }
 
 /*Checkbox styles*/
