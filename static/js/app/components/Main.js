@@ -122,6 +122,9 @@ new Vue({
 
                 const marker = L.circleMarker(latLng, options);
                 marker.bindPopup("<b>"+gameStore.business.name+"</b><br>"+gameStore.street1+"<br>"+gameStore.city+", "+gameStore.stateCode);
+                marker.on('click', function onMarkerClick(e){
+                    store.dispatch('selectedStore/select', gameStore, {root: true});
+                });
                 markers.push(marker);
             }
 
@@ -144,7 +147,8 @@ new Vue({
             return text;
         },
         search() {
+            store.dispatch('selectedStore/select', null, {root:true})
             store.dispatch('businessList/search', this.searchString, {root: true});
-        }
+        },
     }
 });
