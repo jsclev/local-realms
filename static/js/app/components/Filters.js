@@ -10,7 +10,6 @@ Vue.component('Filters', {
     },
     template: `
         <div id="filters">
-            <div id="tag-filters">
                 <div v-for="tag in tags" class="tag-filter">
                     <input type="checkbox"
                            :id="tag.id"
@@ -18,7 +17,6 @@ Vue.component('Filters', {
                            v-model="selectedTagIds">
                     <label :for="tag.id">{{ tag.name }}</label>
                 </div>
-            </div>
         </div>`,
     mounted: function () {
         store.dispatch('businessList/getTags', null, {root: true});

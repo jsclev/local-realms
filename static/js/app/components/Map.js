@@ -8,8 +8,10 @@ Vue.component('Map', {
         }
     },
     template: `
-        <div>
-            {{ gameStores.length }}
+        <div id="number-results">
+            <div style="margin: auto;">{{ gameStores.length }} results</div>
+            <hr class="search-separator" style="margin: 8px 0 8px !important;">
+            <div style="margin: auto">Local Realms</div>
         </div>`,
     mounted: function () {
         store.dispatch('businessList/getBusinesses', null, {root: true});

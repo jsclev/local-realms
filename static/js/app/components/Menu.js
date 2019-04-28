@@ -8,20 +8,19 @@ Vue.component('Menu', {
     mounted: function () {
         $('.menu-icon').click(function () {
             $('#menu').addClass('menu-open');
-            $('#map').addClass('dim');
-            $('#store-list').addClass('dim');
-            $('.search-outer').addClass('dim');
             $('#menu-back-icon').addClass('back-icon');
-            $('.tag-filter').addClass('dim')
+            $('#menu-dim').addClass('dimmed');
         });
 
         $('#menu-back-icon').click(function () {
             $('#menu').removeClass('menu-open');
-            $('#map').removeClass('dim');
-            $('#store-list').removeClass('dim');
-            $('.search-outer').removeClass('dim');
             $('#menu-back-icon').removeClass('back-icon');
-            $('.tag-filter').removeClass('dim')
+            $('#menu-dim').removeClass('dimmed');
         });
+        $('#menu-dim').click(function () {
+            $('#menu').removeClass('menu-open');
+            $('#menu-back-icon').removeClass('back-icon');
+            $('#menu-dim').removeClass('dimmed');
+        })
     }
 });

@@ -19,7 +19,7 @@ Vue.component('SearchBox', {
                            @keyup="search" />
                             <div id="main-search-icon" class="search-icon icon"/>
                     </form>
-                    <hr id="search-separator">
+                    <hr class="search-separator">
                     <div id="filter-search" class="icon"/>
             </div>
         </div>`,
