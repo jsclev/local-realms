@@ -8,6 +8,7 @@ new Vue({
                 <Filters></Filters>
                 <StoreList></StoreList>
                 <Map></Map>
+                <SelectedGameStore></SelectedGameStore>
             </div>
             <Menu></Menu>
         </div>`

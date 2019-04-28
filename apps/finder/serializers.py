@@ -27,6 +27,7 @@ class StoreSerializer(serializers.ModelSerializer):
     zipCode = serializers.CharField(source='zip_code')
     lat = serializers.DecimalField(source='latitude', max_digits=11, decimal_places=9)
     lng = serializers.DecimalField(source='longitude', max_digits=12, decimal_places=9)
+    phone = serializers.CharField()
 
     class Meta:
         model = Store
@@ -38,16 +39,23 @@ class StoreSerializer(serializers.ModelSerializer):
                   'stateCode',
                   'zipCode',
                   'lat',
-                  'lng')
+                  'lng',
+                  'phone')
 
 
 class BusinessSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField()
     name = serializers.CharField()
+    website = serializers.CharField()
+    email = serializers.CharField()
+    facebook = serializers.CharField()
     stores = StoreSerializer(many=True, read_only=True)
 
     class Meta:
         model = Business
         fields = ('id',
                   'name',
+                  'website',
+                  'email',
+                  'facebook',
                   'stores')
