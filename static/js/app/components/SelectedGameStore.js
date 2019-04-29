@@ -1,4 +1,4 @@
-import store from '../store/index.js?v=1'
+import store from '../store/index.js?v=0.0.2'
 
 Vue.component('SelectedGameStore', {
     store,
@@ -7,7 +7,7 @@ Vue.component('SelectedGameStore', {
              class="selected-game-store-closed"
              v-if="selectedGameStore">
             <div id="info-header">
-                {{ selectedGameStore.business.name }}
+                <div style="display: flex;justify-content: center;flex-direction: column;">{{ selectedGameStore.business.name }}</div>
                 <div id="up-down-icon" class="icon up-icon-position"></div>
             </div>
             <a :href="'https://www.google.com/maps/place/' + selectedGameStore.street1 + ' ' + selectedGameStore.city + ' ' + selectedGameStore.stateCode + ' ' + selectedGameStore.zipCode" target="_blank" style="text-decoration: none">
@@ -40,7 +40,7 @@ Vue.component('SelectedGameStore', {
         </div>
         <div id="selected-game-store" v-else="" class="selected-game-store-closed">
             <div id="info-header">
-                Select a store
+            <div style="display: flex;justify-content: center;flex-direction: column;">Select a store</div>
             <div id="up-down-icon" class="icon up-icon-position"></div>
             </div>
             <br/>
