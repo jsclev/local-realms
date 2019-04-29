@@ -13,7 +13,7 @@ Vue.component('SearchBox', {
                 <div class="menu-icon icon"></div>
                     <form id="search-form" autocomplete="off">
                         <input id="search-input" class="input-common"
-                           placeholder="Find a local game store" 
+                           placeholder="Find Local Game Stores" 
                            type="text" 
                            v-model="searchString" 
                            @keyup="search" />
