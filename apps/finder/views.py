@@ -1,7 +1,8 @@
-from django.conf import settings
+from django.conf import settings as django_settings
 from django.http import JsonResponse
 from django.shortcuts import render
 
+import settings
 from apps.finder.models import Business
 from apps.finder.serializers import BusinessSerializer
 from apps.finder.models import Tag
@@ -9,7 +10,8 @@ from apps.finder.serializers import TagSerializer
 
 
 def get_home(request):
-    mapbox_access_token = settings.GLOBAL_CONSTANTS['MAPBOX_ACCESS_TOKEN']
+    version = settings.__version__
+    mapbox_access_token = django_settings.GLOBAL_CONSTANTS['MAPBOX_ACCESS_TOKEN']
 
     return render(request, 'home.html', locals())
 

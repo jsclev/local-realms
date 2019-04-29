@@ -1,4 +1,4 @@
-import store from '../store/index.js?v=1'
+import store from '../store/index.js?v=0.0.2'
 
 Vue.component('Map', {
     store,
