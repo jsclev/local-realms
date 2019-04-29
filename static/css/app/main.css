@@ -444,3 +444,7 @@ html, body {
 #phone-icon {
     background-image: url("../../images/phone.svg");
 }
+
+.selected-store-list-item, .selectedStoreListItem {
+    background-color: #f1f1f1;
+}

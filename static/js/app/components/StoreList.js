@@ -6,6 +6,7 @@ Vue.component('StoreList', {
         <div id="store-list" class="entity-list entity-list-default">
             <div v-for="store in gameStores" 
                  class="section-result-main"
+                 :class="{ selectedStoreListItem: isSelected(store) }"
                  @click="selectGameStore(store)">
                 <div class="section-result-icon"></div>
                 <div id="section-results-text" class="section-result">
@@ -24,7 +25,7 @@ Vue.component('StoreList', {
         const searchOuter = $(".search-outer");
 
         $('#store-list').scroll(function () {
-            var scroll = $('#store-list').scrollTop();
+            const scroll = $('#store-list').scrollTop();
 
             if (scroll >= 10) {
                 list.addClass("entity-list-transition");
@@ -44,14 +45,12 @@ Vue.component('StoreList', {
         }
     },
     methods: {
-        getStoreText(gameStore) {
-            // let score = '';
-            //
-            // if (gameStore.searchResult && gameStore.searchResult.score !== null) {
-            //     score = '(' + gameStore.searchResult.score.toPrecision(4) + ')';
-            // }
+        isSelected(gameStore) {
+            if (store.state.selectedGameStore && store.state.selectedGameStore.id === gameStore.id) {
+                return true;
+            }
 
-            return gameStore.business.name;
+            return false;
         },
         selectGameStore(gameStore) {
             store.dispatch('setSelectedGameStore', gameStore, {root: true});

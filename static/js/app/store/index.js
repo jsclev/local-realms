@@ -9,8 +9,13 @@ export default new Vuex.Store({
         businessList: businessList
     },
     actions: {
-        setSelectedGameStore({commit}, payload) {
-            commit('setSelectedGameStore', payload);
+        setSelectedGameStore({commit, state}, payload) {
+            if (state.selectedGameStore && state.selectedGameStore.id === payload.id) {
+                commit('setSelectedGameStore', null);
+            }
+            else {
+                commit('setSelectedGameStore', payload);
+            }
         }
     },
     mutations: {

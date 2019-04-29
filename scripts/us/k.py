@@ -10,6 +10,23 @@ from apps.finder.models import Store
 ###############################################################################
 # Business
 ###############################################################################
+business = Business(name='Mind Sculpt Games')
+business.website = 'www.mindsculptgames.com'
+business.facebook = 'www.facebook.com/mindsculptgames'
+business.email = 'mindsculptgames@gmail.com'
+business.save()
+
+store = Store(business=business, city='Great Bend', state_code='KS', zip_code='67530')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.street1 = '2521 10th St'
+store.latitude = 38.361049
+store.longitude = -98.772931
+store.phone = '620-603-8462'.replace('-', '')
+store.save()
+
+###############################################################################
+# Business
+###############################################################################
 business = Business(name='Asgards Gate')
 business.website = 'asgardsgate.website'
 business.facebook = 'www.facebook.com/asgardsgateholton'
@@ -26,7 +43,7 @@ store.save()
 # Business
 ###############################################################################
 business = Business(name="The Dragon's Hoard")
-business.website = 'dragonshoardllc.com/'
+business.website = 'www.dragonshoardllc.com'
 business.facebook = 'www.facebook.com/TheDragonsHoardLLC'
 business.save()
 

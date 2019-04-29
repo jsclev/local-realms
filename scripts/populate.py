@@ -14,16 +14,18 @@ Business.objects.all().delete()
 board_game_category = Category.objects.create(name='Board Games')
 comics_category = Category.objects.create(name='Comics')
 
-Tag.objects.create(name='Tabletop Board Games')
-Tag.objects.create(name='Card Games (CCGs and TCGs)')
-Tag.objects.create(name='Miniatures')
-Tag.objects.create(name='Role Playing Games')
-
+Tag.objects.create(name='Tabletop Board Games',
+                   description='')
+Tag.objects.create(name='CCGs, TCGs, and LCGs',
+                   description="Magic, Poke'mon, Yu-Gi-Oh!, Netrunner, Star Wars, Game of Thrones")
+Tag.objects.create(name='Miniature Games',
+                   description='40K, Warhammer, Warmachine, X-Wing, Battletech, Drop Fleet')
+Tag.objects.create(name='Role Playing Games',
+                   description='Dungeons & Dragons, Pathfinder, Shadowrun, Star Wars')
 Tag.objects.create(name='Warhammer Only')
 Tag.objects.create(name='Play Space')
 Tag.objects.create(name='Events and Tournaments')
 
-# board games, comics, miniatures, RPGs and TCGs
 os.system('python us/a.py')
 os.system('python us/c.py')
 os.system('python us/d.py')
