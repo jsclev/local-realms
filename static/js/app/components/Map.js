@@ -15,10 +15,16 @@ Vue.component('Map', {
         </div>`,
     mounted: function () {
         store.dispatch('businessList/getBusinesses', null, {root: true});
+        store.dispatch('businessList/setGeographicBounds', map.getBounds(), {root: true});
+
+        // Attach map bounds change handler
+        map.on('moveend', function(e) {
+            store.dispatch('businessList/setGeographicBounds', map.getBounds(), {root: true});
+        });
     },
     computed: {
         gameStores() {
-            const gameStores = store.state.businessList.searchResults;
+            const gameStores = store.getters['businessList/filteredStores'];
 
             map.removeLayer(this.markerGroup);
             let markers = [];

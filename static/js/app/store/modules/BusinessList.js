@@ -2,40 +2,65 @@ export default {
     namespaced: true,
     state: {
         businesses: [],
+        geographicBounds: null,
         searchIndex: null,
         searchResults: [],
-        centerLocation: {
-            lat: 37.774691,
-            lng: -77.697109
-        },
+        searchText: '',
         isLoadingTags: false,
         tags: []
     },
-    actions: {
-        search({commit, state}, searchString) {
-            let searchResults = [];
+    getters: {
+        filteredStores(state) {
+            if (state.searchText.length > 0) {
+                const filteredBusinesses = [];
 
-            if (state.searchIndex) {
-                searchResults = state.searchIndex.search(searchString.trim() + '*');
-            }
+                for (let searchResult of state.searchResults) {
+                    for (let business of state.businesses) {
+                        for (let gameStore of business.stores) {
+                            const latLng = L.latLng(parseFloat(gameStore.lat), parseFloat(gameStore.lng));
+                            if (parseInt(searchResult.ref) === gameStore.id &&
+                                state.geographicBounds &&
+                                state.geographicBounds.contains(latLng)) {
+                                const obj = Object.assign(gameStore);
+                                obj.distanceToCenterPoint = 1.0;
+                                obj.business = business;
+                                obj.searchResult = Object.assign(searchResult);
 
-            const filteredBusinesses = [];
-            for (let searchResult of searchResults) {
-                for (let business of state.businesses) {
-                    for (let gameStore of business.stores) {
-                        if (parseInt(searchResult.ref) === gameStore.id) {
-                            const obj = Object.assign(gameStore);
-                            obj.distanceToCenterPoint = 1.0;
-                            obj.business = business;
-                            obj.searchResult = Object.assign(searchResult);
-
-                            filteredBusinesses.push(obj);
+                                filteredBusinesses.push(obj);
+                            }
                         }
                     }
                 }
+
+                return filteredBusinesses;
             }
-            commit('setSearchResults', filteredBusinesses);
-        },
+            else {
+                if (state.geographicBounds) {
+                    const filteredBusinesses = [];
+
+                    for (let business of state.businesses) {
+                        for (let gameStore of business.stores) {
+                            const latLng = L.latLng(parseFloat(gameStore.lat), parseFloat(gameStore.lng));
+                            if (state.geographicBounds.contains(latLng)) {
+                                const obj = Object.assign(gameStore);
+                                obj.distanceToCenterPoint = 1.0;
+                                obj.business = business;
+                                obj.searchResult = null;
+
+                                filteredBusinesses.push(obj);
+                            }
+                        }
+                    }
+
+                    return filteredBusinesses;
+                }
+                else {
+                    return state.businesses;
+                }
+            }
+        }
+    },
+    actions: {
         getBusinesses({commit}) {
             $.get('shops/', function (businesses, status) {
                 commit('setBusinesses', businesses);
@@ -68,19 +93,6 @@ export default {
                 });
 
                 commit('setSearchIndex', idx);
-
-                const filteredBusinesses = [];
-                for (let business of businesses) {
-                    for (let gameStore of business.stores) {
-                        const obj = Object.assign(gameStore);
-                        obj.distanceToCenterPoint = 1.0;
-                        obj.business = business;
-                        obj.searchResult = null;
-
-                        filteredBusinesses.push(obj);
-                    }
-                }
-                commit('setSearchResults', filteredBusinesses);
             });
         },
         getTags({commit}) {
@@ -90,6 +102,15 @@ export default {
                 commit('setTags', tags);
                 commit('setIsLoadingTags', false);
             });
+        },
+        search({commit, state}, searchString) {
+            if (state.searchIndex) {
+                commit('setSearchResults', state.searchIndex.search(searchString.trim() + '*'));
+                commit('setSearchText', searchString.trim());
+            }
+        },
+        setGeographicBounds({commit}, geographicBounds) {
+            commit('setGeographicBounds', geographicBounds);
         }
     },
     mutations: {
@@ -104,6 +125,12 @@ export default {
         },
         setBusinesses(state, payload) {
             state.businesses = payload;
+        },
+        setGeographicBounds(state, payload) {
+            state.geographicBounds = payload;
+        },
+        setSearchText(state, payload) {
+            state.searchText = payload;
         },
         setTags(state, payload) {
             state.tags = payload;
