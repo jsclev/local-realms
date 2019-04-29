@@ -40,7 +40,7 @@ Vue.component('StoreList', {
     },
     computed: {
         gameStores() {
-            return store.state.businessList.searchResults;
+            return store.getters['businessList/filteredStores'];
         }
     },
     methods: {
