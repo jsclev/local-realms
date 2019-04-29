@@ -6,25 +6,27 @@ Vue.component('SelectedGameStore', {
         <div id="selected-game-store" 
              class=""
              v-if="selectedGameStore">
-            <div>{{ selectedGameStore.business.name }}</div>
+            <div id="info-header">{{ selectedGameStore.business.name }}</div>
             <div class="info-list-container">
-                <div class=""></div>
+                <div id="place-info-icon" class="info-icon"></div>
                 <div class="info-text">
                     {{ selectedGameStore.street1 }}<br/>{{ selectedGameStore.city }}, {{ selectedGameStore.stateCode }} {{ selectedGameStore.zipCode }}
                 </div>
             </div>
             <a :href="'http://' + selectedGameStore.business.website" target="_blank" style="text-decoration: none">
                 <div id="website" class="info-list-container">
-                    <div class="website-icon"></div> 
+                    <div id="website-icon" class="info-icon"></div> 
                     <span id="website-text" class="info-text">{{ selectedGameStore.business.website }}</span>
                 </div>
             </a>
             <div class="info-list-container">
+                <div id="email-icon" class="info-icon"></div>
                 <div class="info-text">
-                    Email: {{ selectedGameStore.business.email }}
+                    {{ selectedGameStore.business.email }}
                 </div>
             </div>
             <div class="info-list-container">
+                <div id="phone-icon" class="info-icon"></div>
                 <div class="info-text">
                     {{ selectedGameStore.phone }}
                 </div>

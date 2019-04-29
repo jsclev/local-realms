@@ -378,21 +378,15 @@ html, body {
     font-size: 14px;
 }
 
-.website-icon {
+#website-icon {
     background-image: url("../../images/website.svg");
-    width: 24px;
-    height: 24px;
-    margin: 3px 9px 3px 0;
-    background-size: 20px 20px;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 .info-list-container {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    padding: 5px 11px;
+    padding: 11px 0;
 }
 
 #website {
@@ -407,16 +401,46 @@ html, body {
     cursor: pointer;
 }
 
-#website:hover > .website-icon {
+#website:hover > #website-icon {
     background-image: url("../../images/website-blue.svg") !important;
 }
 
 .info-text {
     text-decoration: none;
-    color: #595959;
+    color: #494949;
 }
 
 #selected-game-store {
     border-top: 1px solid #ddd;
-    padding-top: 10px;
+    padding: 24px 0 10px 16px;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: column;
+}
+
+#place-info-icon {
+    background-image: url("../../images/place-light.svg");
+    background-size: 24px 24px;
+}
+
+.info-icon {
+    width: 24px;
+    height: 24px;
+    margin: 3px 9px 3px 0;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#info-header {
+    font-size: 21px;
+    margin-left: 4px;
+}
+
+#email-icon {
+    background-image: url("../../images/email.svg");
+}
+
+#phone-icon {
+    background-image: url("../../images/phone.svg");
 }
