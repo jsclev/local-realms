@@ -1,5 +1,6 @@
 bump2version==0.5.10
 Django==2.1
 djangorestframework==3.9.2
+httplib2==0.12.3
 pytz==2018.9
 sqlparse==0.3.0

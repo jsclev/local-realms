@@ -75,3 +75,13 @@ class StoreLogItem(models.Model):
 
     class Meta:
         db_table = 'store_log_item'
+
+
+class ZipCode(models.Model):
+    zip_code = models.TextField(default=None, blank=False)
+    city = models.TextField(default=None, blank=False)
+    state_name = models.TextField(default=None, blank=False)
+    state_code = models.TextField(default=None, blank=False)
+
+    class Meta:
+        db_table = 'zip_code'
