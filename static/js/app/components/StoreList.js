@@ -54,6 +54,6 @@ Vue.component('StoreList', {
         },
         selectGameStore(gameStore) {
             store.dispatch('setSelectedGameStore', gameStore, {root: true});
-        }
+        },
     }
 });
