@@ -6,6 +6,7 @@ new Vue({
             <div id="main-panel">
                 <SearchBox></SearchBox>
                 <Filters></Filters>
+                <div id="filter-dim"></div>
                 <StoreList></StoreList>
                 <Map></Map>
                 <SelectedGameStore></SelectedGameStore>

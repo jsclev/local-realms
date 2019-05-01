@@ -9,7 +9,7 @@
 }
 
 #store-list {
-    background-color: white;
+    background-color: transparent;
     overflow-y: auto;
 }
 
@@ -31,8 +31,21 @@
     height: 100%;
 }
 
+#filter-dim {
+    position: absolute;
+    opacity: 20%;
+    background: rgba(0, 0, 0, 0);
+    -moz-transition: all 250ms ease;
+    -webkit-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+    transition: all 250ms ease;
+    z-index: -5;
+    width: 100%;
+    height: 100%;
+}
+
 .dimmed {
-    z-index: 1000 !important;
+    z-index: 500 !important;
     background: rgba(0, 0, 0, 0.4) !important;
 }
 
@@ -285,6 +298,7 @@ html, body {
     -o-transition: ease 250ms;
     background-color: white;
     flex: 0 1 40px;
+    z-index: 502;
 
 
 }
@@ -352,12 +366,19 @@ html, body {
     transition: ease 200ms;
     background-color: white;
     overflow: hidden;
+    position: absolute;
+    width: 380px;
+    top: 58px;
+    z-index: 501;
 }
 
 .filter-expanded {
     max-height: 100% !important;
     flex: 0 0 auto;
     padding: 0 0 5px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2),
+        0 -1px 0 rgba(0,0,0,0.02);
+    border-top: #e4e4e4 1px solid;
 }
 
 #tag-filters {
@@ -421,6 +442,8 @@ html, body {
     -ms-transition: ease 250ms;
     -o-transition: ease 250ms;
     transition: ease 250ms;
+    cursor: auto;
+
 }
 
 #place-info-icon {
@@ -443,6 +466,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-content: center;
+    transition: font-size 250ms ease;
 }
 
 #email-icon {
@@ -452,10 +476,6 @@ html, body {
 #phone-icon {
     background-image: url("../../images/phone.svg");
 }
-
-/*.selected-store-list-item, .selectedStoreListItem {*/
-/*    background-color: #f1f1f1;*/
-/*}*/
 
 
 .tooltip .tooltiptext {
@@ -493,7 +513,7 @@ html, body {
     border-color: transparent transparent black transparent;
 }
 
-#up-down-icon {
+.up-down-icon {
     background-image: url("../../images/expand.svg");
     transform: rotate(270deg);
     background-position: 11px;
@@ -505,7 +525,11 @@ html, body {
 
 .selected-game-store-closed {
     padding: 5px 0 5px 16px !important;
-    max-height: 39px !important;
+    max-height: 34px !important;
+    cursor: pointer !important;
+}
+.selected-game-store-closed > #info-header{
+    font-size: 17px !important;
 }
 
 .up-icon-position {
@@ -603,4 +627,11 @@ html, body {
     margin-right: 20px;
     background-size: 20px;
     opacity: 0;
+}
+
+.up-down-closed {
+    background-position: 8.5px !important;
+    width: 34px !important;
+    height: 34px !important;
+    background-size: 18.7px 20.4px;
 }
