@@ -7,8 +7,9 @@ from apps.finder.models import ZipCode
 
 
 ZipCode.objects.all().delete()
+zip_codes = []
 
-with open('/Users/jcleveland/US.txt', 'r') as f:
+with open('./data/US.txt', 'r') as f:
     reader = csv.reader(f, delimiter='\t')
     for row in reader:
         zip_code = ZipCode()
@@ -17,8 +18,9 @@ with open('/Users/jcleveland/US.txt', 'r') as f:
         zip_code.state_name = row[3]
         zip_code.state_code = row[4]
 
-        zip_code.save()
+        zip_codes.append(zip_code)
+
+ZipCode.objects.bulk_create(zip_codes)
 
 zip_codes = ZipCode.objects.all().order_by('state_code', 'city')
-
 print('Total zip codes added to db: ' + str(zip_codes.count()))
