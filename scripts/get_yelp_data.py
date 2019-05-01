@@ -16,7 +16,7 @@ headers = {
 
 business_ids = set()
 
-zip_codes = ZipCode.objects.filter(state_code='RI').order_by('state_code', 'zip_code')
+zip_codes = ZipCode.objects.filter(state_code='CA').order_by('state_code', 'zip_code')
 
 for zip_code in zip_codes:
     print('Getting stores for ' + zip_code.zip_code)
@@ -59,17 +59,3 @@ with open('./data/yelp.json', 'a') as outfile:
         else:
             json.dump(json_obj, outfile, ensure_ascii=False)
             outfile.write('\n')
-            # business = Business()
-            # business.name = json_obj['name']
-            # business.save()
-            #
-            # store = Store()
-            # store.business = business
-            # store.phone = json_obj['phone']
-            # store.street1 = json_obj['location']['address1']
-            # store.city = json_obj['location']['city']
-            # store.state_code = json_obj['location']['state']
-            # store.zip_code = json_obj['location']['zip_code']
-            # store.latitude = json_obj['coordinates']['latitude']
-            # store.longitude = json_obj['coordinates']['longitude']
-            # store.save()
