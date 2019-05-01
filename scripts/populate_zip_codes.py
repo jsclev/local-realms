@@ -9,7 +9,7 @@ from apps.finder.models import ZipCode
 ZipCode.objects.all().delete()
 zip_codes = []
 
-with open('./data/US.txt', 'r') as f:
+with open('./data/us_zip_codes.txt', 'r') as f:
     reader = csv.reader(f, delimiter='\t')
     for row in reader:
         zip_code = ZipCode()
