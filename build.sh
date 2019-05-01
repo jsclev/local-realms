@@ -3,6 +3,8 @@
 export PYTHONPATH=$(pwd):${PYTHONPATH}
 export DJANGO_SETTINGS_MODULE=settings.settings
 
+pip install -r requirements.txt
+
 # Rebuild the database structure
 rm db.sqlite3
 rm -rf apps/finder/migrations
