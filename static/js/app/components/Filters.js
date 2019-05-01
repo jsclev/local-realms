@@ -44,12 +44,14 @@ Vue.component('Filters', {
                 $('#filters').removeClass('filter-expanded');
                 list.removeClass("entity-list-transition-filter");
                 searchContainer.removeClass("input-common-filter");
-                searchOuter.removeClass("search-outer-after-filter")
+                searchOuter.removeClass("search-outer-after-filter");
+                $('#filter-dim').removeClass('dimmed');
             } else {
                 $('#filters').addClass('filter-expanded');
                 list.addClass("entity-list-transition-filter");
                 searchContainer.addClass("input-common-filter");
-                searchOuter.addClass("search-outer-after-filter")
+                searchOuter.addClass("search-outer-after-filter");
+                $('#filter-dim').addClass('dimmed');
             }
         });
     },
