@@ -3,6 +3,7 @@
 export PYTHONPATH=$(pwd):${PYTHONPATH}
 export DJANGO_SETTINGS_MODULE=settings.settings
 
+# Make sure all Python dependencies are updated
 pip install -r requirements.txt
 
 # Rebuild the database structure
