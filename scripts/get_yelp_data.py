@@ -16,7 +16,7 @@ headers = {
 
 business_ids = set()
 
-zip_codes = ZipCode.objects.filter(state_code='CA').order_by('state_code', 'zip_code')
+zip_codes = ZipCode.objects.filter(state_code='WA').order_by('state_code', 'zip_code')
 
 for zip_code in zip_codes:
     print('Getting stores for ' + zip_code.zip_code)
@@ -46,16 +46,19 @@ with open('./data/yelp.json', 'a') as outfile:
 
         json_obj = loads(content)
 
-        name = json_obj['name']
-        city = json_obj['location']['city']
-        state_code = json_obj['location']['state']
-        zip_code = json_obj['location']['zip_code']
+        if 'name' in json_obj:
+            name = json_obj['name']
+            city = json_obj['location']['city']
+            state_code = json_obj['location']['state']
+            zip_code = json_obj['location']['zip_code']
 
-        if Store.objects.filter(business__name=name,
-                                city=city,
-                                state_code=state_code,
-                                zip_code=zip_code).exists():
-            print('Store already exists: ' + str(json_obj))
+            if Store.objects.filter(business__name=name,
+                                    city=city,
+                                    state_code=state_code,
+                                    zip_code=zip_code).exists():
+                print('Store already exists: ' + str(json_obj))
+            else:
+                json.dump(json_obj, outfile, ensure_ascii=False)
+                outfile.write('\n')
         else:
-            json.dump(json_obj, outfile, ensure_ascii=False)
-            outfile.write('\n')
+            print('Error: ' + str(json_obj))
