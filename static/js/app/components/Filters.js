@@ -54,6 +54,13 @@ Vue.component('Filters', {
                 $('#filter-dim').addClass('dimmed');
             }
         });
+        $('#filter-dim').click(function () {
+            $('#filters').removeClass('filter-expanded');
+            list.removeClass("entity-list-transition-filter");
+            searchContainer.removeClass("input-common-filter");
+            searchOuter.removeClass("search-outer-after-filter");
+            $('#filter-dim').removeClass('dimmed');
+        })
     },
     computed:
         {
