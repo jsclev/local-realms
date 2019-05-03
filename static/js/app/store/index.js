@@ -1,4 +1,10 @@
+import Vue from 'vue'
+import Vuex from 'vuex'
+
 import businessList from './modules/BusinessList.js'
+
+Vue.use(Vuex);
+Vue.config.productionTip = false;
 
 export default new Vuex.Store({
     namespaced: true,

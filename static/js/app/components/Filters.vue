@@ -1,6 +1,7 @@
+import Vue from 'vue'
 import store from '../store/index.js?v=0.0.4'
 
-Vue.component('Filters', {
+export default Vue.component('Filters', {
     store,
     data: function () {
         return {

@@ -1,6 +1,7 @@
+import Vue from 'vue'
 import store from '../store/index.js?v=0.0.4'
 
-Vue.component('SearchBox', {
+export default Vue.component('SearchBox', {
     store,
     data: function () {
         return {
@@ -17,10 +18,10 @@ Vue.component('SearchBox', {
                            type="text" 
                            v-model="searchString" 
                            @keyup="search" />
-                            <div id="main-search-icon" class="search-icon icon"/>
+                        <div id="main-search-icon" class="search-icon icon"></div>
                     </form>
                     <hr class="search-separator">
-                    <div id="filter-search" class="icon"/>
+                <div id="filter-search" class="icon"></div>
             </div>
         </div>`,
     mounted: function () {

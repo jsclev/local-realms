@@ -1,4 +1,6 @@
-Vue.component('Menu', {
+import Vue from 'vue'
+
+export default Vue.component('Menu', {
     template: `
          <div id="menu">
             <div class="header">

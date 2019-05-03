@@ -14,26 +14,23 @@
     <link href="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css" rel="stylesheet" />
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet" />
     <link href="{% static "css/app/main.css" %}?v={{ version }}" rel="stylesheet" />
+
+    <script src="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js"></script>
 </head>
 <body>
 <input type="hidden" id="mapboxAccessToken" value="{{ mapbox_access_token }}" />
 <div id="map"></div>
-<div id="main-vue-hook"></div>
+<div id="app"></div>
+<script>
+    L.mapbox.accessToken = document.getElementById('mapboxAccessToken').value;
+    const map = L.mapbox.map('map')
+        .setView([38.836684, -104.842041], 4)
+        .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+</script>
 
 <script src="{% static "js/lib/jQuery/jquery-3.4.0.min.js" %}"></script>
-<script src="{% static "js/lib/Vuejs/vue.js" %}"></script>
-<script src="{% static "js/lib/Vuejs/vuex.js" %}"></script>
 <script src="https://unpkg.com/lunr/lunr.js"></script>
-<script src="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js"></script>
 
-<script src="{% static "js/app/main.js" %}?v={{ version }}"></script>
-
-<script src="{% static "js/app/components/Menu.js" %}?v={{ version }}" type="module"></script>
-<script src="{% static "js/app/components/SearchBox.js" %}?v={{ version }}" type="module"></script>
-<script src="{% static "js/app/components/Filters.js" %}?v={{ version }}" type="module"></script>
-<script src="{% static "js/app/components/StoreList.js" %}?v={{ version }}" type="module"></script>
-<script src="{% static "js/app/components/Map.js" %}?v={{ version }}" type="module"></script>
-<script src="{% static "js/app/components/SelectedGameStore.js" %}?v={{ version }}" type="module"></script>
-<script src="{% static "js/app/components/Main.js" %}?v={{ version }}" type="module"></script>
+<script src="{% static "js/dist/main.js" %}?v={{ version }}"></script>
 </body>
 </html>

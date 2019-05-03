@@ -1,6 +1,7 @@
+import Vue from 'vue'
 import store from '../store/index.js?v=0.0.4'
 
-Vue.component('StoreList', {
+export default Vue.component('StoreList', {
     store,
     template: `
         <div id="store-list" class="entity-list entity-list-default">
