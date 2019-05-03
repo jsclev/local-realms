@@ -159,3 +159,20 @@ store.latitude = 39.041876
 store.longitude = -77.052743
 store.phone = '443-424-2637'.replace('-', '')
 store.save()
+
+###############################################################################
+# Business
+###############################################################################
+business = Business.objects.create(name='Retrofix Games')
+business.website = 'www.retrofixgames.com'
+business.facebook = 'www.facebook.com/retrofixmissoula'
+business.email = 'contact@retrofixgames.com'
+business.save()
+
+store = Store(business=business, city='Missoula', state_code='MT', zip_code='59801')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.street1 = '1118 W Central Ave'
+store.latitude = 46.851084
+store.longitude = -114.015993
+store.phone = '406-926-6911'.replace('-', '')
+store.save()

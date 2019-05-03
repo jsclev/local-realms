@@ -1,9 +1,13 @@
-import django, json, httplib2, time
 from json import loads
+
+import django
+import httplib2
+import json
+import time
 
 django.setup()
 
-from apps.finder.models import Business, Store, ZipCode
+from apps.finder.models import Store, ZipCode
 
 http = httplib2.Http()
 
@@ -16,7 +20,7 @@ headers = {
 
 business_ids = set()
 
-zip_codes = ZipCode.objects.filter(state_code='WA').order_by('state_code', 'zip_code')
+zip_codes = ZipCode.objects.filter(state_code='SD').order_by('state_code', 'zip_code')
 
 for zip_code in zip_codes:
     print('Getting stores for ' + zip_code.zip_code)
