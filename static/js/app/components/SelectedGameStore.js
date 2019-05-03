@@ -1,4 +1,4 @@
-import store from '../store/index.js?v=0.0.2'
+import store from '../store/index.js?v=0.0.4'
 
 Vue.component('SelectedGameStore', {
     store,
