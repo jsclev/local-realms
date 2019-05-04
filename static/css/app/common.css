@@ -217,3 +217,18 @@ a {
         transform: scale(1)
     }
 }
+
+/*--------Icons--------*/
+
+.section-result-main:hover > .section-result-icon {
+    background-image: url("../../images/place.svg");
+}
+
+.section-result-icon {
+    width: 15%;
+    height: 30px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../../images/place-dark.svg');
+}
