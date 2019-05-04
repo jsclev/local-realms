@@ -1,3 +1,5 @@
+import lunr from 'lunr'
+
 export default {
     namespaced: true,
     state: {
@@ -98,7 +100,7 @@ export default {
         getTags({commit}) {
             commit('setIsLoadingTags', true);
 
-            $.get('tags/', function (tags, status) {
+            $.get('tags/', function (tags) {
                 commit('setTags', tags);
                 commit('setIsLoadingTags', false);
             });

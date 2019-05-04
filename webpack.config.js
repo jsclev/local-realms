@@ -11,5 +11,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'static/js/dist'),
     filename: 'main.js'
-  }
+  },
+  watch: true
 };

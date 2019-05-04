@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import store from '../store/index.js?v=0.0.4'
+import store from '../store/index.js'
 
 export default Vue.component('SearchBox', {
     store,

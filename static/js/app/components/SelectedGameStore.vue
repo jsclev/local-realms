@@ -1,5 +1,6 @@
 import Vue from 'vue'
-import store from '../store/index.js?v=0.0.4'
+import { parsePhoneNumberFromString } from 'libphonenumber-js'
+import store from '../store/index'
 
 export default Vue.component('SelectedGameStore', {
     store,
@@ -53,7 +54,7 @@ export default Vue.component('SelectedGameStore', {
                 <div class="info-list-container tooltip">
                     <div id="phone-icon" class="info-icon"></div>
                     <div class="info-text" v-if="selectedGameStore">
-                        <span v-show="selectedGameStore.phone">{{ selectedGameStore.phone }}</span>
+                        <span v-show="selectedGameStore.phone">{{ formattedPhoneNumber }}</span>
                         <span v-show="!selectedGameStore.phone">None</span>
                     </div>
                     <span class="tooltiptext" style="margin-top: 27px;">Phone</span>
@@ -78,11 +79,25 @@ export default Vue.component('SelectedGameStore', {
                 $('.up-down-icon').addClass('up-icon-position up-down-closed');
             }
         });
-
     },
     computed: {
-        selectedGameStore() {
+        formattedPhoneNumber() {
+            const gameStore = this.selectedGameStore;
 
+            if (gameStore && gameStore.phone) {
+                const phoneNumber = parsePhoneNumberFromString(gameStore.phone);
+
+                if (phoneNumber) {
+                    return phoneNumber.formatNational();
+                }
+                else {
+                    return gameStore.phone;
+                }
+            }
+
+            return '';
+        },
+        selectedGameStore() {
             return store.state.selectedGameStore;
         },
     },
