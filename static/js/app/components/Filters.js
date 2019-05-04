@@ -14,6 +14,7 @@ Vue.component('Filters', {
                     <button class="filter-item">{{ tag.name }}</button>
                     <div class="check-mark check-icon-show"></div>
                 </div>
+                <button id="filter-save">Save changes</button>
         </div>`,
     mounted: function () {
         store.dispatch('businessList/getTags', null, {root: true});
