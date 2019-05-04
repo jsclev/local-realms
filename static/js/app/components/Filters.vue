@@ -4,29 +4,10 @@
             <button class="filter-item">{{ tag.name }}</button>
             <div class="check-mark check-icon-show"></div>
         </div>
+        <button id=""></button>
     </div>
 </template>
 
-<<<<<<< HEAD
-export default Vue.component('Filters', {
-    store,
-    data: function () {
-        return {
-            errors: [],
-            selectedTagIds: []
-        }
-    },
-    template: `
-        <div id="filters">
-                <div v-for="tag in tags" class="tag-filter checked" :id="tag.name">
-                    <button class="filter-item">{{ tag.name }}</button>
-                    <div class="check-mark check-icon-show"></div>
-                </div>
-                <button id="filter-save">Save changes</button>
-        </div>`,
-    mounted: function () {
-        store.dispatch('businessList/getTags', null, {root: true});
-=======
 <script>
     import store from '../store/index'
 
@@ -39,7 +20,6 @@ export default Vue.component('Filters', {
         },
         mounted: function () {
             store.dispatch('businessList/getTags', null, {root: true});
->>>>>>> d3c866ae436f3d92fdd6b07445c3cd419f38c7cd
 
             const searchContainer = $("#input-container");
             const list = $(".entity-list");

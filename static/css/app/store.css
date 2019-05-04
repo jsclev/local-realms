@@ -1,0 +1,128 @@
+.selected-game-store {
+    border-top: 1px solid #ddd;
+    padding: 24px 0 10px 16px;
+    display: flex;
+    max-height: 500px;
+    flex-direction: column;
+    -webkit-transition: ease 250ms;
+    -moz-transition: ease 250ms;
+    -ms-transition: ease 250ms;
+    -o-transition: ease 250ms;
+    transition: ease 250ms;
+    cursor: auto;
+
+}
+
+.selected-game-store-closed {
+    padding: 5px 0 5px 16px !important;
+    max-height: 34px !important;
+}
+
+.selected-game-store-closed > .info-header {
+    font-size: 17px !important;
+}
+
+.info-header {
+    font-size: 21px;
+    margin-left: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    transition: font-size 250ms ease;
+    cursor: pointer;
+}
+
+.info-list-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 11px 0;
+    cursor: pointer;
+}
+
+.info-list-container:hover .tooltiptext {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.info-list-container:hover > .info-text {
+    color: #0061ff !important;
+}
+
+.info-text {
+    text-decoration: none;
+    color: #494949;
+}
+
+#info-address > .tooltiptext {
+    margin-top: 36px;
+}
+
+/*-----Icons-----*/
+
+.info-icon {
+    width: 24px;
+    height: 24px;
+    margin: 3px 9px 3px 0;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#website-icon {
+    background-image: url("../../images/info/website.svg");
+}
+
+.email-icon {
+    background-image: url("../../images/info/email.svg");
+}
+
+#phone-icon {
+    background-image: url("../../images/info/phone.svg");
+}
+
+#place-info-icon {
+    background-image: url("../../images/place-light.svg");
+    background-size: 24px 24px;
+}
+
+.info-list-container:hover > .email-icon {
+    background-image: url("../../images/info/email-blue.svg");
+}
+
+.info-list-container:hover > #place-info-icon {
+    background-image: url("../../images/info/place-blue.svg");
+}
+
+.info-list-container:hover > #phone-icon {
+    background-image: url("../../images/info/phone-blue.svg");
+}
+
+.info-list-container:hover > #website-icon {
+    background-image: url("../../images/info/website-blue.svg");
+}
+
+.up-icon-position {
+    transform: rotate(90deg) !important;
+}
+
+.up-down-icon {
+    background-image: url("../../images/info/expand.svg");
+    transform: rotate(270deg);
+    background-position: 11px;
+    -webkit-background-size: 22px 24px;
+    background-size: 22px 24px;
+    transition: all 250ms ease;
+    margin-right: 5px;
+}
+
+.up-down-closed {
+    background-position: 8.5px !important;
+    width: 34px !important;
+    height: 34px !important;
+    background-size: 18.7px 20.4px;
+}
+
+.info-header:hover .up-down-icon {
+    background-color: #f1f1f1;
+}
