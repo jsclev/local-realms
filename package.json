@@ -1,0 +1,31 @@
+{
+  "name": "local-realms",
+  "version": "1.0.0",
+  "description": "Website and app for locating friendly local game stores.",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "libphonenumber-js": "^1.7.15",
+    "lunr": "^2.3.6",
+    "vue": "^2.6.10",
+    "vuex": "^3.1.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsclev/local-realms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsclev/local-realms/issues"
+  },
+  "homepage": "https://github.com/jsclev/local-realms#readme"
+}

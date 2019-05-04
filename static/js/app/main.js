@@ -1,11 +1,32 @@
-if ("geolocation" in navigator) {
-    // console.log('geolocation available');
-  /* geolocation is available */
-} else {
-  /* geolocation IS NOT available */
-}
+import Vue from 'vue'
+import Filters from './components/Filters.vue'
+import MapContainer from './components/Map.vue'
+import Menu from './components/Menu.vue'
+import SearchBox from './components/SearchBox.vue'
+import SelectedGameStore from './components/SelectedGameStore.vue'
+import StoreList from './components/StoreList.vue'
 
-L.mapbox.accessToken = document.getElementById('mapboxAccessToken').value;
-const map = L.mapbox.map('map')
-    .setView([38.836684, -104.842041], 4)
-    .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+new Vue({
+    el: '#app',
+    components: {
+        Filters,
+        MapContainer,
+        Menu,
+        SearchBox,
+        SelectedGameStore,
+        StoreList
+    },
+    template: `
+        <div>
+            <div id="menu-dim"></div>
+            <div id="main-panel">
+                <SearchBox></SearchBox>
+                <Filters></Filters>
+                <div id="filter-dim"></div>
+                <StoreList></StoreList>
+                <MapContainer></MapContainer>
+                <SelectedGameStore></SelectedGameStore>
+            </div>
+            <Menu></Menu>
+        </div>`
+});

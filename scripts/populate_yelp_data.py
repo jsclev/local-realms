@@ -44,6 +44,3 @@ with open('./data/yelp.json', 'r') as f:
             store.latitude = latitude
             store.longitude = longitude
             store.save()
-
-            print('Added ' + name)
-
