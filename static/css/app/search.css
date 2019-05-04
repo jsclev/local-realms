@@ -1,0 +1,110 @@
+#input-container {
+    padding: 0 10px;
+    font-size: 14px;
+    border-radius: 10px;
+    height: 48px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-transition: ease 250ms;
+    -moz-transition: ease 250ms;
+    -ms-transition: ease 250ms;
+    -o-transition: ease 250ms;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    margin: 0;
+
+
+}
+
+.input-common {
+    outline: none;
+    border: none;
+    height: 30px;
+    display: inline-block;
+    width: 80%;
+    font-size: 15px;
+}
+
+.input-common-default {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0 rgba(0, 0, 0, 0.02);
+    border: 1px solid #fff;
+    -webkit-transition: ease 250ms;
+    -moz-transition: ease 250ms;
+    -ms-transition: ease 250ms;
+    -o-transition: ease 250ms;
+    background-color: white;
+}
+
+.search-outer {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    -webkit-transition: ease 250ms;
+    -moz-transition: ease 250ms;
+    -ms-transition: ease 250ms;
+    -o-transition: ease 250ms;
+    background-color: white;
+    flex: 0 1 40px;
+    z-index: 502;
+}
+
+.search-outer-after {
+    padding: 5px !important;
+}
+
+#search-form {
+    width: 227px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    padding: 10px;
+}
+
+/*-----Icons-----*/
+
+#search-input:focus + #main-search-icon {
+    background-image: url("../../images/search/search-red.svg") !important;
+}
+
+.menu-icon {
+    background-image: url("../../images/search/menu.svg");
+    background-repeat: no-repeat;
+    margin: 0 10px 0 0;
+    background-position: center;
+}
+
+.search-icon {
+    background-image: url("../../images/search/search.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+
+.search-icon::-moz-focus-inner {
+    border: 0;
+}
+
+#menu-back-icon {
+    background-image: url("../../images/back-arrow.svg");
+    -webkit-transition: right 250ms;
+    -moz-transition: right 250ms;
+    -ms-transition: right 250ms;
+    -o-transition: right 250ms ease;
+    transition: right 250ms ease;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#filter-search {
+    background-image: url("../../images/search/filter-light.svg");
+    margin: 0 5px
+}
+

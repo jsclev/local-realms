@@ -1,9 +1,8 @@
 <template>
     <div>
-        <div id="selected-game-store"
-             class="selected-game-store-closed selected-game-store selected-game-store-select"
+        <div class="selected-game-store-closed selected-game-store selected-game-store-select"
              v-show="selectedGameStore">
-            <div id="info-header" class="info-header-class">
+            <div class="info-header info-header-class">
                 <div style="display: flex;justify-content: center;flex-direction: column;"
                      v-if="selectedGameStore">{{ selectedGameStore.business.name }}
                 </div>
@@ -36,7 +35,7 @@
             <a v-if="selectedGameStore" v-show="selectedGameStore.business.email"
                :href="'mailto:' + selectedGameStore.business.email" target="_blank">
                 <div class="info-list-container tooltip">
-                    <div id="email-icon" class="info-icon"></div>
+                    <div class="info-icon email-icon"></div>
                     <div class="info-text" v-if="selectedGameStore">
                         {{ selectedGameStore.business.email }}
                     </div>
@@ -45,7 +44,7 @@
             </a>
             <a v-if="selectedGameStore" v-show="!selectedGameStore.business.email">
                 <div class="info-list-container">
-                    <div id="email-icon" class="info-icon"></div>
+                    <div class="info-icon email-icon"></div>
                     <div class="info-text" v-if="selectedGameStore">
                         None
                     </div>
@@ -63,7 +62,7 @@
         <div v-show="!selectedGameStore"
              class="selected-game-store-closed selected-game-store selected-game-store-select"
              id="selected-game-store">
-            <div id="info-header" class="info-header-class">
+            <div class="info-header info-header-class">
                 <div style="display: flex;justify-content: center;flex-direction: column;">Select a store
                 </div>
                 <div class="icon up-icon-position up-down-icon up-down-closed"></div>
