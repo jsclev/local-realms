@@ -28,3 +28,19 @@
         }
     }
 </script>
+
+<style scoped>
+    #menu {
+        width: 350px;
+        height: 100%;
+        position: absolute;
+        z-index: 1000;
+        background-color: white;
+        transition: ease 250ms;
+        left: -350px;
+    }
+
+    .menu-open {
+        left: 0 !important;
+    }
+</style>

@@ -74,7 +74,7 @@
                 searchContainer.removeClass("input-common-filter");
                 searchOuter.removeClass("search-outer-after-filter");
                 $('#filter-dim').removeClass('dimmed');
-            })
+            });
             // Ripple effect
             (function () {
                 let cleanUp, debounce, i, len, ripple, rippleContainer, ripples, showRipple;

@@ -60,3 +60,51 @@
         }
     }
 </script>
+
+<style scoped>
+    #store-list {
+        background-color: transparent;
+        overflow-y: auto;
+    }
+
+    .entity-list {
+        height: 100%;
+        -webkit-transition: ease 250ms;
+        -moz-transition: ease 250ms;
+        -ms-transition: ease 250ms;
+        -o-transition: ease 250ms;
+        transition: ease 250ms;
+        border-top: white 0 solid;
+        flex: 0 1 auto;
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+    }
+
+    .section-result {
+        display: inline-block;
+        width: 85%;
+        padding: 14px 0 14px 6px;
+        height: 100%;
+    }
+
+    .section-result-main {
+        display: flex;
+        align-items: center;
+        border-bottom: #f2f2f2 1px solid;
+    }
+
+    .section-result-main:hover {
+        background-color: #f9f9f9;
+    }
+
+    .section-result-title {
+        font-size: 18px;
+    }
+
+    .section-result-details {
+        font-size: 11px;
+        color: dimgray;
+    }
+
+
+</style>
