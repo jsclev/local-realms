@@ -19,10 +19,10 @@
 .filter-expanded {
     max-height: 100% !important;
     flex: 0 0 auto;
-    padding: 0 0 5px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     0 -1px 0 rgba(0, 0, 0, 0.02);
     border-top: #e4e4e4 2px solid;
+    padding: 0;
 }
 
 .search-outer-after-filter {
@@ -62,6 +62,8 @@
     width: 380px;
     top: 57px;
     z-index: 501;
+    display: flex;
+    flex-direction: column;
 }
 
 #tag-filters {
@@ -79,6 +81,11 @@
     outline: none;
     background-color: transparent;
     cursor: pointer;
+    -webkit-transition: ease 75ms;
+    -moz-transition: ease 75ms;
+    -ms-transition: ease 75ms;
+    -o-transition: ease 75ms;
+    transition: ease 75ms;
 }
 
 .tag-filter {
@@ -112,3 +119,150 @@
     opacity: 0;
 }
 
+/*.button {*/
+/*    border-radius: 5px;*/
+/*    border: none;*/
+/*    font-size: 15px;*/
+/*    -webkit-transition: ease 80ms;*/
+/*    -moz-transition: ease 80ms;*/
+/*    -ms-transition: ease 80ms;*/
+/*    -o-transition: ease 80ms;*/
+/*    transition: ease 80ms;*/
+/*    height: 40px;*/
+/*    width: 130px;*/
+/*    background-color: #ededed;*/
+/*    outline: none;*/
+/*    margin: 10px 5px 5px 10px;*/
+/*    color: #414141;*/
+
+/*}*/
+
+/*#save-changes {*/
+/*    width: 215px;*/
+/*    background-color: #f3f3f3;*/
+/*    margin: 10px 10px 5px 5px;*/
+/*    color: #a7a7a7;*/
+
+/*}*/
+
+/*.save-changes-allowed {*/
+/*    background-color: #00bf6f !important;*/
+/*    color: white !important;*/
+/*    cursor: pointer;*/
+/*}*/
+
+.content button {
+    border: none;
+    font-size: 12px;
+    outline: 0;
+    border-radius: 3px;
+    height: 30px;
+    margin: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 100ms ease;
+}
+
+.apply {
+    width: 70px;
+    background-color: #2962ff;
+    color: white;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.apply:active {
+    background-color: #0042ff !important;
+}
+
+.cancel {
+    width: 60px;
+    color: #2962ff;
+}
+
+.cancel:hover {
+
+}
+
+.apply:hover {
+    background-color: rgba(41, 98, 255, 0.9);
+}
+
+.cancel:hover {
+    background-color: rgba(41, 98, 255, 0.1);
+}
+
+.content {
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    border-top: #e4e4e4 1px solid;
+
+}
+
+[ripple] {
+    position: relative;
+    overflow: hidden;
+}
+
+[ripple] .ripple--container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+[ripple] .ripple--container span {
+    transform: scale(0);
+    border-radius: 100%;
+    position: absolute;
+    opacity: 0.3;
+    background-color: #fff;
+    animation: ripple 500ms;
+}
+
+.cancel .ripple--container span {
+    background-color: rgba(41, 98, 255, 0.5);;
+}
+
+@-moz-keyframes ripple {
+    to {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+@-webkit-keyframes ripple {
+    70% {
+        transform: scale(2);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-o-keyframes ripple {
+    to {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+@keyframes ripple {
+    40% {
+        opacity: .3;
+        transform: scale(2);
+    }
+    50% {
+        opacity: 0;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.number-filters {
+    color: #8f8f8f;
+    font-size: 14px;
+    margin: auto auto auto 25px;
+}
