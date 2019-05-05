@@ -323,9 +323,10 @@ store = Store(business=business, city='Warrenton', state_code='VA', zip_code='20
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.location_heading = 'Warrenton Village Center'
 store.street1 = '251 W Lee Hwy'
-store.street2 = 'suite 655'
+store.street2 = 'Suite 655'
 store.latitude = 38.730083
 store.longitude = -77.799671
+store.phone = '540-878-5480'.replace('-', '')
 store.save()
 
 ###############################################################################
