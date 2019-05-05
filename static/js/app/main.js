@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import EditStoreForm from './components/EditStoreForm.vue'
 import Filters from './components/Filters.vue'
 import MapContainer from './components/Map.vue'
 import Menu from './components/Menu.vue'
@@ -9,6 +10,7 @@ import StoreList from './components/StoreList.vue'
 new Vue({
     el: '#app',
     components: {
+        EditStoreForm,
         Filters,
         MapContainer,
         Menu,
@@ -28,5 +30,6 @@ new Vue({
                 <SelectedGameStore></SelectedGameStore>
             </div>
             <Menu></Menu>
+            <EditStoreForm></EditStoreForm>
         </div>`
 });
