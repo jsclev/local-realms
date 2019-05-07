@@ -131,6 +131,24 @@ store.save()
 ###############################################################################
 # Business
 ###############################################################################
+business = Business.objects.create(name='Neverland Games - Lost Boys Hideout')
+business.website = 'neverlandgames.tcgplayerpro.com'
+business.facebook = 'www.facebook.com/Neverland.Games'
+business.email = 'info@neverlandgamestore.com'
+business.save()
+
+store = Store(business=business, city='Hagerstown', state_code='MD', zip_code='21740')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.street1 = '17301 Valley Mall Rd'
+store.street2 = 'Suite 416'
+store.latitude = 39.624662
+store.longitude = -77.767881
+store.phone = '240-513-6055'.replace('-', '')
+store.save()
+
+###############################################################################
+# Business
+###############################################################################
 business = Business.objects.create(name='Dream Wizards')
 business.website = 'www.dreamwizards.com'
 business.facebook = 'www.facebook.com/dreamwizards'

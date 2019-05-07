@@ -20,7 +20,7 @@ headers = {
 
 business_ids = set()
 
-zip_codes = ZipCode.objects.filter(state_code='MS').order_by('state_code', 'zip_code')
+zip_codes = ZipCode.objects.filter(state_code='ME').order_by('state_code', 'zip_code')
 
 for zip_code in zip_codes:
     print('Getting stores for ' + zip_code.zip_code)

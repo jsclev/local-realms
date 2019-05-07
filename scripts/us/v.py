@@ -102,6 +102,22 @@ store.save()
 ###############################################################################
 # Business
 ###############################################################################
+business = Business(name='Gamer Oasis')
+business.facebook = 'www.facebook.com/GamerOasis'
+business.save()
+
+store = Store(business=business, city='Harrisonburg', state_code='VA', zip_code='22801')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.location_heading = 'Cloverleaf Shopping Center'
+store.street1 = '111 S Carlton St'
+store.latitude = 38.441948
+store.longitude = -78.855953
+store.phone = '540-217-2672'.replace('-', '')
+store.save()
+
+###############################################################################
+# Business
+###############################################################################
 business = Business.objects.get(name='G2K Games')
 
 store = Store(business=business, city='Kingsport', state_code='VA', zip_code='37660')
@@ -355,4 +371,19 @@ store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.street1 = '27 Main St'
 store.latitude = 43.299009
 store.longitude = -72.482226
+store.save()
+
+###############################################################################
+# Business
+###############################################################################
+business = Business(name='Comic Kung Fu')
+business.website = 'www.facebook.com/ComicKungFu'
+business.save()
+
+store = Store(business=business, city='Winchester', state_code='VA', zip_code='22601')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.street1 = '672 N Loudoun St'
+store.latitude = 39.195943
+store.longitude = -78.160509
+store.phone = '540-667-5497'.replace('-', '')
 store.save()
