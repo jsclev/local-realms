@@ -21,7 +21,7 @@ def get_shops(request):
     businesses = Business.objects.all().order_by('name')
     for business in businesses:
         if business.name in forbidden_stores:
-            businesses.exclude(name=business.name)
+            businesses = businesses.exclude(name=business.name)
             print('%s has a forbidden name.  Removing from queryset.' % business.name)
     serializer = BusinessSerializer(businesses, many=True)
 
