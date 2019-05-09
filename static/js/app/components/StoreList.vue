@@ -56,7 +56,23 @@
             },
             selectGameStore(gameStore) {
                 store.dispatch('setSelectedGameStore', gameStore, {root: true});
+                const latLng = L.latLng(gameStore.lat, gameStore.lng);
+                var popup = new L.Popup({closeOnClick: false})
+                    .setLatLng(latLng)
+                    .setContent(this.getPopupHtml(gameStore))
+                    .openOn(map);
+                console.log('test');
             },
+             getPopupHtml(gameStore) {
+                 let html = "<b>";
+                 html += gameStore.business.name;
+                 html += '</b><br>';
+                 html += gameStore.street1;
+                 html += '<br>';
+                 html += gameStore.city + ", " + gameStore.stateCode;
+
+                 return html;
+             }
         }
     }
 </script>
