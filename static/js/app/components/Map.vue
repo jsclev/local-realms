@@ -12,8 +12,15 @@
     export default {
         data: function () {
             return {
-                markerGroup: L.featureGroup()
+                markerGroup: L.featureGroup(),
+                userLocationMarker: L.marker()
             }
+        },
+        created: function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(this.markUserLocation);
+            }
+
         },
         mounted: function () {
             store.dispatch('businessList/getBusinesses', null, {root: true});
@@ -67,6 +74,14 @@
                 html += gameStore.city + ", " + gameStore.stateCode;
 
                 return html;
+            },
+            markUserLocation(location){
+                let lat = location.coords.latitude;
+                let lng = location.coords.longitude;
+                const latLng = L.latLng(lat, lng);
+                const marker = L.marker(latLng);
+                marker.bindPopup("Your Location");
+                marker.addTo(map);
             }
         }
     }
