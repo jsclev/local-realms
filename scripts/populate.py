@@ -5,6 +5,7 @@ django.setup()
 
 from apps.finder.models import Category
 from apps.finder.models import Business
+from apps.finder.models import StoreBlacklistItem
 from apps.finder.models import Tag
 
 Tag.objects.all().delete()
@@ -25,6 +26,11 @@ Tag.objects.create(name='Role Playing Games',
 Tag.objects.create(name='Warhammer Only')
 Tag.objects.create(name='Play Space')
 Tag.objects.create(name='Events and Tournaments')
+
+StoreBlacklistItem.objects.create(name='Gamestop')
+StoreBlacklistItem.objects.create(name='GameStop')
+StoreBlacklistItem.objects.create(name='Barnes & Noble')
+StoreBlacklistItem.objects.create(name='Barnes & Noble Booksellers')
 
 os.system('python us/a.py')
 os.system('python us/c.py')
