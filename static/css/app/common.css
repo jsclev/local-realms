@@ -237,6 +237,23 @@ a {
 #about-link {
     position: absolute;
     top: 12px;
+    right: 150px;
+    z-index: 100;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0 rgba(0, 0, 0, 0.02);
+    border: 1px solid #fff;
+    -webkit-transition: ease 250ms;
+    -moz-transition: ease 250ms;
+    -ms-transition: ease 250ms;
+    -o-transition: ease 250ms;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px 10px;
+}
+
+#contact-link {
+    position: absolute;
+    top: 12px;
     right: 20px;
     z-index: 100;
     color: white;

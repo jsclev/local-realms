@@ -22,6 +22,12 @@ def get_about(request):
     return render(request, 'about.html', locals())
 
 
+def get_contact(request):
+    version = settings.__version__
+
+    return render(request, 'contact.html', locals())
+
+
 def get_shops(request):
     businesses = Business.objects.all().order_by('name')
     serializer = BusinessSerializer(businesses, many=True)
