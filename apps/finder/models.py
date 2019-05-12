@@ -53,6 +53,13 @@ class Store(models.Model):
         db_table = 'store'
 
 
+class StoreBlacklistItem(models.Model):
+    name = models.TextField(default='', blank=True)
+
+    class Meta:
+        db_table = 'store_blacklist_item'
+
+
 class StoreTag(models.Model):
     store = models.ForeignKey(Business, related_name='tags', on_delete=models.CASCADE)
     tag = models.ForeignKey(Tag, on_delete=models.CASCADE)

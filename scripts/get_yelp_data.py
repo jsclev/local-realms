@@ -7,7 +7,7 @@ import time
 
 django.setup()
 
-from apps.finder.models import Store, ZipCode
+from apps.finder.models import Store, StoreBlacklistItem, ZipCode
 
 http = httplib2.Http()
 
@@ -20,7 +20,7 @@ headers = {
 
 business_ids = set()
 
-zip_codes = ZipCode.objects.filter(state_code='MS').order_by('state_code', 'zip_code')
+zip_codes = ZipCode.objects.filter(state_code='MA').order_by('state_code', 'zip_code')
 
 for zip_code in zip_codes:
     print('Getting stores for ' + zip_code.zip_code)
@@ -51,16 +51,18 @@ with open('./data/yelp.json', 'a') as outfile:
         json_obj = loads(content)
 
         if 'name' in json_obj:
-            name = json_obj['name']
-            city = json_obj['location']['city']
-            state_code = json_obj['location']['state']
-            zip_code = json_obj['location']['zip_code']
+            name = json_obj['name'].strip()
+            city = json_obj['location']['city'].strip()
+            state_code = json_obj['location']['state'].strip()
+            zip_code = json_obj['location']['zip_code'].strip()
 
             if Store.objects.filter(business__name=name,
                                     city=city,
                                     state_code=state_code,
                                     zip_code=zip_code).exists():
                 print('Store already exists: ' + str(json_obj))
+            elif StoreBlacklistItem.objects.filter(name=name).exists():
+                print("Won't add store, it's on the blacklist: " + name)
             else:
                 json.dump(json_obj, outfile, ensure_ascii=False)
                 outfile.write('\n')

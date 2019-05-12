@@ -1,3 +1,4 @@
+import axios from 'axios'
 import lunr from 'lunr'
 
 export default {
@@ -35,8 +36,7 @@ export default {
                 }
 
                 return filteredBusinesses;
-            }
-            else {
+            } else {
                 if (state.geographicBounds) {
                     const filteredBusinesses = [];
 
@@ -55,8 +55,7 @@ export default {
                     }
 
                     return filteredBusinesses;
-                }
-                else {
+                } else {
                     return state.businesses;
                 }
             }
@@ -64,46 +63,51 @@ export default {
     },
     actions: {
         getBusinesses({commit}) {
-            $.get('shops/', function (businesses, status) {
-                commit('setBusinesses', businesses);
+            axios.get('shops/')
+                .then(response => {
+                    commit('setBusinesses', response.data);
 
-                const idx = lunr(function () {
-                    this.ref('id');
-                    this.field('name');
-                    this.field('businessName');
-                    this.field('street1');
-                    this.field('city');
-                    this.field('zipCode');
+                    const idx = lunr(function () {
+                        this.ref('id');
+                        this.field('name');
+                        this.field('businessName');
+                        this.field('street1');
+                        this.field('city');
+                        this.field('zipCode');
 
-                    this.pipeline.remove(lunr.stemmer);
-                    this.pipeline.remove(lunr.stopWordFilter);
+                        this.pipeline.remove(lunr.stemmer);
+                        this.pipeline.remove(lunr.stopWordFilter);
 
-                    for (let business of businesses) {
-                        for (let gameStore of business.stores) {
-                            const doc = {
-                                id: gameStore.id,
-                                businessName: business.name,
-                                name: gameStore.name,
-                                street1: gameStore.street1,
-                                city: gameStore.city,
-                                zipCode: gameStore.zipCode
-                            };
+                        for (let business of response.data) {
+                            for (let gameStore of business.stores) {
+                                const doc = {
+                                    id: gameStore.id,
+                                    businessName: business.name,
+                                    name: gameStore.name,
+                                    street1: gameStore.street1,
+                                    city: gameStore.city,
+                                    zipCode: gameStore.zipCode
+                                };
 
-                            this.add(doc);
+                                this.add(doc);
+                            }
                         }
-                    }
-                });
+                    });
 
-                commit('setSearchIndex', idx);
-            });
+                    commit('setSearchIndex', idx);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
         },
         getTags({commit}) {
             commit('setIsLoadingTags', true);
 
-            $.get('tags/', function (tags) {
-                commit('setTags', tags);
-                commit('setIsLoadingTags', false);
-            });
+            axios.get('tags/')
+                .then(response => {
+                    commit('setTags', response.data);
+                    commit('setIsLoadingTags', false);
+                });
         },
         search({commit, state}, searchString) {
             if (state.searchIndex) {

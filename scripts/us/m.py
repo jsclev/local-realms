@@ -45,6 +45,21 @@ store.save()
 ###############################################################################
 # Business
 ###############################################################################
+business = Business.objects.create(name='Arkham Games')
+business.facebook = 'www.facebook.com/arkhamgames'
+business.save()
+
+store = Store(business=business, city='Cumberland', state_code='MD', zip_code='21502')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.street1 = '1068 National Hwy'
+store.latitude = 39.640022
+store.longitude = -78.827243
+store.phone = '304-209-1413'.replace('-', '')
+store.save()
+
+###############################################################################
+# Business
+###############################################################################
 business = Business.objects.create(name='Check Us First')
 business.website = 'checkusfirst.tcgplayerpro.com'
 business.facebook = 'www.facebook.com/CheckUsFirst'
@@ -126,6 +141,41 @@ store.street1 = '18749 N Frederick Ave'
 store.latitude = 39.163650
 store.longitude = -77.225354
 store.phone = '301-216-0007'.replace('-', '')
+store.save()
+
+###############################################################################
+# Business
+###############################################################################
+business = Business.objects.create(name='Neverland Games - Lost Boys Hideout')
+business.website = 'neverlandgames.tcgplayerpro.com'
+business.facebook = 'www.facebook.com/Neverland.Games'
+business.email = 'info@neverlandgamestore.com'
+business.save()
+
+store = Store(business=business, city='Hagerstown', state_code='MD', zip_code='21740')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.street1 = '17301 Valley Mall Rd'
+store.street2 = 'Suite 416'
+store.latitude = 39.624662
+store.longitude = -77.767881
+store.phone = '240-513-6055'.replace('-', '')
+store.save()
+
+###############################################################################
+# Business
+###############################################################################
+business = Business.objects.create(name='Our House Games, LLC.')
+business.website = 'www.ourhousegames.com'
+business.facebook = 'www.facebook.com/OurHouseGames'
+business.email = 'contact@ourhousegames.com'
+business.save()
+
+store = Store(business=business, city='Monroe', state_code='MI', zip_code='48161')
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.street1 = '1211 S Monroe St'
+store.latitude = 41.905184
+store.longitude = -83.406853
+store.phone = '734-242-4263'.replace('-', '')
 store.save()
 
 ###############################################################################

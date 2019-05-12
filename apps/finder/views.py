@@ -16,8 +16,20 @@ def get_home(request):
     return render(request, 'home.html', locals())
 
 
+def get_about(request):
+    version = settings.__version__
+
+    return render(request, 'about.html', locals())
+
+
+def get_contact(request):
+    version = settings.__version__
+
+    return render(request, 'contact.html', locals())
+
+
 def get_shops(request):
-    businesses = Business.objects.all().order_by('name')[:50]
+    businesses = Business.objects.all().order_by('name')
     serializer = BusinessSerializer(businesses, many=True)
 
     return JsonResponse(serializer.data, safe=False)
