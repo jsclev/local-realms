@@ -3,6 +3,10 @@
         <div class="header">
             <div id="menu-back-icon" class="icon"></div>
         </div>
+        <div id="menu-content">
+            <a id="about-link" class="menu-item" href="about/">About Us</a>
+            <a id="contact-link" class="menu-item" href="contact/">Contact Us</a>
+        </div>
     </div>
 </template>
 
@@ -38,9 +42,29 @@
         background-color: white;
         transition: ease 250ms;
         left: -350px;
+        display: flex;
+        flex-direction: column;
     }
 
     .menu-open {
         left: 0 !important;
     }
+
+    .menu-item {
+        color: black;
+        -webkit-transition: ease 250ms;
+        -moz-transition: ease 250ms;
+        -ms-transition: ease 250ms;
+        -o-transition: ease 250ms;
+        padding: 6px 10px;
+
+    }
+
+    #about-link {
+    }
+
+    #contact-link {
+
+    }
+
 </style>

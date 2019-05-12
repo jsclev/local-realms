@@ -26,7 +26,7 @@
 
 <script>
     import store from '../store/index';
-    import {MDCTextField} from '@material/textfield';
+    // import {MDCTextField} from '@material/textfield';
 
 
     export default {
@@ -36,7 +36,7 @@
                 $('#edit').addClass('open');
             });
 
-            const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
+            // const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
 
         },
         computed: {
