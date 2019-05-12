@@ -4,24 +4,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
     <meta name="description"
           content="Visit a Friendly Local Game Store (FLGS) today.  Find local board game stores and board game cafes in North America."/>
     <title>Local Game Store Finder</title>
 
     <link rel="icon" type="image/png" sizes="32x32" href="{% static "images/favicon.ico" %}?v=1"/>
 
-    <link href="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css" rel="stylesheet" />
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet" />
-    <link href="{% static "css/app/common.css" %}?v={{ version }}" rel="stylesheet" />
-    <link href="{% static "css/app/filter.css" %}?v={{ version }}" rel="stylesheet" />
-    <link href="{% static "css/app/store.css" %}?v={{ version }}" rel="stylesheet" />
-    <link href="{% static "css/app/search.css" %}?v={{ version }}" rel="stylesheet" />
+    <link href="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css" rel="stylesheet"/>
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet"/>
+    <link href="{% static "css/app/common.css" %}?v={{ version }}" rel="stylesheet"/>
+    <link href="{% static "css/app/filter.css" %}?v={{ version }}" rel="stylesheet"/>
+    <link href="{% static "css/app/store.css" %}?v={{ version }}" rel="stylesheet"/>
+    <link href="{% static "css/app/search.css" %}?v={{ version }}" rel="stylesheet"/>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
 
     <script src="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js"></script>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
 </head>
 <body>
-<input type="hidden" id="mapboxAccessToken" value="{{ mapbox_access_token }}" />
+<input type="hidden" id="mapboxAccessToken" value="{{ mapbox_access_token }}"/>
 <div id="map"></div>
 <div id="app"></div>
 <script>

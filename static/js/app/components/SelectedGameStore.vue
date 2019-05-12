@@ -9,7 +9,7 @@
                 <div class="icon up-icon-position up-down-icon up-down-closed"></div>
 
             </div>
-            <div v-if="selectedGameStore" @click="edit()">Edit</div>
+            <button id="edit" v-if="selectedGameStore" @click="edit()">Edit</button>
             <a v-if="selectedGameStore"
                :href="'https://www.google.com/maps/place/' + selectedGameStore.street1 + ' ' + selectedGameStore.city + ' ' + selectedGameStore.stateCode + ' ' + selectedGameStore.zipCode"
                target="_blank" style="text-decoration: none">

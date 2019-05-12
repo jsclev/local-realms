@@ -24,12 +24,12 @@
 
 .info-header {
     font-size: 21px;
-    margin-left: 4px;
     display: flex;
     justify-content: space-between;
     align-content: center;
     transition: font-size 250ms ease;
     cursor: pointer;
+    /*padding: 5px 5px 5px 5px;*/
 }
 
 .info-list-container {

@@ -171,6 +171,28 @@ a {
     height: 100%;
 }
 
+:root {
+  --mdc-theme-primary: #2962ff !important;
+  --mdc-theme-secondary: #fafafa !important;
+  --mdc-theme-on-primary: #fff !important;
+  --mdc-theme-on-secondary: #fff !important;
+
+}
+
+    .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+        color: #2962ff !important;
+    }
+    .mdc-text-field {
+        height: 46px !important;
+    }
+    .mdc-text-field .mdc-floating-label {
+        top: 13px !important;
+    }
+
+    .mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
+        transform: translateY(-105.6%) scale(.75) !important;
+    }
+
 /*-----Transitions-----*/
 
 @-webkit-keyframes swing {
