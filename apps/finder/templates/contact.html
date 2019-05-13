@@ -3,13 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <meta name="description"
-          content="Visit a Friendly Local Game Store (FLGS) today.  Find local board game stores and board game cafes in North America."/>
-    <title>Local Game Store Finder</title>
-
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static "images/favicon.ico" %}?v=1"/>
+    {% include "common_head.html" %}
+    <title>Local Realms</title>
 
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet" />
     <link href="{% static "css/app/common.css" %}?v={{ version }}" rel="stylesheet" />

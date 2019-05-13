@@ -1,0 +1,22 @@
+{% load staticfiles %}
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140022542-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-140022542-1');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
+<meta name="description"
+      content="Visit a Friendly Local Game Store (FLGS) today.  Find local board game stores and board game cafes in North America."/>
+<title>Friendly Local Game Store Finder</title>
+
+<link rel="icon" type="image/png" sizes="32x32" href="{% static "images/favicon.ico" %}?v=1"/>

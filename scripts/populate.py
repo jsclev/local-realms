@@ -3,10 +3,17 @@ import os
 
 django.setup()
 
+from django.contrib.sites.models import Site
+
 from apps.finder.models import Category
 from apps.finder.models import Business
 from apps.finder.models import StoreBlacklistItem
 from apps.finder.models import Tag
+
+site = Site.objects.all()[0]
+site.domain = 'localrealms.com'
+site.name = 'Local Realms'
+site.save()
 
 Tag.objects.all().delete()
 Category.objects.all().delete()
