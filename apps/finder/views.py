@@ -29,7 +29,8 @@ def get_contact(request):
 
 
 def get_shops(request):
-    businesses = Business.objects.all().order_by('name')
+    businesses = Business.objects.all().order_by('name',
+                                                 )
     serializer = BusinessSerializer(businesses, many=True)
 
     return JsonResponse(serializer.data, safe=False)

@@ -21,6 +21,10 @@
                     </div>
                     <span class="tooltiptext">Google Maps</span>
                 </div>
+                <div v-if="addressLastUpdatedDate"
+                     class="info-text last-verified">
+                    {{ addressLastUpdatedDate }}
+                </div>
             </a>
             <a v-if="selectedGameStore" :href="'https://' + selectedGameStore.business.website"
                target="_blank" style="text-decoration: none">
@@ -54,10 +58,14 @@
             <div class="info-list-container tooltip">
                 <div id="phone-icon" class="info-icon"></div>
                 <div class="info-text" v-if="selectedGameStore">
-                    <span v-show="selectedGameStore.phone">{{ formattedPhoneNumber }}</span>
-                    <span v-show="!selectedGameStore.phone">None</span>
+                    <span v-if="formattedPhoneNumber">{{ formattedPhoneNumber }}</span>
+                    <span v-else>None</span>
                 </div>
                 <span class="tooltiptext" style="margin-top: 27px;">Phone</span>
+            </div>
+            <div v-if="phoneLastUpdatedDate"
+                 class="info-text last-verified">
+                {{ phoneLastUpdatedDate }}
             </div>
         </div>
         <div v-show="!selectedGameStore"
@@ -75,7 +83,8 @@
 </template>
 
 <script>
-    import {parsePhoneNumberFromString} from 'libphonenumber-js'
+    import moment from 'moment'
+    import {ParseError, parsePhoneNumber} from 'libphonenumber-js'
     import store from '../store/index'
 
     export default {
@@ -95,16 +104,28 @@
                 const gameStore = this.selectedGameStore;
 
                 if (gameStore && gameStore.phone) {
-                    const phoneNumber = parsePhoneNumberFromString(gameStore.phone);
-
-                    if (phoneNumber) {
+                    try {
+                        const phoneNumber = parsePhoneNumber(gameStore.phone, 'US');
                         return phoneNumber.formatNational();
-                    } else {
-                        return gameStore.phone;
+                    } catch (error) {
+                        if (error instanceof ParseError) {
+                            // Not a phone number, non-existent country, etc.
+                            console.log(error.message)
+                        } else {
+                            throw error
+                        }
                     }
+
+                    return gameStore.phone;
                 }
 
-                return '';
+                return null;
+            },
+            addressLastUpdatedDate() {
+                return this.getLastUpdatedDate('Address last verified', 1);
+            },
+            phoneLastUpdatedDate() {
+                return this.getLastUpdatedDate('Phone last verified', 3);
             },
             selectedGameStore() {
                 return store.state.selectedGameStore;
@@ -113,6 +134,25 @@
         methods: {
             edit() {
                 store.dispatch('setIsEditingStore', true, {root: true})
+            },
+            getLastUpdatedDate(prefix, logItemType) {
+                if (this.selectedGameStore) {
+                    const logItems = this.selectedGameStore.logItems;
+
+                    if (logItems.length > 0) {
+                        for (let logItem of logItems) {
+                            if (logItem.logItemType === logItemType) {
+                                let str = prefix + ' ';
+                                str += moment(logItem.lastUpdated).format('MM/DD/YYYY');
+                                str += ' by jsclev';
+
+                                return str;
+                            }
+                        }
+                    }
+                }
+
+                return null;
             }
         }
     }

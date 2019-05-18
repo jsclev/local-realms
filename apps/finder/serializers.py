@@ -17,6 +17,16 @@ class TagSerializer(serializers.ModelSerializer):
                   'description')
 
 
+class StoreLogItemSerializer(serializers.ModelSerializer):
+    logItemType = serializers.IntegerField(source='log_item_type')
+    lastUpdated = serializers.DateTimeField(source='last_updated', format='iso-8601')
+
+    class Meta:
+        model = Store
+        fields = ('logItemType',
+                  'lastUpdated')
+
+
 class StoreSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField()
     name = serializers.CharField()
@@ -28,6 +38,7 @@ class StoreSerializer(serializers.ModelSerializer):
     lat = serializers.DecimalField(source='latitude', max_digits=11, decimal_places=9)
     lng = serializers.DecimalField(source='longitude', max_digits=12, decimal_places=9)
     phone = serializers.CharField()
+    logItems = StoreLogItemSerializer(source='log_items', many=True)
 
     class Meta:
         model = Store
@@ -40,7 +51,8 @@ class StoreSerializer(serializers.ModelSerializer):
                   'zipCode',
                   'lat',
                   'lng',
-                  'phone')
+                  'phone',
+                  'logItems')
 
 
 class BusinessSerializer(serializers.ModelSerializer):

@@ -6,7 +6,6 @@ django.setup()
 from apps.finder.models import Business
 from apps.finder.models import Store
 
-
 ###############################################################################
 # Business
 ###############################################################################

@@ -24,6 +24,11 @@
 <input type="hidden" id="mapboxAccessToken" value="{{ mapbox_access_token }}"/>
 <div id="map"></div>
 <div id="app"></div>
+<div id="social-media">
+    <a href="https://www.facebook.com/LocalRealms" class="nav-link fa fa-facebook-f fa-lg">f</a>
+    <a href="https://twitter.com/LocalRealms" class="nav-link fa fa-twitter-f fa-lg">t</a>
+    <a href="https://www.linkedin.com/company/LocalRealms" class="nav-link fa fa-linkedin-f fa-lg">l</a>
+</div>
 <script>
     L.mapbox.accessToken = document.getElementById('mapboxAccessToken').value;
     const map = L.mapbox.map('map')

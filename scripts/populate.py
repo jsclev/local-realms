@@ -1,13 +1,18 @@
-import django
 import os
+from datetime import datetime
+
+import django
+import pytz
 
 django.setup()
 
 from django.contrib.sites.models import Site
+from django.contrib.auth import get_user_model
 
 from apps.finder.models import Category
-from apps.finder.models import Business
+from apps.finder.models import Store
 from apps.finder.models import StoreBlacklistItem
+from apps.finder.models import StoreLogItem
 from apps.finder.models import Tag
 
 site = Site.objects.all()[0]
@@ -15,9 +20,12 @@ site.domain = 'localrealms.com'
 site.name = 'Local Realms'
 site.save()
 
-Tag.objects.all().delete()
-Category.objects.all().delete()
-Business.objects.all().delete()
+user_model = get_user_model()
+user = user_model.objects.create_user('john',
+                                      password='john',
+                                      email='john@localrealms.com',
+                                      first_name='John',
+                                      last_name='Cleveland')
 
 board_game_category = Category.objects.create(name='Board Games')
 comics_category = Category.objects.create(name='Comics')
@@ -53,3 +61,12 @@ os.system('python us/t.py')
 os.system('python us/u.py')
 os.system('python us/v.py')
 os.system('python us/w.py')
+
+for store in Store.objects.all():
+    for log_item_type in range(4):
+        store_log_item = StoreLogItem()
+        store_log_item.store = store
+        store_log_item.log_item_type = log_item_type
+        store_log_item.user = user
+        store_log_item.last_updated = datetime.now(pytz.utc)
+        store_log_item.save()

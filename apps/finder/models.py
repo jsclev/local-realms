@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -76,9 +77,9 @@ class CategoryQuantity(models.Model):
 
 class StoreLogItem(models.Model):
     store = models.ForeignKey(Store, related_name='log_items', on_delete=models.CASCADE)
-    user = models.TextField(default=None)
     log_item_type = models.IntegerField(default=None, blank=True)
-    timestamp = models.DateTimeField(default=None, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None, blank=False)
+    last_updated = models.DateTimeField(default=None, blank=True)
 
     class Meta:
         db_table = 'store_log_item'

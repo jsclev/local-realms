@@ -256,3 +256,15 @@ a {
     background-image: url('../../images/place-dark.svg');
 }
 
+#social-media {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 100;
+}
+
+.last-verified {
+    font-style: italic;
+    font-size: 11px;
+    margin-left: 32px;
+}
