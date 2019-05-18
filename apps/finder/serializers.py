@@ -1,8 +1,15 @@
+from django.contrib.auth.models import User
 from rest_framework import serializers
 
 from apps.finder.models import Business
 from apps.finder.models import Store
 from apps.finder.models import Tag
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username',)
 
 
 class TagSerializer(serializers.ModelSerializer):
@@ -19,11 +26,13 @@ class TagSerializer(serializers.ModelSerializer):
 
 class StoreLogItemSerializer(serializers.ModelSerializer):
     logItemType = serializers.IntegerField(source='log_item_type')
+    user = UserSerializer()
     lastUpdated = serializers.DateTimeField(source='last_updated', format='iso-8601')
 
     class Meta:
         model = Store
         fields = ('logItemType',
+                  'user',
                   'lastUpdated')
 
 

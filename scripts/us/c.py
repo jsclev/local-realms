@@ -10,6 +10,26 @@ from apps.finder.models import Store
 ###############################################################################
 # Business
 ###############################################################################
+business = Business.objects.get(name='+EV Games')
+business.name = 'Plus EV Games'
+business.website = 'www.plusevgames.com'
+business.facebook = 'www.facebook.com/plusevgames'
+business.email = 'sales@plusevgames.com'
+business.save()
+
+store = Store.objects.get(business=business)
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.street1 = '300 N Lantana St'
+store.street2 = 'Ste #38'
+store.city = 'Camarillo'
+store.state_code = 'CA'
+store.zip_code = '93010'
+store.phone = '805-389-7428'.replace('-', '')
+store.save()
+
+###############################################################################
+# Business
+###############################################################################
 business = Business(name='Enchanted Realms Games and Gifts')
 business.website = 'www.enchantedrealmsgames.com'
 business.facebook = 'www.facebook.com/PetriesGames'

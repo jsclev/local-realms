@@ -144,7 +144,7 @@
                             if (logItem.logItemType === logItemType) {
                                 let str = prefix + ' ';
                                 str += moment(logItem.lastUpdated).format('MM/DD/YYYY');
-                                str += ' by jsclev';
+                                str += ' by ' + logItem.user.username;
 
                                 return str;
                             }

@@ -21,7 +21,7 @@ site.name = 'Local Realms'
 site.save()
 
 user_model = get_user_model()
-user = user_model.objects.create_user('john',
+user = user_model.objects.create_user('jsclev',
                                       password='john',
                                       email='john@localrealms.com',
                                       first_name='John',
