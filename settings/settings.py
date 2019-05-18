@@ -131,5 +131,12 @@ GLOBAL_CONSTANTS = {
                            'DRsNjFzeGx2bWdiaDlrMjIifQ.W1H0lSji_u8g2UX_OlvuqA',
     'STATUS_OPEN': 0,
     'STATUS_CLOSED': 1,
-    'STATUS_CLOSING': 2
+    'STATUS_CLOSING': 2,
+    'BUSINESS_STATUS': 0,
+    'BUSINESS_WEBSITE': 1,
+    'BUSINESS_EMAIL': 2,
+    'BUSINESS_FACEBOOK': 3,
+    'STORE_STATUS': 0,
+    'STORE_ADDRESS': 1,
+    'STORE_PHONE': 2
 }

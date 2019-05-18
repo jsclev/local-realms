@@ -5,7 +5,16 @@ django.setup()
 
 from apps.finder.models import Business
 from apps.finder.models import Store
+from scripts.functions import create_business_log_item
+from scripts.functions import create_store_log_item
 
+BUSINESS_STATUS = settings.GLOBAL_CONSTANTS['BUSINESS_STATUS']
+BUSINESS_WEBSITE = settings.GLOBAL_CONSTANTS['BUSINESS_WEBSITE']
+BUSINESS_EMAIL = settings.GLOBAL_CONSTANTS['BUSINESS_EMAIL']
+BUSINESS_FACEBOOK = settings.GLOBAL_CONSTANTS['BUSINESS_FACEBOOK']
+STORE_STATUS = settings.GLOBAL_CONSTANTS['STORE_STATUS']
+STORE_ADDRESS = settings.GLOBAL_CONSTANTS['STORE_ADDRESS']
+STORE_PHONE = settings.GLOBAL_CONSTANTS['STORE_PHONE']
 
 ###############################################################################
 # Business
@@ -22,6 +31,14 @@ store.latitude = 42.015345
 store.longitude = -91.633349
 store.phone = '319-826-1289'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -42,6 +59,14 @@ store.longitude = -91.716889
 store.phone = '319-390-6441'.replace('-', '')
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -57,6 +82,14 @@ store.latitude = 43.589194
 store.longitude = -116.269873
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -68,6 +101,9 @@ store.latitude = 43.615762
 store.longitude = -116.203093
 store.save()
 
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -78,6 +114,9 @@ store.address1 = '350 N Milwaukee St'
 store.latitude = 43.608643
 store.longitude = -116.278262
 store.save()
+
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -92,3 +131,10 @@ store.address1 = '5147 Main St'
 store.latitude = 41.793356
 store.longitude = -88.010124
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')

@@ -136,10 +136,10 @@
                 return this.getLastUpdatedDate('Email last verified', 0, 2);
             },
             phoneLastUpdated() {
-                return this.getLastUpdatedDate('Phone last verified', 1, 3);
+                return this.getLastUpdatedDate('Phone last verified', 1, 2);
             },
             websiteLastUpdated() {
-                return this.getLastUpdatedDate('Website last verified', 0, 2);
+                return this.getLastUpdatedDate('Website last verified', 0, 1);
             },
             selectedGameStore() {
                 return store.state.selectedGameStore;

@@ -1,10 +1,20 @@
 import django
-from django.conf import settings
 
 django.setup()
 
+from django.conf import settings
 from apps.finder.models import Business
 from apps.finder.models import Store
+from scripts.functions import create_business_log_item
+from scripts.functions import create_store_log_item
+
+BUSINESS_STATUS = settings.GLOBAL_CONSTANTS['BUSINESS_STATUS']
+BUSINESS_WEBSITE = settings.GLOBAL_CONSTANTS['BUSINESS_WEBSITE']
+BUSINESS_EMAIL = settings.GLOBAL_CONSTANTS['BUSINESS_EMAIL']
+BUSINESS_FACEBOOK = settings.GLOBAL_CONSTANTS['BUSINESS_FACEBOOK']
+STORE_STATUS = settings.GLOBAL_CONSTANTS['STORE_STATUS']
+STORE_ADDRESS = settings.GLOBAL_CONSTANTS['STORE_ADDRESS']
+STORE_PHONE = settings.GLOBAL_CONSTANTS['STORE_PHONE']
 
 ###############################################################################
 # Business
@@ -22,6 +32,13 @@ store.longitude = -111.755649
 store.phone = '520-274-9294'.replace('-', '')
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -38,6 +55,13 @@ store.longitude = -110.352997
 store.phone = '520-559-2202'.replace('-', '')
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -52,6 +76,10 @@ store.longitude = -111.787992
 store.phone = '520-460-6891'.replace('-', '')
 store.save()
 
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -64,6 +92,10 @@ store.latitude = 32.221302
 store.longitude = -110.936149
 store.phone = '520-320-0338'.replace('-', '')
 store.save()
+
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -84,6 +116,14 @@ store.longitude = -110.866797
 store.phone = '520-603-4037'.replace('-', '')
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -98,3 +138,7 @@ store.latitude = 32.288937
 store.longitude = -110.975884
 store.phone = '520-460-6891'.replace('-', '')
 store.save()
+
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')

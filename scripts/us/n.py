@@ -5,7 +5,16 @@ django.setup()
 
 from apps.finder.models import Business
 from apps.finder.models import Store
+from scripts.functions import create_business_log_item
+from scripts.functions import create_store_log_item
 
+BUSINESS_STATUS = settings.GLOBAL_CONSTANTS['BUSINESS_STATUS']
+BUSINESS_WEBSITE = settings.GLOBAL_CONSTANTS['BUSINESS_WEBSITE']
+BUSINESS_EMAIL = settings.GLOBAL_CONSTANTS['BUSINESS_EMAIL']
+BUSINESS_FACEBOOK = settings.GLOBAL_CONSTANTS['BUSINESS_FACEBOOK']
+STORE_STATUS = settings.GLOBAL_CONSTANTS['STORE_STATUS']
+STORE_ADDRESS = settings.GLOBAL_CONSTANTS['STORE_ADDRESS']
+STORE_PHONE = settings.GLOBAL_CONSTANTS['STORE_PHONE']
 
 ###############################################################################
 # Business
@@ -22,6 +31,11 @@ store.latitude = 35.171643
 store.longitude = -80.657079
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -36,6 +50,11 @@ store.address2 = 'Suite EE'
 store.latitude = 35.570199
 store.longitude = -82.507587
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -52,6 +71,11 @@ store.latitude = 35.085479
 store.longitude = -80.890651
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -66,6 +90,11 @@ store.latitude = 35.319121
 store.longitude = -80.952932
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -79,6 +108,11 @@ store.address1 = '347 Merrimon Ave'
 store.latitude = 35.610936
 store.longitude = -82.554662
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -95,6 +129,11 @@ store.latitude = 35.439584
 store.longitude = -82.504974
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -109,3 +148,8 @@ store.address1 = 'E150 Morganton Heights Blvd'
 store.latitude = 35.725135
 store.longitude = -81.704035
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')

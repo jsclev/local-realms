@@ -5,7 +5,16 @@ django.setup()
 
 from apps.finder.models import Business
 from apps.finder.models import Store
+from scripts.functions import create_business_log_item
+from scripts.functions import create_store_log_item
 
+BUSINESS_STATUS = settings.GLOBAL_CONSTANTS['BUSINESS_STATUS']
+BUSINESS_WEBSITE = settings.GLOBAL_CONSTANTS['BUSINESS_WEBSITE']
+BUSINESS_EMAIL = settings.GLOBAL_CONSTANTS['BUSINESS_EMAIL']
+BUSINESS_FACEBOOK = settings.GLOBAL_CONSTANTS['BUSINESS_FACEBOOK']
+STORE_STATUS = settings.GLOBAL_CONSTANTS['STORE_STATUS']
+STORE_ADDRESS = settings.GLOBAL_CONSTANTS['STORE_ADDRESS']
+STORE_PHONE = settings.GLOBAL_CONSTANTS['STORE_PHONE']
 
 ###############################################################################
 # Business
@@ -21,6 +30,9 @@ store.latitude = 34.981058
 store.longitude = -81.090907
 store.save()
 
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -34,3 +46,6 @@ store.address2 = 'Suite 117'
 store.latitude = 34.943390
 store.longitude = -80.965526
 store.save()
+
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')

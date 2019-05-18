@@ -5,7 +5,16 @@ django.setup()
 
 from apps.finder.models import Business
 from apps.finder.models import Store
+from scripts.functions import create_business_log_item
+from scripts.functions import create_store_log_item
 
+BUSINESS_STATUS = settings.GLOBAL_CONSTANTS['BUSINESS_STATUS']
+BUSINESS_WEBSITE = settings.GLOBAL_CONSTANTS['BUSINESS_WEBSITE']
+BUSINESS_EMAIL = settings.GLOBAL_CONSTANTS['BUSINESS_EMAIL']
+BUSINESS_FACEBOOK = settings.GLOBAL_CONSTANTS['BUSINESS_FACEBOOK']
+STORE_STATUS = settings.GLOBAL_CONSTANTS['STORE_STATUS']
+STORE_ADDRESS = settings.GLOBAL_CONSTANTS['STORE_ADDRESS']
+STORE_PHONE = settings.GLOBAL_CONSTANTS['STORE_PHONE']
 
 ###############################################################################
 # Business
@@ -19,6 +28,9 @@ store.address1 = '376 Towne Centre Drive'
 store.latitude = 36.701102
 store.longitude = -81.977939
 store.save()
+
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -35,6 +47,13 @@ store.latitude = 39.058097
 store.longitude = -77.445812
 store.phone = '703-466-0460'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -54,6 +73,14 @@ store.longitude = -77.446814
 store.phone = '515-599-0360'.replace('-', '')
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -68,6 +95,11 @@ store.latitude = 38.064315
 store.longitude = -78.488559
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -81,6 +113,11 @@ store.address1 = '103 E Broad St'
 store.latitude = 38.882183
 store.longitude = -77.170760
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -99,6 +136,14 @@ store.longitude = -77.178619
 store.phone = '703-241-9393'.replace('-', '')
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -115,6 +160,12 @@ store.longitude = -78.855953
 store.phone = '540-217-2672'.replace('-', '')
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -128,6 +179,9 @@ store.address2 = 'Suite 36'
 store.latitude = 36.543057
 store.longitude = -82.517806
 store.save()
+
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -145,6 +199,13 @@ store.longitude = -79.445417
 store.phone = '540-724-6124'.replace('-', '')
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -159,6 +220,11 @@ store.latitude = 37.396347
 store.longitude = -79.171051
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -171,6 +237,9 @@ store.address1 = '645 Commonwealth Dr'
 store.latitude = 36.956268
 store.longitude = -82.605011
 store.save()
+
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -192,6 +261,13 @@ store.facebook = 'www.facebook.com/atlantis.norfolk'
 store.phone = '757-502-8954'.replace('-', '')
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -207,6 +283,10 @@ store.email = 'ac1@atlantis-comics.com'
 store.facebook = 'www.facebook.com/atlantis.one'
 store.phone = '757-465-1617'.replace('-', '')
 store.save()
+
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -225,6 +305,14 @@ store.longitude = -80.556410
 store.phone = '540-639-6547'.replace('-', '')
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -241,6 +329,14 @@ store.latitude = 37.553151
 store.longitude = -77.480305
 store.phone = '804-359-5163'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -259,6 +355,14 @@ store.longitude = -79.949687
 store.phone = '540-204-4016'.replace('-', '')
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -276,6 +380,14 @@ store.longitude = -79.893189
 store.phone = '540-342-1460'.replace('-', '')
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -291,6 +403,13 @@ store.latitude = 37.328675
 store.longitude = -79.954230
 store.phone = '540-767-4263'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -310,6 +429,14 @@ store.longitude = -76.178961
 store.phone = '757-420-8008'.replace('-', '')
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -326,6 +453,14 @@ store.latitude = 36.798303
 store.longitude = -76.178961
 store.phone = '757-301-9187'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -345,6 +480,14 @@ store.longitude = -77.799671
 store.phone = '540-878-5480'.replace('-', '')
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -357,6 +500,9 @@ store.address1 = '1321 W Broad St'
 store.latitude = 38.073755
 store.longitude = -78.898431
 store.save()
+
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -373,6 +519,12 @@ store.latitude = 43.299009
 store.longitude = -72.482226
 store.save()
 
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+
 ###############################################################################
 # Business
 ###############################################################################
@@ -387,3 +539,9 @@ store.latitude = 39.195943
 store.longitude = -78.160509
 store.phone = '540-667-5497'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
