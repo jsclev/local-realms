@@ -71,7 +71,7 @@ export default {
                         this.ref('id');
                         this.field('name');
                         this.field('businessName');
-                        this.field('street1');
+                        this.field('address1');
                         this.field('city');
                         this.field('zipCode');
 
@@ -84,7 +84,7 @@ export default {
                                     id: gameStore.id,
                                     businessName: business.name,
                                     name: gameStore.name,
-                                    street1: gameStore.street1,
+                                    address1: gameStore.address1,
                                     city: gameStore.city,
                                     zipCode: gameStore.zipCode
                                 };

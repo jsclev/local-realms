@@ -16,7 +16,7 @@ business.save()
 
 store = Store(business=business, city='Casa Grande', state_code='AZ', zip_code='85122')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '204 N Sacaton St'
+store.address1 = '204 N Sacaton St'
 store.latitude = 32.877465
 store.longitude = -111.755649
 store.phone = '520-274-9294'.replace('-', '')
@@ -32,7 +32,7 @@ business.save()
 
 store = Store(business=business, city='Fort Huachuca', state_code='AZ', zip_code='85635')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '52035 Arizona St'
+store.address1 = '52035 Arizona St'
 store.latitude = 31.557008
 store.longitude = -110.352997
 store.phone = '520-559-2202'.replace('-', '')
@@ -45,8 +45,8 @@ business = Business.objects.get(name='Amazing Discoveries')
 
 store = Store(business=business, city='Gilbert', state_code='AZ', zip_code='85234')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '745 N Gilbert Rd'
-store.street2 = 'Ste 116'
+store.address1 = '745 N Gilbert Rd'
+store.address2 = 'Ste 116'
 store.latitude = 33.363882
 store.longitude = -111.787992
 store.phone = '520-460-6891'.replace('-', '')
@@ -59,7 +59,7 @@ business = Business.objects.get(name='Amazing Discoveries')
 
 store = Store(business=business, city='Tucson', state_code='AZ', zip_code='85719')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '2410 E Broadway Blvd'
+store.address1 = '2410 E Broadway Blvd'
 store.latitude = 32.221302
 store.longitude = -110.936149
 store.phone = '520-320-0338'.replace('-', '')
@@ -77,8 +77,8 @@ business.save()
 store = Store(business=business, city='Tucson', state_code='AZ', zip_code='85711')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.location_heading = 'Park Place Mall'
-store.street1 = '5870 E Broadway Blvd'
-store.street2 = '#110'
+store.address1 = '5870 E Broadway Blvd'
+store.address2 = '#110'
 store.latitude = 32.219918
 store.longitude = -110.866797
 store.phone = '520-603-4037'.replace('-', '')
@@ -92,8 +92,8 @@ business = Business.objects.get(name='Tucson Games and Gadgets')
 store = Store(business=business, city='Tucson', state_code='AZ', zip_code='85705')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.location_heading = 'Tucson Mall'
-store.street1 = '4500 N Oracle'
-store.street2 = '#253'
+store.address1 = '4500 N Oracle'
+store.address2 = '#253'
 store.latitude = 32.288937
 store.longitude = -110.975884
 store.phone = '520-460-6891'.replace('-', '')

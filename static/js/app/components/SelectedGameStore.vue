@@ -11,21 +11,21 @@
             </div>
             <button id="edit" v-if="selectedGameStore" @click="edit()">Edit</button>
             <a v-if="selectedGameStore"
-               :href="'https://www.google.com/maps/place/' + selectedGameStore.street1 + ' ' + selectedGameStore.city + ' ' + selectedGameStore.stateCode + ' ' + selectedGameStore.zipCode"
+               :href="'https://www.google.com/maps/place/' + selectedGameStore.address1 + ' ' + selectedGameStore.city + ' ' + selectedGameStore.stateCode + ' ' + selectedGameStore.zipCode"
                target="_blank" style="text-decoration: none">
                 <div id="info-address" class="info-list-container tooltip">
                     <div id="place-info-icon" class="info-icon"></div>
                     <div v-if="selectedGameStore" class="info-text">
-                        <span v-show="selectedGameStore.street1">{{ selectedGameStore.street1 }}<br/>{{ selectedGameStore.city }}, {{ selectedGameStore.stateCode }} {{ selectedGameStore.zipCode }}</span>
-                        <span v-show="!selectedGameStore.street1">None</span>
+                        <span v-show="selectedGameStore.address1">{{ selectedGameStore.address1 }}<br/>{{ selectedGameStore.city }}, {{ selectedGameStore.stateCode }} {{ selectedGameStore.zipCode }}</span>
+                        <span v-show="!selectedGameStore.address1">None</span>
                     </div>
                     <span class="tooltiptext">Google Maps</span>
                 </div>
-                <div v-if="addressLastUpdatedDate"
-                     class="info-text last-verified">
-                    {{ addressLastUpdatedDate }}
-                </div>
             </a>
+            <div v-if="addressLastUpdated"
+                 class="info-text last-verified">
+                {{ addressLastUpdated }}
+            </div>
             <a v-if="selectedGameStore" :href="'https://' + selectedGameStore.business.website"
                target="_blank" style="text-decoration: none">
                 <div id="website" class="info-list-container tooltip">
@@ -37,6 +37,10 @@
                     <span class="tooltiptext" style="margin-top: 27px;">Go to website</span>
                 </div>
             </a>
+            <div v-if="websiteLastUpdated"
+                 class="info-text last-verified">
+                {{ websiteLastUpdated }}
+            </div>
             <a v-if="selectedGameStore" v-show="selectedGameStore.business.email"
                :href="'mailto:' + selectedGameStore.business.email" target="_blank">
                 <div class="info-list-container tooltip">
@@ -55,6 +59,10 @@
                     </div>
                 </div>
             </a>
+            <div v-if="emailLastUpdated"
+                 class="info-text last-verified">
+                {{ emailLastUpdated }}
+            </div>
             <div class="info-list-container tooltip">
                 <div id="phone-icon" class="info-icon"></div>
                 <div class="info-text" v-if="selectedGameStore">
@@ -63,9 +71,9 @@
                 </div>
                 <span class="tooltiptext" style="margin-top: 27px;">Phone</span>
             </div>
-            <div v-if="phoneLastUpdatedDate"
+            <div v-if="phoneLastUpdated"
                  class="info-text last-verified">
-                {{ phoneLastUpdatedDate }}
+                {{ phoneLastUpdated }}
             </div>
         </div>
         <div v-show="!selectedGameStore"
@@ -121,11 +129,17 @@
 
                 return null;
             },
-            addressLastUpdatedDate() {
-                return this.getLastUpdatedDate('Address last verified', 1);
+            addressLastUpdated() {
+                return this.getLastUpdatedDate('Address last verified', 1, 1);
             },
-            phoneLastUpdatedDate() {
-                return this.getLastUpdatedDate('Phone last verified', 3);
+            emailLastUpdated() {
+                return this.getLastUpdatedDate('Email last verified', 0, 2);
+            },
+            phoneLastUpdated() {
+                return this.getLastUpdatedDate('Phone last verified', 1, 3);
+            },
+            websiteLastUpdated() {
+                return this.getLastUpdatedDate('Website last verified', 0, 2);
             },
             selectedGameStore() {
                 return store.state.selectedGameStore;
@@ -135,9 +149,15 @@
             edit() {
                 store.dispatch('setIsEditingStore', true, {root: true})
             },
-            getLastUpdatedDate(prefix, logItemType) {
+            getLastUpdatedDate(prefix, level, logItemType) {
                 if (this.selectedGameStore) {
-                    const logItems = this.selectedGameStore.logItems;
+                    let logItems = [];
+                    if (level === 0) {
+                        logItems = this.selectedGameStore.business.logItems;
+                    }
+                    else if (level === 1) {
+                        logItems = this.selectedGameStore.logItems;
+                    }
 
                     if (logItems.length > 0) {
                         for (let logItem of logItems) {

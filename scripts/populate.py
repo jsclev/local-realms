@@ -9,8 +9,9 @@ django.setup()
 from django.contrib.sites.models import Site
 from django.contrib.auth import get_user_model
 
+from apps.finder.models import Business
+from apps.finder.models import BusinessLogItem
 from apps.finder.models import Category
-from apps.finder.models import Store
 from apps.finder.models import StoreBlacklistItem
 from apps.finder.models import StoreLogItem
 from apps.finder.models import Tag
@@ -62,11 +63,20 @@ os.system('python us/u.py')
 os.system('python us/v.py')
 os.system('python us/w.py')
 
-for store in Store.objects.all():
+for business in Business.objects.all():
     for log_item_type in range(4):
-        store_log_item = StoreLogItem()
-        store_log_item.store = store
-        store_log_item.log_item_type = log_item_type
-        store_log_item.user = user
-        store_log_item.last_updated = datetime.now(pytz.utc)
-        store_log_item.save()
+        business_log_item = BusinessLogItem()
+        business_log_item.business = business
+        business_log_item.log_item_type = log_item_type
+        business_log_item.user = user
+        business_log_item.last_updated = datetime.now(pytz.utc)
+        business_log_item.save()
+
+    for store in business.stores.all():
+        for log_item_type in range(4):
+            store_log_item = StoreLogItem()
+            store_log_item.store = store
+            store_log_item.log_item_type = log_item_type
+            store_log_item.user = user
+            store_log_item.last_updated = datetime.now(pytz.utc)
+            store_log_item.save()

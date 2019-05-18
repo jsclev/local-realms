@@ -15,7 +15,7 @@ business = Business.objects.get(name='G2K Games')
 store = Store(business=business, city='Abingdon', state_code='VA', zip_code='24210')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.name = 'Abingdon – Towne Centre'
-store.street1 = '376 Towne Centre Drive'
+store.address1 = '376 Towne Centre Drive'
 store.latitude = 36.701102
 store.longitude = -81.977939
 store.save()
@@ -30,7 +30,7 @@ business.save()
 
 store = Store(business=business, city='Ashburn', state_code='VA', zip_code='20147')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '44927 George Washington Blvd'
+store.address1 = '44927 George Washington Blvd'
 store.latitude = 39.058097
 store.longitude = -77.445812
 store.phone = '703-466-0460'.replace('-', '')
@@ -48,7 +48,7 @@ business.save()
 store = Store(business=business, city='Centreville', state_code='VA', zip_code='20120')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.location_heading = 'Sully Station Center'
-store.street1 = '5107 Westfields Blvd'
+store.address1 = '5107 Westfields Blvd'
 store.latitude = 38.867360
 store.longitude = -77.446814
 store.phone = '515-599-0360'.replace('-', '')
@@ -63,7 +63,7 @@ business.save()
 
 store = Store(business=business, city='Charlottesville', state_code='VA', zip_code='22901')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '374 Hillsdale Dr'
+store.address1 = '374 Hillsdale Dr'
 store.latitude = 38.064315
 store.longitude = -78.488559
 store.save()
@@ -77,7 +77,7 @@ business.save()
 
 store = Store(business=business, city='Falls Church', state_code='VA', zip_code='22046')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '103 E Broad St'
+store.address1 = '103 E Broad St'
 store.latitude = 38.882183
 store.longitude = -77.170760
 store.save()
@@ -93,7 +93,7 @@ business.save()
 
 store = Store(business=business, city='Falls Church', state_code='VA', zip_code='22046')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '586 S Washington St'
+store.address1 = '586 S Washington St'
 store.latitude = 38.879380
 store.longitude = -77.178619
 store.phone = '703-241-9393'.replace('-', '')
@@ -109,7 +109,7 @@ business.save()
 store = Store(business=business, city='Harrisonburg', state_code='VA', zip_code='22801')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.location_heading = 'Cloverleaf Shopping Center'
-store.street1 = '111 S Carlton St'
+store.address1 = '111 S Carlton St'
 store.latitude = 38.441948
 store.longitude = -78.855953
 store.phone = '540-217-2672'.replace('-', '')
@@ -123,8 +123,8 @@ business = Business.objects.get(name='G2K Games')
 store = Store(business=business, city='Kingsport', state_code='VA', zip_code='37660')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.name = 'Kingsport – East Stone Commons'
-store.street1 = '2003 N Eastman Rd'
-store.street2 = 'Suite 36'
+store.address1 = '2003 N Eastman Rd'
+store.address2 = 'Suite 36'
 store.latitude = 36.543057
 store.longitude = -82.517806
 store.save()
@@ -139,7 +139,7 @@ business.save()
 
 store = Store(business=business, city='Lexington', state_code='VA', zip_code='24450')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '314 S Main St'
+store.address1 = '314 S Main St'
 store.latitude = 37.781786
 store.longitude = -79.445417
 store.phone = '540-724-6124'.replace('-', '')
@@ -154,7 +154,7 @@ business.save()
 
 store = Store(business=business, city='Lynchburg', state_code='VA', zip_code='24501')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '3102 Memorial Ave'
+store.address1 = '3102 Memorial Ave'
 store.latitude = 37.396347
 store.longitude = -79.171051
 store.save()
@@ -167,7 +167,7 @@ business = Business.objects.get(name='G2K Games')
 store = Store(business=business, city='Norton', state_code='VA', zip_code='24273')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.name = 'Norton – Norton Commons'
-store.street1 = '645 Commonwealth Dr'
+store.address1 = '645 Commonwealth Dr'
 store.latitude = 36.956268
 store.longitude = -82.605011
 store.save()
@@ -184,7 +184,7 @@ business.save()
 store = Store(business=business, city='Norfolk', state_code='VA', zip_code='23503')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.name = 'Atlantis Norfolk'
-store.street1 = '9649 1st View St'
+store.address1 = '9649 1st View St'
 store.latitude = 36.955741
 store.longitude = -76.254268
 store.email = 'ac3@atlantis-comics.com'
@@ -200,7 +200,7 @@ business = Business.objects.get(name='Atlantis Games & Comics')
 store = Store(business=business, city='Portsmouth', state_code='VA', zip_code='23701')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.name = 'Atlantis Portsmouth'
-store.street1 = '2862 Airline Blvd'
+store.address1 = '2862 Airline Blvd'
 store.latitude = 36.810674
 store.longitude = -76.368036
 store.email = 'ac1@atlantis-comics.com'
@@ -219,7 +219,7 @@ business.save()
 
 store = Store(business=business, city='Radford', state_code='VA', zip_code='24141')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '1085 E Main St'
+store.address1 = '1085 E Main St'
 store.latitude = 37.140935
 store.longitude = -80.556410
 store.phone = '540-639-6547'.replace('-', '')
@@ -236,7 +236,7 @@ business.save()
 
 store = Store(business=business, city='Richmond', state_code='VA', zip_code='23221')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '3104 W Cary St'
+store.address1 = '3104 W Cary St'
 store.latitude = 37.553151
 store.longitude = -77.480305
 store.phone = '804-359-5163'.replace('-', '')
@@ -253,7 +253,7 @@ business.save()
 
 store = Store(business=business, city='Roanoke', state_code='VA', zip_code='24016')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '430 Salem Ave SW'
+store.address1 = '430 Salem Ave SW'
 store.latitude = 37.272227
 store.longitude = -79.949687
 store.phone = '540-204-4016'.replace('-', '')
@@ -270,7 +270,7 @@ business.save()
 
 store = Store(business=business, city='Roanoke', state_code='VA', zip_code='24012')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '3432 Orange Ave NE'
+store.address1 = '3432 Orange Ave NE'
 store.latitude = 37.304304
 store.longitude = -79.893189
 store.phone = '540-342-1460'.replace('-', '')
@@ -286,7 +286,7 @@ business.save()
 
 store = Store(business=business, city='Roanoke', state_code='VA', zip_code='24012')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '5728 Williamson Rd'
+store.address1 = '5728 Williamson Rd'
 store.latitude = 37.328675
 store.longitude = -79.954230
 store.phone = '540-767-4263'.replace('-', '')
@@ -303,8 +303,8 @@ business.save()
 
 store = Store(business=business, city='Virginia Beach', state_code='VA', zip_code='23464')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '5405 Indian River Rd'
-store.street2 = 'Suite A'
+store.address1 = '5405 Indian River Rd'
+store.address2 = 'Suite A'
 store.latitude = 36.798303
 store.longitude = -76.178961
 store.phone = '757-420-8008'.replace('-', '')
@@ -321,7 +321,7 @@ business.save()
 
 store = Store(business=business, city='Virginia Beach', state_code='VA', zip_code='23452')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '859 S Lynnhaven Rd'
+store.address1 = '859 S Lynnhaven Rd'
 store.latitude = 36.798303
 store.longitude = -76.178961
 store.phone = '757-301-9187'.replace('-', '')
@@ -338,8 +338,8 @@ business.save()
 store = Store(business=business, city='Warrenton', state_code='VA', zip_code='20186')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.location_heading = 'Warrenton Village Center'
-store.street1 = '251 W Lee Hwy'
-store.street2 = 'Suite 655'
+store.address1 = '251 W Lee Hwy'
+store.address2 = 'Suite 655'
 store.latitude = 38.730083
 store.longitude = -77.799671
 store.phone = '540-878-5480'.replace('-', '')
@@ -353,7 +353,7 @@ business = Business.objects.get(name='G2K Games')
 store = Store(business=business, city='Waynesboro', state_code='VA', zip_code='22980')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.name = 'Waynesboro – Gateway Park Shopping Center'
-store.street1 = '1321 W Broad St'
+store.address1 = '1321 W Broad St'
 store.latitude = 38.073755
 store.longitude = -78.898431
 store.save()
@@ -368,7 +368,7 @@ business.save()
 
 store = Store(business=business, city='Springfield', state_code='VT', zip_code='05156')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '27 Main St'
+store.address1 = '27 Main St'
 store.latitude = 43.299009
 store.longitude = -72.482226
 store.save()
@@ -382,7 +382,7 @@ business.save()
 
 store = Store(business=business, city='Winchester', state_code='VA', zip_code='22601')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '672 N Loudoun St'
+store.address1 = '672 N Loudoun St'
 store.latitude = 39.195943
 store.longitude = -78.160509
 store.phone = '540-667-5497'.replace('-', '')

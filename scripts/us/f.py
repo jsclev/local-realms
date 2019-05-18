@@ -16,8 +16,8 @@ business.save()
 
 store = Store(business=business, city='Jacksonville', state_code='FL', zip_code='32225')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '10230 Atlantic Blvd'
-store.street2 = '#11'
+store.address1 = '10230 Atlantic Blvd'
+store.address2 = '#11'
 store.latitude = 30.322750
 store.longitude = -81.534627
 store.phone = '904-720-0774'.replace('-', '')
@@ -34,7 +34,7 @@ business.save()
 
 store = Store(business=business, city='Jacksonville', state_code='FL', zip_code='32244')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '5517 Roosevelt Blvd'
+store.address1 = '5517 Roosevelt Blvd'
 store.latitude = 30.247073
 store.longitude = -81.697058
 store.phone = '904-503-8061'.replace('-', '')

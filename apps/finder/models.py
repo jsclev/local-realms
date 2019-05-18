@@ -35,8 +35,8 @@ class Store(models.Model):
     status = models.IntegerField(default=0, null=False)
     name = models.TextField(default='', blank=True)
     location_heading = models.TextField(default='')
-    street1 = models.TextField(default='')
-    street2 = models.TextField(default='')
+    address1 = models.TextField(default='')
+    address2 = models.TextField(default='')
     city = models.TextField(default='')
     state_code = models.CharField(max_length=2, null=True)
     zip_code = models.CharField(max_length=10, null=True)
@@ -73,6 +73,16 @@ class CategoryQuantity(models.Model):
     business = models.ForeignKey(Business, related_name='category_quantities', on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
+
+
+class BusinessLogItem(models.Model):
+    business = models.ForeignKey(Business, related_name='log_items', on_delete=models.CASCADE)
+    log_item_type = models.IntegerField(default=None, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None, blank=False)
+    last_updated = models.DateTimeField(default=None, blank=True)
+
+    class Meta:
+        db_table = 'business_log_item'
 
 
 class StoreLogItem(models.Model):

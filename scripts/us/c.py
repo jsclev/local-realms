@@ -19,8 +19,8 @@ business.save()
 
 store = Store.objects.get(business=business)
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '300 N Lantana St'
-store.street2 = 'Ste #38'
+store.address1 = '300 N Lantana St'
+store.address2 = 'Ste #38'
 store.city = 'Camarillo'
 store.state_code = 'CA'
 store.zip_code = '93010'
@@ -37,7 +37,7 @@ business.save()
 
 store = Store(business=business, city='Colorado Springs', state_code='CO', zip_code='80910')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '1050 S Academy Blvd'
+store.address1 = '1050 S Academy Blvd'
 store.latitude = 38.817881
 store.longitude = -104.758201
 store.phone = '719-418-2187'.replace('-', '')
@@ -53,7 +53,7 @@ business.save()
 
 store = Store(business=business, city='Colorado Springs', state_code='CO', zip_code='80920')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '7681 N Union Blvd'
+store.address1 = '7681 N Union Blvd'
 store.latitude = 38.942139
 store.longitude = -104.774062
 store.phone = '719-522-1099'.replace('-', '')
@@ -69,7 +69,7 @@ business.save()
 
 store = Store(business=business, city='Colorado Springs', state_code='CO', zip_code='80918')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '5730 N Academy Blvd'
+store.address1 = '5730 N Academy Blvd'
 store.latitude = 38.913907
 store.longitude = -104.788893
 store.phone = '719-531-9863'.replace('-', '')
@@ -86,7 +86,7 @@ business.save()
 
 store = Store(business=business, city='Pueblo', state_code='CO', zip_code='81001')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '521 Chinook Ln'
+store.address1 = '521 Chinook Ln'
 store.latitude = 38.287747
 store.longitude = -104.599527
 store.phone = '719-542-1237'.replace('-', '')

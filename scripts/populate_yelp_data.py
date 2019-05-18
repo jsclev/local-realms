@@ -12,16 +12,16 @@ with open('./data/yelp.json', 'r') as f:
         json_obj = json.loads(line)
 
         name = json_obj['name']
-        street1 = json_obj['location']['address1']
-        street2 = json_obj['location']['address2']
+        address1 = json_obj['location']['address1']
+        address2 = json_obj['location']['address2']
         city = json_obj['location']['city']
         state_code = json_obj['location']['state']
         zip_code = json_obj['location']['zip_code']
         latitude = json_obj['coordinates']['latitude']
         longitude = json_obj['coordinates']['longitude']
 
-        if street2 is None:
-            street2 = ''
+        if address2 is None:
+            address2 = ''
 
         if Store.objects.filter(business__name=name,
                                 city=city,
@@ -36,8 +36,8 @@ with open('./data/yelp.json', 'r') as f:
             store = Store()
             store.business = business
             store.phone = json_obj['phone']
-            store.street1 = street1
-            store.street2 = street2
+            store.address1 = address1
+            store.address2 = address2
             store.city = city
             store.state_code = state_code
             store.zip_code = zip_code

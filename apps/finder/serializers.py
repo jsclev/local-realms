@@ -2,7 +2,9 @@ from django.contrib.auth.models import User
 from rest_framework import serializers
 
 from apps.finder.models import Business
+from apps.finder.models import BusinessLogItem
 from apps.finder.models import Store
+from apps.finder.models import StoreLogItem
 from apps.finder.models import Tag
 
 
@@ -30,7 +32,7 @@ class StoreLogItemSerializer(serializers.ModelSerializer):
     lastUpdated = serializers.DateTimeField(source='last_updated', format='iso-8601')
 
     class Meta:
-        model = Store
+        model = StoreLogItem
         fields = ('logItemType',
                   'user',
                   'lastUpdated')
@@ -39,8 +41,8 @@ class StoreLogItemSerializer(serializers.ModelSerializer):
 class StoreSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField()
     name = serializers.CharField()
-    street1 = serializers.CharField()
-    street2 = serializers.CharField()
+    address1 = serializers.CharField()
+    address2 = serializers.CharField()
     city = serializers.CharField()
     stateCode = serializers.CharField(source='state_code')
     zipCode = serializers.CharField(source='zip_code')
@@ -53,8 +55,8 @@ class StoreSerializer(serializers.ModelSerializer):
         model = Store
         fields = ('id',
                   'name',
-                  'street1',
-                  'street2',
+                  'address1',
+                  'address2',
                   'city',
                   'stateCode',
                   'zipCode',
@@ -64,6 +66,18 @@ class StoreSerializer(serializers.ModelSerializer):
                   'logItems')
 
 
+class BusinessLogItemSerializer(serializers.ModelSerializer):
+    logItemType = serializers.IntegerField(source='log_item_type')
+    user = UserSerializer()
+    lastUpdated = serializers.DateTimeField(source='last_updated', format='iso-8601')
+
+    class Meta:
+        model = BusinessLogItem
+        fields = ('logItemType',
+                  'user',
+                  'lastUpdated')
+
+
 class BusinessSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField()
     name = serializers.CharField()
@@ -71,6 +85,7 @@ class BusinessSerializer(serializers.ModelSerializer):
     email = serializers.CharField()
     facebook = serializers.CharField()
     stores = StoreSerializer(many=True, read_only=True)
+    logItems = BusinessLogItemSerializer(source='log_items', many=True)
 
     class Meta:
         model = Business
@@ -79,4 +94,5 @@ class BusinessSerializer(serializers.ModelSerializer):
                   'website',
                   'email',
                   'facebook',
-                  'stores')
+                  'stores',
+                  'logItems')
