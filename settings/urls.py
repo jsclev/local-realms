@@ -6,6 +6,7 @@ from django.urls import path, include
 
 from apps.finder import views
 from apps.accounts import views as account_views
+from apps.maintenance import views as maintenance_views
 from settings.sitemaps import StaticViewSitemap
 
 sitemaps = {
@@ -26,4 +27,5 @@ urlpatterns = [
     path('contact/', views.get_contact, name='contact'),
     path('shops/', views.get_shops),
     path('tags/', views.get_tags),
+    path('maintenance/', maintenance_views.get_no_phone_stores)
 ]

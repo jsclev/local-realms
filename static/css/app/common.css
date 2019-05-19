@@ -275,3 +275,14 @@ a {
     font-size: 11px;
     margin-left: 32px;
 }
+
+#sign-in-link {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 100;
+    padding: 12px;
+    background-color: #4387fd;
+    color: white;
+    white-space: nowrap;
+}

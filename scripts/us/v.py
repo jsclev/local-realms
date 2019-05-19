@@ -86,6 +86,8 @@ create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 ###############################################################################
 business = Business(name='The End Games')
 business.website = 'www.theendgames.co'
+business.email = 'omegagamesllc@gmail.com'
+business.facebook = 'https://www.facebook.com/TheEndGamesVA'
 business.save()
 
 store = Store(business=business, city='Charlottesville', state_code='VA', zip_code='22901')
@@ -93,12 +95,16 @@ store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.address1 = '374 Hillsdale Dr'
 store.latitude = 38.064315
 store.longitude = -78.488559
+store.phone = '434-973-2205'.replace('-', '')
 store.save()
 
-create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_STATUS, '2019-05-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-05-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-05-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-05-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-05-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -210,7 +216,7 @@ create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 # Business
 ###############################################################################
 business = Business(name='Dragon Fire Games')
-business.website = 'www.facebook.com/Dragon-Fire-Games-inc-1453584968210052'
+business.facebook = 'www.facebook.com/Dragon-Fire-Games-inc-1453584968210052'
 business.save()
 
 store = Store(business=business, city='Lynchburg', state_code='VA', zip_code='24501')
@@ -218,12 +224,15 @@ store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.address1 = '3102 Memorial Ave'
 store.latitude = 37.396347
 store.longitude = -79.171051
+store.phone = '434-229-3645'.replace('-', '')
 store.save()
 
-create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_STATUS, '2019-05-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-05-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-05-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-05-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -510,6 +519,7 @@ create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
 business = Business(name='Dark Mountain Games')
 business.website = 'www.darkmountaingames.com'
 business.email = 'darkmtngames@vermontel.net'
+business.facebook = 'https://p.facebook.com/darkmountaingames'
 business.save()
 
 store = Store(business=business, city='Springfield', state_code='VT', zip_code='05156')
@@ -517,13 +527,16 @@ store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.address1 = '27 Main St'
 store.latitude = 43.299009
 store.longitude = -72.482226
+store.phone = '802-885-4800'.replace('-', '')
 store.save()
 
-create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_STATUS, '2019-05-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-05-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-05-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-05-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-05-18T12:00:00+00:00')
 
 ###############################################################################
 # Business

@@ -19,30 +19,30 @@ STORE_PHONE = settings.GLOBAL_CONSTANTS['STORE_PHONE']
 ###############################################################################
 # Business
 ###############################################################################
-business = Business.objects.get(name='+EV Games')
-business.name = 'Plus EV Games'
-business.website = 'www.plusevgames.com'
-business.facebook = 'www.facebook.com/plusevgames'
-business.email = 'sales@plusevgames.com'
-business.save()
-
-store = Store.objects.get(business=business)
-store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.address1 = '300 N Lantana St'
-store.address2 = 'Ste #38'
-store.city = 'Camarillo'
-store.state_code = 'CA'
-store.zip_code = '93010'
-store.phone = '805-389-7428'.replace('-', '')
-store.save()
-
-create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+# business = Business.objects.get(name='+EV Games')
+# business.name = 'Plus EV Games'
+# business.website = 'www.plusevgames.com'
+# business.facebook = 'www.facebook.com/plusevgames'
+# business.email = 'sales@plusevgames.com'
+# business.save()
+#
+# store = Store.objects.get(business=business)
+# store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+# store.address1 = '300 N Lantana St'
+# store.address2 = 'Ste #38'
+# store.city = 'Camarillo'
+# store.state_code = 'CA'
+# store.zip_code = '93010'
+# store.phone = '805-389-7428'.replace('-', '')
+# store.save()
+#
+# create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+# create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+# create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+# create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+# create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+# create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+# create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business

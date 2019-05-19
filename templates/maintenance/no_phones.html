@@ -6,24 +6,16 @@
     {% include "common_head.html" %}
     <title>Local Realms</title>
 
-    <link href="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css" rel="stylesheet"/>
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet"/>
     <link href="{% static "css/app/common.css" %}?v={{ version }}" rel="stylesheet"/>
-    <link href="{% static "css/app/filter.css" %}?v={{ version }}" rel="stylesheet"/>
-    <link href="{% static "css/app/store.css" %}?v={{ version }}" rel="stylesheet"/>
-    <link href="{% static "css/app/search.css" %}?v={{ version }}" rel="stylesheet"/>
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons" rel="stylesheet" />
 
-    <script src="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js"></script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="{% static "js/lib/jQuery/jquery-3.4.0.min.js" %}"></script>
 
 </head>
 <body>
-<input type="hidden" id="mapboxAccessToken" value="{{ mapbox_access_token }}"/>
-<div id="map"></div>
-<div id="app"></div>
 <div id="social-media">
     <a href="https://www.facebook.com/LocalRealms" class="nav-link fa fa-facebook-f fa-lg">f</a>
     <a href="https://twitter.com/LocalRealms" class="nav-link fa fa-twitter-f fa-lg">t</a>
@@ -37,12 +29,9 @@
         <a href="accounts/login/" id="sign-in-link">Sign In</a>
     {% endif %}
 </div>
-<script>
-    L.mapbox.accessToken = document.getElementById('mapboxAccessToken').value;
-    const map = L.mapbox.map('map')
-        .setView([38.836684, -104.842041], 4)
-        .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
-</script>
-<script src="{% static "js/dist/main.js" %}?v={{ version }}"></script>
+
+{% for store in stores %}
+    Business: {{ store.business.name }}, {{ store.name }}, {{ store.city }}, {{ store.state_code }} <br />
+{% endfor %}
 </body>
 </html>
