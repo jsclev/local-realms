@@ -29,13 +29,20 @@
     <a href="https://twitter.com/LocalRealms" class="nav-link fa fa-twitter-f fa-lg">t</a>
     <a href="https://www.linkedin.com/company/LocalRealms" class="nav-link fa fa-linkedin-f fa-lg">l</a>
 </div>
+<div id="user-account-info">
+    {% if request.user.is_authenticated %}
+        <span id="user-account-welcome">Hello, </span>
+        <span id="user-account-name">{{ request.user.username }}</span>
+    {% else %}
+        Sign In
+    {% endif %}
+</div>
 <script>
     L.mapbox.accessToken = document.getElementById('mapboxAccessToken').value;
     const map = L.mapbox.map('map')
         .setView([38.836684, -104.842041], 4)
         .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
 </script>
-
 <script src="{% static "js/dist/main.js" %}?v={{ version }}"></script>
 </body>
 </html>
