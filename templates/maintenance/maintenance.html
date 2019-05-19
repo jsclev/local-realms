@@ -30,8 +30,14 @@
     {% endif %}
 </div>
 
-{% for store in stores %}
+<div>Stores with no phone number</div>
+{% for store in stores_with_no_phone %}
     Business: {{ store.business.name }}, {{ store.name }}, {{ store.city }}, {{ store.state_code }} <br />
+{% endfor %}
+
+<div>Businesses with no website</div>
+{% for business in businesses_with_no_website %}
+    Business: {{ business.name }} <br />
 {% endfor %}
 </body>
 </html>

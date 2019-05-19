@@ -81,6 +81,7 @@ create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
 ###############################################################################
 business = Business.objects.create(name='Spandex City')
 business.website = 'spandexcity.com'
+business.facebook = 'https://www.facebook.com/SpandexCity'
 business.save()
 
 store = Store(business=business, city='Charlotte', state_code='NC', zip_code='28214')
@@ -88,18 +89,24 @@ store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.address1 = '2914 Mt Holly-Huntersville Rd'
 store.latitude = 35.319121
 store.longitude = -80.952932
+store.phone = '704-909-7168'.replace('-', '')
 store.save()
 
-create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_STATUS, '2019-05-19T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-05-19T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-05-19T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-05-19T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-19T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-19T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-05-19T12:00:00+00:00')
 
 ###############################################################################
 # Business
 ###############################################################################
 business = Business.objects.create(name="The Wyvern's Tale")
 business.website = 'www.thewyvernstaleavl.com'
+business.facebook = 'https://www.facebook.com/thewyvernstale'
+business.email = 'store@TheWyvernsTaleAVL.com'
 business.save()
 
 store = Store(business=business, city='Asheville', state_code='NC', zip_code='28801')
@@ -107,12 +114,16 @@ store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.address1 = '347 Merrimon Ave'
 store.latitude = 35.610936
 store.longitude = -82.554662
+store.phone = '828-505-7887'.replace('-', '')
 store.save()
 
-create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_STATUS, '2019-05-19T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-05-19T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-05-19T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-05-19T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-19T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-19T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-05-19T12:00:00+00:00')
 
 ###############################################################################
 # Business
