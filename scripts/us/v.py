@@ -118,12 +118,13 @@ store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.address1 = '103 E Broad St'
 store.latitude = 38.882183
 store.longitude = -77.170760
+store.phone = '703-532-2477'.replace('-', '')
 store.save()
 
-create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_STATUS, '2019-05-19T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-05-19T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-19T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-19T12:00:00+00:00')
 
 ###############################################################################
 # Business

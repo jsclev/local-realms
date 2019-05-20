@@ -123,6 +123,8 @@ create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
 ###############################################################################
 business = Business(name='Fair Game')
 business.website = 'www.fairgamestore.com'
+business.email = 'fairgamestore@gmail.com'
+business.facebook = 'www.facebook.com/fairgamestore'
 business.save()
 
 store = Store(business=business, city='Downers Grove', state_code='IL', zip_code='60515')
@@ -130,11 +132,13 @@ store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.address1 = '5147 Main St'
 store.latitude = 41.793356
 store.longitude = -88.010124
+store.phone = '630-963-0640'.replace('-', '')
 store.save()
 
-create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_STATUS, '2019-05-20T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-05-20T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-05-20T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-05-20T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-20T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-20T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-05-20T12:00:00+00:00')
