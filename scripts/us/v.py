@@ -23,14 +23,16 @@ business = Business.objects.get(name='G2K Games')
 
 store = Store(business=business, city='Abingdon', state_code='VA', zip_code='24210')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.name = 'Abingdon – Towne Centre'
+store.location_heading = 'Abingdon Towne Centre'
 store.address1 = '376 Towne Centre Drive'
 store.latitude = 36.701102
 store.longitude = -81.977939
+store.phone = '276-676-4263'.replace('-', '')
 store.save()
 
-create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-21T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-21T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-05-21T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -176,23 +178,6 @@ create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 ###############################################################################
 # Business
 ###############################################################################
-business = Business.objects.get(name='G2K Games')
-
-store = Store(business=business, city='Kingsport', state_code='VA', zip_code='37660')
-store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.name = 'Kingsport – East Stone Commons'
-store.address1 = '2003 N Eastman Rd'
-store.address2 = 'Suite 36'
-store.latitude = 36.543057
-store.longitude = -82.517806
-store.save()
-
-create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
-
-###############################################################################
-# Business
-###############################################################################
 business = Business(name='Just Games Lexington')
 business.website = 'www.justgameslex.com'
 business.email = 'zander@justgameslex.com'
@@ -242,14 +227,16 @@ business = Business.objects.get(name='G2K Games')
 
 store = Store(business=business, city='Norton', state_code='VA', zip_code='24273')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.name = 'Norton – Norton Commons'
+store.name = 'Norton Commons'
 store.address1 = '645 Commonwealth Dr'
 store.latitude = 36.956268
 store.longitude = -82.605011
+store.phone = '276-679-1008'.replace('-', '')
 store.save()
 
-create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-21T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-21T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-21T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -505,14 +492,16 @@ business = Business.objects.get(name='G2K Games')
 
 store = Store(business=business, city='Waynesboro', state_code='VA', zip_code='22980')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.name = 'Waynesboro – Gateway Park Shopping Center'
+store.name = 'Gateway Park Shopping Center'
 store.address1 = '1321 W Broad St'
 store.latitude = 38.073755
 store.longitude = -78.898431
+store.phone = '540-943-4399'.replace('-', '')
 store.save()
 
-create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-21T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-21T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-21T12:00:00+00:00')
 
 ###############################################################################
 # Business

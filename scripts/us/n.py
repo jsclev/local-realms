@@ -170,17 +170,23 @@ create_store_log_item(store, STORE_PHONE, '2019-05-20T12:00:00+00:00')
 ###############################################################################
 business = Business(name='G2K Games')
 business.website = 'www.g2kgames.net'
+business.facebook = 'https://www.facebook.com/G2KGAMES'
+business.email = 'customerservice@g2kgames.net'
 business.save()
 
 store = Store(business=business, city='Morganton', state_code='NC', zip_code='28655')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.name = 'Morganton – Morganton Heights Shopping Center'
+store.name = 'Morganton Heights Shopping Center'
 store.address1 = 'E150 Morganton Heights Blvd'
 store.latitude = 35.725135
 store.longitude = -81.704035
+store.phone = '828-438-1890'.replace('-', '')
 store.save()
 
-create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_STATUS, '2019-05-21T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-05-21T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-05-21T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-05-21T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-21T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-21T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-21T12:00:00+00:00')
