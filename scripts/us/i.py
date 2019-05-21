@@ -72,23 +72,27 @@ create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 ###############################################################################
 business = Business(name='All About Games')
 business.website = 'allaboutgames.com'
+business.email = 'info@AllAboutGames.com'
+business.facebook = 'https://www.facebook.com/AllAboutGames365'
 business.save()
 
 store = Store(business=business, city='Boise', state_code='ID', zip_code='83709')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.location_heading = 'Overland Park Shopping Center'
 store.name = 'Overland Location'
 store.address1 = '7079 W Overland Rd'
 store.latitude = 43.589194
 store.longitude = -116.269873
+store.phone = '208-343-5653'.replace('-', '')
 store.save()
 
-create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
-create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_STATUS, '2019-05-21T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-05-21T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-05-21T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-05-21T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-21T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-21T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-05-21T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -99,24 +103,29 @@ store.name = 'Downtown Location'
 store.address1 = '120 N 8th St'
 store.latitude = 43.615762
 store.longitude = -116.203093
+store.phone = '208-345-0204'.replace('-', '')
 store.save()
 
-create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-21T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-21T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-05-21T12:00:00+00:00')
 
 ###############################################################################
 # Business
 ###############################################################################
 store = Store(business=business, city='Boise', state_code='ID', zip_code='83704')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.location_heading = 'Boise Towne Square'
 store.name = 'Mall Location'
 store.address1 = '350 N Milwaukee St'
 store.latitude = 43.608643
 store.longitude = -116.278262
+store.phone = '208-350-1201'.replace('-', '')
 store.save()
 
-create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
-create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-21T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-21T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-05-21T12:00:00+00:00')
 
 ###############################################################################
 # Business
