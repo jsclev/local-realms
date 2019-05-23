@@ -140,3 +140,21 @@ create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00
 create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
 create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
 create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
+
+###############################################################################
+# Business
+###############################################################################
+business = Business.objects.get(name='Room 2 Game')
+business.facebook = 'https://www.facebook.com/Room2Game-2158984360834710'
+business.save()
+
+store = Store.objects.get(business=business)
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-05-22T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-05-22T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-05-22T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-05-22T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-22T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-05-22T12:00:00+00:00')

@@ -5,6 +5,7 @@ django.setup()
 
 from apps.finder.models import Business
 from apps.finder.models import Store
+from scripts.functions import create_business_log_item
 from scripts.functions import create_store_log_item
 
 BUSINESS_STATUS = settings.GLOBAL_CONSTANTS['BUSINESS_STATUS']
@@ -73,3 +74,46 @@ store.save()
 create_store_log_item(store, STORE_STATUS, '2019-05-21T12:00:00+00:00')
 create_store_log_item(store, STORE_ADDRESS, '2019-05-21T12:00:00+00:00')
 create_store_log_item(store, STORE_ADDRESS, '2019-05-21T12:00:00+00:00')
+
+###############################################################################
+# Business
+###############################################################################
+business = Business.objects.get(name='Gamers Den')
+business.website = 'www.247ttg.com'
+business.facebook = 'https://www.facebook.com/gamersdencc'
+business.save()
+
+store = Store.objects.get(business=business)
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.address1 = '6410 Weber Rd'
+store.address2 = 'Suite 13'
+store.city = 'Corpus Christi'
+store.state_code = 'TX'
+store.zip_code = '78413'
+store.phone = '361-444-6607'.replace('-', '')
+store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-05-22T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-05-22T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-05-22T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-05-22T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-22T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-05-22T12:00:00+00:00')
+
+###############################################################################
+# Business
+###############################################################################
+business = Business.objects.get(name='Gardiners Games')
+business.save()
+
+store = Store.objects.get(business=business)
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.phone = '903-328-8610'.replace('-', '')
+store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-05-22T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-05-22T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-05-22T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-05-22T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-22T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-05-22T12:00:00+00:00')
