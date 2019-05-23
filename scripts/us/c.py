@@ -158,3 +158,28 @@ create_business_log_item(business, BUSINESS_EMAIL, '2019-05-22T12:00:00+00:00')
 create_business_log_item(business, BUSINESS_FACEBOOK, '2019-05-22T12:00:00+00:00')
 create_store_log_item(store, STORE_STATUS, '2019-05-22T12:00:00+00:00')
 create_store_log_item(store, STORE_PHONE, '2019-05-22T12:00:00+00:00')
+
+###############################################################################
+# Business
+###############################################################################
+business = Business.objects.get(name='San Ysidro Games')
+business.facebook = 'https://www.facebook.com/pages/category/' + \
+                    'Collectibles-Store/San-Ysidro-Games-427451907293221/'
+business.save()
+
+store = Store.objects.get(business=business)
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.address1 = '4650 Border Village Rd'
+store.city = 'San Ysidro'
+store.state_code = 'CA'
+store.zip_code = '92173'
+store.phone = '619-428-5991'.replace('-', '')
+store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-05-23T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-05-23T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-05-23T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-05-23T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-23T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-05-23T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-05-23T12:00:00+00:00')

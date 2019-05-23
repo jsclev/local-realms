@@ -19,6 +19,28 @@ STORE_PHONE = settings.GLOBAL_CONSTANTS['STORE_PHONE']
 ###############################################################################
 # Business
 ###############################################################################
+business = Business.objects.get(name='Bard & Baker Board Game Cafe')
+business.name = 'Bard & Baker: Board Game Café'
+business.website = 'www.bardandbaker.com'
+business.facebook = 'https://www.facebook.com/bardandbaker'
+business.email = 'bardandbaker@gmail.com'
+business.save()
+
+store = Store.objects.get(business=business)
+store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
+store.phone = '518-948-6693'.replace('-', '')
+store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-05-23T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-05-23T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-05-23T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-05-23T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-05-23T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-05-23T12:00:00+00:00')
+
+###############################################################################
+# Business
+###############################################################################
 business = Business.objects.create(name='Your Local Game Store')
 business.website = 'www.yourlocalgamestore.com'
 business.email = 'contact@yourlocalgamestore.com'

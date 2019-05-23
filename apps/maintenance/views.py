@@ -5,8 +5,12 @@ import settings
 
 
 def get_no_phone_stores(request):
-    businesses_with_no_website = Business.objects.filter(website='')
-    stores_with_no_phone = Store.objects.filter(phone='')
     version = settings.__version__
+
+    businesses_with_no_website = Business.objects.filter(website='')
+    num_businesses_with_no_website = businesses_with_no_website.count()
+
+    stores_with_no_phone = Store.objects.filter(phone='')
+    num_stores_with_no_phone = stores_with_no_phone.count()
 
     return render(request, 'maintenance/maintenance.html', locals())
