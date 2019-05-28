@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
 from apps.finder.models import Business
@@ -6,6 +6,8 @@ from apps.finder.models import BusinessLogItem
 from apps.finder.models import Store
 from apps.finder.models import StoreLogItem
 from apps.finder.models import Tag
+
+User = get_user_model()
 
 
 class UserSerializer(serializers.ModelSerializer):

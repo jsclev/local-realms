@@ -1,8 +1,10 @@
 import dateutil.parser
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
 from apps.finder.models import BusinessLogItem
 from apps.finder.models import StoreLogItem
+
+User = get_user_model()
 
 
 def create_business_log_item(business, log_item_type, date_string):
