@@ -33,6 +33,7 @@
     {% if request.user.is_authenticated %}
         <span id="user-account-welcome">Hello, </span>
         <span id="user-account-name">{{ request.user.username }}</span>
+        <a href="/accounts/logout">Log Out</a>
     {% else %}
         <a href="accounts/login/" id="sign-in-link">Sign In</a>
     {% endif %}
