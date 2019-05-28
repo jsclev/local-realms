@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'rest_framework',
-    'apps.finder'
+    'apps.accounts',
+    'apps.finder',
+    'apps.maintenance'
 ]
 
 MIDDLEWARE = [
@@ -59,7 +61,6 @@ ROOT_URLCONF = 'settings.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -13,4 +13,4 @@ def get_no_phone_stores(request):
     stores_with_no_phone = Store.objects.filter(phone='')
     num_stores_with_no_phone = stores_with_no_phone.count()
 
-    return render(request, 'maintenance/maintenance.html', locals())
+    return render(request, 'maintenance.html', locals())

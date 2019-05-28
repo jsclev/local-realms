@@ -8,6 +8,7 @@ from apps.finder import views
 from apps.accounts import views as account_views
 from apps.maintenance import views as maintenance_views
 from settings.sitemaps import StaticViewSitemap
+import django.contrib.auth.urls
 
 sitemaps = {
     'static': StaticViewSitemap,
