@@ -10,7 +10,7 @@ npm install
 # Rebuild the database structure
 rm db.sqlite3
 rm -rf apps/finder/migrations
-python manage.py makemigrations finder
+python manage.py makemigrations finder accounts
 python manage.py migrate
 
 # Populate the database
