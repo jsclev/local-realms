@@ -13,7 +13,9 @@
     <link href="{% static "css/app/store.css" %}?v={{ version }}" rel="stylesheet"/>
     <link href="{% static "css/app/search.css" %}?v={{ version }}" rel="stylesheet"/>
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons"
+          rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js"></script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
@@ -24,19 +26,24 @@
 <input type="hidden" id="mapboxAccessToken" value="{{ mapbox_access_token }}"/>
 <div id="map"></div>
 <div id="app"></div>
-<div id="social-media">
-    <a href="https://www.facebook.com/LocalRealms" class="nav-link fa fa-facebook-f fa-lg">f</a>
-    <a href="https://twitter.com/LocalRealms" class="nav-link fa fa-twitter-f fa-lg">t</a>
-    <a href="https://www.linkedin.com/company/LocalRealms" class="nav-link fa fa-linkedin-f fa-lg">l</a>
-</div>
-<div id="user-account-info">
-    {% if request.user.is_authenticated %}
-        <span id="user-account-welcome">Hello, </span>
-        <span id="user-account-name">{{ request.user.username }}</span>
-        <a href="/accounts/logout">Log Out</a>
-    {% else %}
-        <a href="accounts/login/" id="sign-in-link">Sign In</a>
-    {% endif %}
+<div style="top:0;right:15px;position:absolute;min-width:200px;min-height:55px;display:flex;align-items:center;justify-content:flex-end;pointer-events: none">
+    <div id="social-media">
+        <i class="material-icons share">share</i>
+        <div class="share-dropdown">
+            <a href="https://www.facebook.com/LocalRealms" class="fa fa-facebook"></a>
+            <a href="https://twitter.com/LocalRealms" class="fa fa-twitter"></a>
+            <a href="https://www.linkedin.com/company/LocalRealms" class="fa fa-linkedin"></a>
+        </div>
+    </div>
+    <div id="user-account-info">
+        {% if request.user.is_authenticated %}
+            <span id="user-account-welcome">Hello, </span>
+            <span id="user-account-name">{{ request.user.username }}</span>
+            <a href="/accounts/logout">Log Out</a>
+        {% else %}
+            <a href="accounts/login/" id="sign-in-link">Sign In</a>
+        {% endif %}
+    </div>
 </div>
 <script>
     L.mapbox.accessToken = document.getElementById('mapboxAccessToken').value;

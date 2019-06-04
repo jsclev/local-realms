@@ -1,5 +1,6 @@
 <template>
-    <div id="store-list" class="entity-list entity-list-default">
+    <div>
+        <div style="height: 68px; width: 100%"></div>
         <div v-for="store in gameStores"
              class="section-result-main"
              :class="{ selectedStoreListItem: isSelected(store) }"
@@ -22,24 +23,24 @@
 
     export default {
         mounted: function () {
-            const searchContainer = $("#input-container");
-            const list = $(".entity-list");
-            const searchOuter = $(".search-outer");
-
-            $('#store-list').scroll(function () {
-                const scroll = $('#store-list').scrollTop();
-
-                if (scroll >= 10) {
-                    list.addClass("entity-list-transition");
-                    searchContainer.removeClass("input-common-default");
-                    searchOuter.addClass("search-outer-after")
-
-                } else {
-                    list.removeClass("entity-list-transition");
-                    searchContainer.addClass("input-common-default");
-                    searchOuter.removeClass("search-outer-after")
-                }
-            });
+            // const searchContainer = $("#input-container");
+            // const list = $(".entity-list");
+            // const searchOuter = $(".search-outer");
+            //
+            // $('#store-list').scroll(function () {
+            //     const scroll = $('#store-list').scrollTop();
+            //
+            //     if (scroll >= 10) {
+            //         list.addClass("entity-list-transition");
+            //         searchContainer.removeClass("input-common-default");
+            //         searchOuter.addClass("search-outer-after")
+            //
+            //     } else {
+            //         list.removeClass("entity-list-transition");
+            //         searchContainer.addClass("input-common-default");
+            //         searchOuter.removeClass("search-outer-after")
+            //     }
+            // });
         },
         computed: {
             gameStores() {
@@ -78,23 +79,9 @@
 </script>
 
 <style scoped>
-    #store-list {
-        background-color: transparent;
-        overflow-y: auto;
-    }
 
-    .entity-list {
-        height: 100%;
-        -webkit-transition: ease 250ms;
-        -moz-transition: ease 250ms;
-        -ms-transition: ease 250ms;
-        -o-transition: ease 250ms;
-        transition: ease 250ms;
-        border-top: white 0 solid;
-        flex: 0 1 auto;
-        -ms-overflow-style: none;
-        overflow: -moz-scrollbars-none;
-    }
+
+
 
     .section-result {
         display: inline-block;
