@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'rest_framework',
-    'apps.finder'
+    'apps.accounts',
+    'apps.finder',
+    'apps.maintenance'
 ]
 
 MIDDLEWARE = [
@@ -59,7 +61,6 @@ ROOT_URLCONF = 'settings.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,6 +87,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
+# User object for app
+AUTH_USER_MODEL = 'accounts.User'
 
 
 # Password validation
@@ -121,6 +126,8 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 STATICFILES_DIRS = (
   os.path.join(BASE_DIR, 'static/'),
@@ -131,5 +138,12 @@ GLOBAL_CONSTANTS = {
                            'DRsNjFzeGx2bWdiaDlrMjIifQ.W1H0lSji_u8g2UX_OlvuqA',
     'STATUS_OPEN': 0,
     'STATUS_CLOSED': 1,
-    'STATUS_CLOSING': 2
+    'STATUS_CLOSING': 2,
+    'BUSINESS_STATUS': 0,
+    'BUSINESS_WEBSITE': 1,
+    'BUSINESS_EMAIL': 2,
+    'BUSINESS_FACEBOOK': 3,
+    'STORE_STATUS': 0,
+    'STORE_ADDRESS': 1,
+    'STORE_PHONE': 2
 }

@@ -1,12 +1,12 @@
-import django
 import os
+import django
 
 django.setup()
 
 from django.contrib.sites.models import Site
+from django.contrib.auth import get_user_model
 
 from apps.finder.models import Category
-from apps.finder.models import Business
 from apps.finder.models import StoreBlacklistItem
 from apps.finder.models import Tag
 
@@ -15,9 +15,12 @@ site.domain = 'localrealms.com'
 site.name = 'Local Realms'
 site.save()
 
-Tag.objects.all().delete()
-Category.objects.all().delete()
-Business.objects.all().delete()
+user_model = get_user_model()
+user = user_model.objects.create_user('jsclev',
+                                      password='john',
+                                      email='john@localrealms.com',
+                                      first_name='John',
+                                      last_name='Cleveland')
 
 board_game_category = Category.objects.create(name='Board Games')
 comics_category = Category.objects.create(name='Comics')
@@ -43,6 +46,7 @@ os.system('python us/a.py')
 os.system('python us/c.py')
 os.system('python us/d.py')
 os.system('python us/f.py')
+os.system('python us/g.py')
 os.system('python us/i.py')
 os.system('python us/k.py')
 os.system('python us/m.py')

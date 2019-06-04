@@ -5,7 +5,16 @@ django.setup()
 
 from apps.finder.models import Business
 from apps.finder.models import Store
+from scripts.functions import create_business_log_item
+from scripts.functions import create_store_log_item
 
+BUSINESS_STATUS = settings.GLOBAL_CONSTANTS['BUSINESS_STATUS']
+BUSINESS_WEBSITE = settings.GLOBAL_CONSTANTS['BUSINESS_WEBSITE']
+BUSINESS_EMAIL = settings.GLOBAL_CONSTANTS['BUSINESS_EMAIL']
+BUSINESS_FACEBOOK = settings.GLOBAL_CONSTANTS['BUSINESS_FACEBOOK']
+STORE_STATUS = settings.GLOBAL_CONSTANTS['STORE_STATUS']
+STORE_ADDRESS = settings.GLOBAL_CONSTANTS['STORE_ADDRESS']
+STORE_PHONE = settings.GLOBAL_CONSTANTS['STORE_PHONE']
 
 ###############################################################################
 # Business
@@ -19,12 +28,20 @@ business.save()
 store = Store(business=business, city='California', state_code='MD', zip_code='20619')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
 store.location_heading = 'San Souci Plaza'
-store.street1 = '22599 MacArthur Blvd'
-store.street2 = 'Suite #126'
+store.address1 = '22599 MacArthur Blvd'
+store.address2 = 'Suite #126'
 store.latitude = 38.288438
 store.longitude = -76.486903
 store.phone = '240-587-0791'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -36,11 +53,19 @@ business.save()
 
 store = Store(business=business, city='College Park', state_code='MD', zip_code='20740')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '8150 Baltimore Ave'
+store.address1 = '8150 Baltimore Ave'
 store.latitude = 38.288438
 store.longitude = -76.486903
 store.phone = '240-542-4613'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -51,11 +76,19 @@ business.save()
 
 store = Store(business=business, city='Cumberland', state_code='MD', zip_code='21502')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '1068 National Hwy'
+store.address1 = '1068 National Hwy'
 store.latitude = 39.640022
 store.longitude = -78.827243
 store.phone = '304-209-1413'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -68,11 +101,19 @@ business.save()
 
 store = Store(business=business, city='Damascus', state_code='MD', zip_code='20872')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '26212 Ridge Rd'
+store.address1 = '26212 Ridge Rd'
 store.latitude = 39.287753
 store.longitude = -77.207540
 store.phone = '240-207-3651'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -85,11 +126,19 @@ business.save()
 
 store = Store(business=business, city='Frederick', state_code='MD', zip_code='21701')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '54 E Patrick St'
+store.address1 = '54 E Patrick St'
 store.latitude = 39.414004
 store.longitude = -77.409187
 store.phone = '301-663-3039'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -102,12 +151,20 @@ business.save()
 
 store = Store(business=business, city='Frederick', state_code='MD', zip_code='21701')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '467 W Patrick St'
-store.street2 = 'Suite 8a'
+store.address1 = '467 W Patrick St'
+store.address2 = 'Suite 8a'
 store.latitude = 39.413781
 store.longitude = -77.422826
 store.phone = '301-401-8202'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -120,12 +177,20 @@ business.save()
 
 store = Store(business=business, city='Fulton', state_code='MD', zip_code='20759')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '8180 Maple Lawn Blvd'
-store.street2 = 'Suite E'
+store.address1 = '8180 Maple Lawn Blvd'
+store.address2 = 'Suite E'
 store.latitude = 39.148120
 store.longitude = -76.906923
 store.phone = '240-360-5998'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -137,11 +202,19 @@ business.save()
 
 store = Store(business=business, city='Gaithersburg', state_code='MD', zip_code='20879')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '18749 N Frederick Ave'
+store.address1 = '18749 N Frederick Ave'
 store.latitude = 39.163650
 store.longitude = -77.225354
 store.phone = '301-216-0007'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -154,12 +227,20 @@ business.save()
 
 store = Store(business=business, city='Hagerstown', state_code='MD', zip_code='21740')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '17301 Valley Mall Rd'
-store.street2 = 'Suite 416'
+store.address1 = '17301 Valley Mall Rd'
+store.address2 = 'Suite 416'
 store.latitude = 39.624662
 store.longitude = -77.767881
 store.phone = '240-513-6055'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -172,11 +253,19 @@ business.save()
 
 store = Store(business=business, city='Monroe', state_code='MI', zip_code='48161')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '1211 S Monroe St'
+store.address1 = '1211 S Monroe St'
 store.latitude = 41.905184
 store.longitude = -83.406853
 store.phone = '734-242-4263'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -189,11 +278,19 @@ business.save()
 
 store = Store(business=business, city='Rockville', state_code='MD', zip_code='20852')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '11772 Parklawn Dr'
+store.address1 = '11772 Parklawn Dr'
 store.latitude = 39.048085
 store.longitude = -77.102418
 store.phone = '301-881-3530'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -204,11 +301,19 @@ business.save()
 
 store = Store(business=business, city='Silver Spring', state_code='MD', zip_code='20902')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '11406-b Georgia Ave'
+store.address1 = '11406-b Georgia Ave'
 store.latitude = 39.041876
 store.longitude = -77.052743
 store.phone = '443-424-2637'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')
 
 ###############################################################################
 # Business
@@ -221,8 +326,16 @@ business.save()
 
 store = Store(business=business, city='Missoula', state_code='MT', zip_code='59801')
 store.status = settings.GLOBAL_CONSTANTS['STATUS_OPEN']
-store.street1 = '1118 W Central Ave'
+store.address1 = '1118 W Central Ave'
 store.latitude = 46.851084
 store.longitude = -114.015993
 store.phone = '406-926-6911'.replace('-', '')
 store.save()
+
+create_business_log_item(business, BUSINESS_STATUS, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_WEBSITE, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_EMAIL, '2019-04-18T12:00:00+00:00')
+create_business_log_item(business, BUSINESS_FACEBOOK, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_STATUS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_ADDRESS, '2019-04-18T12:00:00+00:00')
+create_store_log_item(store, STORE_PHONE, '2019-04-18T12:00:00+00:00')

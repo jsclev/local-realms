@@ -15,7 +15,7 @@ python manage.py migrate
 
 # Populate the database
 cd scripts
-python populate.py
 python populate_zip_codes.py
 python populate_yelp_data.py
+python populate.py
 cd ..

@@ -69,7 +69,7 @@
                 let html = "<b>";
                 html += gameStore.business.name;
                 html += '</b><br>';
-                html += gameStore.street1;
+                html += gameStore.address1;
                 html += '<br>';
                 html += gameStore.city + ", " + gameStore.stateCode;
 
