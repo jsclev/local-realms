@@ -1,13 +1,28 @@
 <template>
-    <div id="filters">
-        <div v-for="tag in tags" class="tag-filter checked" :id="tag.name">
-            <button class="filter-item">{{ tag.name }}</button>
-            <div class="check-mark check-icon-show"></div>
+    <div>
+        <div id="filters">
+            <div v-for="tag in tags" class="tag-filter checked" :id="tag.name">
+                <button class="filter-item">{{ tag.name }}</button>
+                <div class="check-mark check-icon-show"></div>
+            </div>
+            <div class="content">
+                <div class="number-filters">0 filters</div>
+                <button class="cancel" ripple="ripple">CANCEL</button>
+                <button class="apply" ripple="ripple">APPLY</button>
+            </div>
         </div>
-        <div class="content">
-            <div class="number-filters">0 filters</div>
-            <button class="cancel" ripple="ripple">CANCEL</button>
-            <button class="apply" ripple="ripple">APPLY</button>
+<!--        <button class="foo-button mdc-button">Button</button>-->
+        <div class="mdc-snackbar">
+            <div class="mdc-snackbar__surface">
+                <div class="mdc-snackbar__label"
+                     role="status"
+                     aria-live="polite">
+                    Can't send photo. Retry in 5 seconds.
+                </div>
+                <div class="mdc-snackbar__actions">
+                    <button type="button" class="mdc-button mdc-snackbar__action">Retry</button>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -24,12 +39,29 @@
         },
         mounted: function () {
             store.dispatch('businessList/getTags', null, {root: true});
+            // mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
 
+            // import {MDCSnackbar} from 'node_modules/@material/snackbar';
+            mdc.ripple.MDCSnackbar(document.querySelector('.mdc-snackbar'));
             const searchContainer = $("#input-container");
             const list = $(".entity-list");
             const searchOuter = $(".search-outer");
 
-            $(document).ready(function () {
+            $('#filter-search').click(function () {
+                $('.mdc-snackbar').show();
+                if ($('#filters').hasClass('filter-expanded')) {
+                    $('#filters').removeClass('filter-expanded');
+                    list.removeClass("entity-list-transition-filter");
+                    searchContainer.removeClass("input-common-filter");
+                    searchOuter.removeClass("search-outer-after-filter");
+                    $('#filter-dim').removeClass('dimmed');
+                } else {
+                    $('#filters').addClass('filter-expanded');
+                    list.addClass("entity-list-transition-filter");
+                    searchContainer.addClass("input-common-filter");
+                    searchOuter.addClass("search-outer-after-filter");
+                    $('#filter-dim').addClass('dimmed');
+                }
                 $('.tag-filter').click(function () {
                     $('#save-changes').addClass('save-changes-allowed');
                     var currentID = this.id;
@@ -44,22 +76,6 @@
                         $(currentID).children('button').css('color', 'rgba(0,0,0,.7)')
                     }
                 });
-            });
-
-            $('#filter-search').click(function () {
-                if ($('#filters').hasClass('filter-expanded')) {
-                    $('#filters').removeClass('filter-expanded');
-                    list.removeClass("entity-list-transition-filter");
-                    searchContainer.removeClass("input-common-filter");
-                    searchOuter.removeClass("search-outer-after-filter");
-                    $('#filter-dim').removeClass('dimmed');
-                } else {
-                    $('#filters').addClass('filter-expanded');
-                    list.addClass("entity-list-transition-filter");
-                    searchContainer.addClass("input-common-filter");
-                    searchOuter.addClass("search-outer-after-filter");
-                    $('#filter-dim').addClass('dimmed');
-                }
             });
             $('#filter-dim').click(function () {
                 $('#filters').removeClass('filter-expanded');

@@ -22,10 +22,9 @@ new Vue({
         <div>
             <div id="menu-dim"></div>
             <div id="main-panel">
-                <SearchBox></SearchBox>
                 <Filters></Filters>
                 <div id="filter-dim"></div>
-                <StoreList></StoreList>
+                <StoreList><SearchBox></SearchBox></StoreList>
                 <MapContainer></MapContainer>
                 <SelectedGameStore></SelectedGameStore>
             </div>
