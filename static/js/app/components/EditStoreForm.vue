@@ -1,6 +1,6 @@
 <template>
-<!--    v-show="selectedGameStore && isEditingStore"-->
-    <form
+    <form v-show="selectedGameStore && isEditingStore"
+          class="open"
           id="edit-store-form"
           autocomplete="off">
         <div class="mdc-text-field mdc-text-field--outlined">
@@ -28,17 +28,7 @@
     import store from '../store/index';
     // import {MDCTextField} from '@material/textfield';
 
-
     export default {
-        mounted: function () {
-            $('#edit').click(function () {
-                console.log('sasd');
-                $('#edit').addClass('open');
-            });
-
-            // const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
-
-        },
         computed: {
             facebook: {
                 get() {
@@ -99,7 +89,6 @@
 </script>
 
 <style scoped>
-
     #edit-store-form {
         position: absolute;
         z-index: 2;
@@ -115,6 +104,7 @@
         -o-transition: all 250ms;
         transition: all 250ms;
     }
+
     .open {
         left: 0 !important;
     }

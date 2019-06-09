@@ -29,6 +29,7 @@
 
 <script>
     import store from '../store/index'
+    import {MDCSnackbar} from '@material/snackbar';
 
     export default {
         data: function () {
@@ -41,8 +42,7 @@
             store.dispatch('businessList/getTags', null, {root: true});
             // mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
 
-            // import {MDCSnackbar} from 'node_modules/@material/snackbar';
-            mdc.ripple.MDCSnackbar(document.querySelector('.mdc-snackbar'));
+            const snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
             const searchContainer = $("#input-container");
             const list = $(".entity-list");
             const searchOuter = $(".search-outer");
