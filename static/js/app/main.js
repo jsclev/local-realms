@@ -3,9 +3,11 @@ import EditStoreForm from './components/EditStoreForm.vue'
 import Filters from './components/Filters.vue'
 import MapContainer from './components/Map.vue'
 import Menu from './components/Menu.vue'
+import NewStoreForm from './components/NewStoreForm.vue'
 import SearchBox from './components/SearchBox.vue'
 import SelectedGameStore from './components/SelectedGameStore.vue'
 import StoreList from './components/StoreList.vue'
+
 
 new Vue({
     el: '#app',
@@ -14,6 +16,7 @@ new Vue({
         Filters,
         MapContainer,
         Menu,
+        NewStoreForm,
         SearchBox,
         SelectedGameStore,
         StoreList
@@ -33,5 +36,6 @@ new Vue({
             </div>
             <Menu></Menu>
             <EditStoreForm></EditStoreForm>
+            <NewStoreForm></NewStoreForm>
         </div>`
 });

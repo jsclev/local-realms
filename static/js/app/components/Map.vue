@@ -3,6 +3,7 @@
         <div style="margin: auto;">{{ gameStores.length }} locations</div>
         <hr class="search-separator" style="margin: 8px 0 8px !important;">
         <div style="margin: auto">Local Realms</div>
+        <button style="margin: auto" @click="create">New Store</button>
     </div>
 </template>
 
@@ -65,6 +66,9 @@
             }
         },
         methods: {
+            create() {
+                store.dispatch('setIsCreatingNewStore', true, {root: true})
+            },
             getPopupHtml(gameStore) {
                 let html = "<b>";
                 html += gameStore.business.name;

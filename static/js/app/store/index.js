@@ -9,6 +9,7 @@ export default new Vuex.Store({
     namespaced: true,
     state: {
         isEditingStore: false,
+        isCreatingNewStore: false,
         selectedGameStore: null
     },
     modules: {
@@ -17,6 +18,9 @@ export default new Vuex.Store({
     actions: {
         setIsEditingStore({commit}, payload) {
             commit('setIsEditingStore', payload);
+        },
+        setIsCreatingNewStore({commit}, payload) {
+            commit('setIsCreatingNewStore', payload);
         },
         setSelectedGameStore({commit, state}, payload) {
             if (state.selectedGameStore && state.selectedGameStore.id === payload.id) {
@@ -32,6 +36,9 @@ export default new Vuex.Store({
     mutations: {
         setIsEditingStore(state, payload) {
             state.isEditingStore = payload;
+        },
+        setIsCreatingNewStore(state, payload) {
+            state.isCreatingNewStore = payload;
         },
         setSelectedGameStore(state, payload) {
             state.selectedGameStore = payload;
