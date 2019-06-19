@@ -27,5 +27,6 @@ urlpatterns = [
     path('contact/', views.get_contact, name='contact'),
     path('shops/', views.get_shops),
     path('tags/', views.get_tags),
+    path('add_store/', views.add_store),
     path('maintenance/', maintenance_views.get_no_phone_stores)
 ]

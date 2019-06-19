@@ -1,9 +1,9 @@
 <template>
     <div id="number-results">
-        <div style="margin: auto;">{{ gameStores.length }} locations</div>
+        <div class="margin-auto">{{ gameStores.length }} locations</div>
         <hr class="search-separator" style="margin: 8px 0 8px !important;">
-        <div style="margin: auto">Local Realms</div>
-        <button style="margin: auto" @click="create">New Store</button>
+        <div class="margin-auto">Local Realms</div>
+        <button class="margin-auto new-store-button" @click="create">New Store</button>
     </div>
 </template>
 
@@ -91,3 +91,16 @@
         }
     }
 </script>
+
+<style scoped>
+    .margin-auto {
+        margin: auto;
+    }
+
+    .new-store-button {
+        background-color: white;
+        border: none;
+        color: #8f8f8f;
+    }
+</style>
+
