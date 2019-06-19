@@ -82,6 +82,7 @@
                 const marker = L.marker(latLng);
                 marker.bindPopup("Your Location");
                 marker.addTo(map);
+                map.setView(latLng, 9)
             }
         }
     }
