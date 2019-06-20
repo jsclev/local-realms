@@ -37,10 +37,10 @@
         <input id="zip-code" name="zip-code" required class="input-common" type="number"/>
         <br>
         <label for="latitude">Latitude</label>
-        <input id="latitude" name="latitude" required class="input-common" type="text"/>
+        <input id="latitude" name="latitude" class="input-common" type="text"/>
         <br>
         <label for="longitude">Longitude</label>
-        <input id="longitude" name="longitude" required class="input-common" type="text"/>
+        <input id="longitude" name="longitude" class="input-common" type="text"/>
         <br>
         <br>
         <input type="submit" class="input-common"/>

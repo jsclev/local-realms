@@ -35,6 +35,7 @@ class Business(models.Model):
 
 class Store(models.Model):
     business = models.ForeignKey(Business, related_name='stores', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, null=True, related_name='accepted_contributions', on_delete=models.SET_NULL)
     status = models.IntegerField(default=0, null=False)
     name = models.TextField(default='', blank=True)
     location_heading = models.TextField(default='')
@@ -55,6 +56,25 @@ class Store(models.Model):
 
     class Meta:
         db_table = 'store'
+
+
+class UserStoreSuggestion(models.Model):
+    edit_store = models.ForeignKey(Store, null=True, related_name="edits", on_delete=models.SET_NULL)
+    user = models.ForeignKey(User, null=True, related_name='suggested_contributions', on_delete=models.SET_NULL)
+    is_verified = models.BooleanField(default=False)
+    name = models.TextField(default='', blank=True)
+    location_heading = models.TextField(default='')
+    address1 = models.TextField(default='')
+    address2 = models.TextField(default='')
+    city = models.TextField(default='')
+    state = models.CharField(max_length=2, null=True)
+    zip_code = models.CharField(max_length=10, null=True)
+    phone = models.TextField(default='')
+    latitude = models.DecimalField(max_digits=11, decimal_places=9, null=True)
+    longitude = models.DecimalField(max_digits=12, decimal_places=9, null=True)
+    website = models.TextField(default='')
+    facebook = models.TextField(default='')
+    email = models.TextField(default='')
 
 
 class StoreBlacklistItem(models.Model):

@@ -3,7 +3,7 @@ from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
 
 import settings
-from apps.finder.models import Business, Store
+from apps.finder.models import Business, Store, UserStoreSuggestion
 from apps.finder.serializers import BusinessSerializer
 from apps.finder.models import Tag
 from apps.finder.serializers import TagSerializer
@@ -51,7 +51,7 @@ def add_store(request):
         address1 = post_values['address']
         address2 = post_values['address-line-2']
         city = post_values['city']
-        state_code = post_values['state']
+        state = post_values['state']
         zip_code = post_values['zip-code']
         latitude = post_values['latitude']
         longitude = post_values['longitude']
@@ -64,29 +64,24 @@ def add_store(request):
         if address2 is None:
             address2 = ''
 
-        if Store.objects.filter(business__name=name,
-                                city=city,
-                                state_code=state_code,
-                                zip_code=zip_code).exists():
-            print('Store already exists: ' + str(post_values))
         else:
-            business = Business()
-            business.name = name
-            business.website = website
-            business.facebook = facebook
-            business.email = email
-            business.save()
-
-            store = Store()
-            store.business = business
-            store.phone = phone
-            store.address1 = address1
-            store.address2 = address2
-            store.city = city
-            store.state_code = state_code
-            store.zip_code = zip_code
-            store.latitude = latitude
-            store.longitude = longitude
-            store.save()
+            suggestion = UserStoreSuggestion()
+            if not request.user.is_anonymous:
+                suggestion.user = request.user
+            suggestion.name = name
+            suggestion.website = website
+            suggestion.facebook = facebook
+            suggestion.email = email
+            suggestion.phone = phone
+            suggestion.address1 = address1
+            suggestion.address2 = address2
+            suggestion.city = city
+            suggestion.state = state
+            suggestion.zip_code = zip_code
+            if suggestion.latitude:
+                suggestion.latitude = latitude
+            if suggestion.longitude:
+                suggestion.longitude = longitude
+            suggestion.save()
 
     return redirect('/')

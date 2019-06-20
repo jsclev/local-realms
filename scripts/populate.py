@@ -16,11 +16,20 @@ site.name = 'Local Realms'
 site.save()
 
 user_model = get_user_model()
-user = user_model.objects.create_user('jsclev',
-                                      password='john',
-                                      email='john@localrealms.com',
-                                      first_name='John',
-                                      last_name='Cleveland')
+owner = user_model.objects.create_user('jsclev',
+                                       password='john',
+                                       email='john@localrealms.com',
+                                       first_name='John',
+                                       last_name='Cleveland',
+                                       is_admin=True,
+                                       is_owner=True)
+admin = user_model.objects.create_user('admin',
+                                       password='admin',
+                                       email='admin@localrealms.com',
+                                       first_name='Admin',
+                                       last_name='Admin',
+                                       is_admin=True,
+                                       is_owner=False)
 
 board_game_category = Category.objects.create(name='Board Games')
 comics_category = Category.objects.create(name='Comics')

@@ -3,7 +3,7 @@
         <div class="margin-auto">{{ gameStores.length }} locations</div>
         <hr class="search-separator" style="margin: 8px 0 8px !important;">
         <div class="margin-auto">Local Realms</div>
-        <button class="margin-auto new-store-button" @click="create">New Store</button>
+        <button class="margin-auto new-store-button" @click="create">Suggest Store</button>
     </div>
 </template>
 

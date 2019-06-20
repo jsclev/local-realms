@@ -1,0 +1,80 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Local Realms</title>
+
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet"/>
+    <link href="{% static "css/app/common.css" %}?v={{ version }}" rel="stylesheet"/>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons" rel="stylesheet" />
+
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="{% static "js/lib/jQuery/jquery-3.4.0.min.js" %}"></script>
+</head>
+<body>
+    <a href="/maintenance">Maintenance Home</a>
+    <div id="user-account-info">
+        <span id="user-account-welcome">Hello, </span>
+        <span id="user-account-name">{{ request.user.username }}</span>
+    </div>
+    <div><b>User Suggestions</b></div>
+    {% for suggestion in new_suggestions %}
+        {{ suggestion.user }}
+        <form
+          class="open"
+          id="process-suggestion"
+          autocomplete="off"
+          method="post"
+          action="">
+            {% csrf_token %}
+            <input type="hidden" name="id" value="{{ suggestion.id }}"/>
+            <label for="name">Name</label>
+            <input id="name" name="name" required class="input-common" type="text" value="{{ suggestion.name }}"/>
+            <br>
+            <label for="website">Website</label>
+            <input id="website" name="website" class="input-common" type="text" value="{{ suggestion.website }}"/>
+            <br>
+            <label for="facebook">Facebook</label>
+            <input id="facebook" name="facebook" class="input-common" type="text" value="{{ suggestion.facebook }}"/>
+            <br>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" class="input-common" type="text" value="{{ suggestion.phone }}"/>
+            <br>
+            <label for="email">Email</label>
+            <input id="email" name="email" class="input-common" type="email" value="{{ suggestion.email }}"/>
+            <br>
+            <label for="address">Address</label>
+            <input id="address" name="address" required class="input-common" type="text" value="{{ suggestion.address1 }}"/>
+            <br>
+            <label for="address-line-2">Address Line 2</label>
+            <input id="address-line-2" name="address-line-2" class="input-common" type="text"
+                   value="{{ suggestion.address2 }}"/>
+            <br>
+            <label for="city">City</label>
+            <input id="city" name="city" required class="input-common" type="text" value="{{ suggestion.city }}"/>
+            <br>
+            <label for="state-code">State Code</label>
+            <input id="state-code" name="state-code" required class="input-common" type="text" value="{{ suggestion.state }}"/>
+            <br>
+            <label for="zip-code">Zip Code</label>
+            <input id="zip-code" name="zip-code" required class="input-common" type="number"
+                   value="{{ suggestion.zip_code }}"/>
+            <br>
+            <label for="latitude">Latitude</label>
+            <input id="latitude" name="latitude" required class="input-common" type="text"
+                   value="{{ suggestion.latitude }}"/>
+            <br>
+            <label for="longitude">Longitude</label>
+            <input id="longitude" name="longitude" required class="input-common" type="text"
+                   value="{{ suggestion.longitude }}"/>
+            <br>
+            <input type="submit" class="input-common"/>
+            <br>
+            <br>
+        </form>
+    {% endfor %}
+</body>
+</html>

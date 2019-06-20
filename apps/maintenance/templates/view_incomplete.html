@@ -16,21 +16,20 @@
 
 </head>
 <body>
-<div id="user-account-info">
-    <span id="user-account-welcome">Hello, </span>
-    <span id="user-account-name">{{ request.user.username }}</span>
-</div>
-<br>
-<div id="view-suggestions">
-    <a href="/maintenance/view_suggestions">View User Submitted Suggested Stores</a>
-</div>
-<br>
-<div id="view-incomplete">
-    <a href="/maintenance/view_incomplete">View Stores with Incomplete Data</a>
-</div>
-<br>
-<div id="view-home">
-    <a href="/">Home</a>
-</div>
+    <a href="/maintenance">Maintenance Home</a>
+    <div id="user-account-info">
+        <span id="user-account-welcome">Hello, </span>
+        <span id="user-account-name">{{ request.user.username }}</span>
+    </div>
+
+    <div><b>Stores with No Phone Number ({{ num_stores_with_no_phone }})</b></div>
+    {% for store in stores_with_no_phone %}
+        Business: {{ store.business.name }}, {{ store.name }}, {{ store.city }}, {{ store.state_code }} <br />
+    {% endfor %}
+    <p></p>
+    <div><b>Businesses with No Website ({{ num_businesses_with_no_website }})</b></div>
+    {% for business in businesses_with_no_website %}
+        Business: {{ business.name }} <br />
+    {% endfor %}
 </body>
 </html>
