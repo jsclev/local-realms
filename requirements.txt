@@ -1,6 +1,6 @@
 bump2version==0.5.10
 Django==2.1.11
-djangorestframework==3.9.2
+djangorestframework==3.11.2
 httplib2==0.12.3
 jsonlines==1.2.0
 python-dateutil==2.8.0
